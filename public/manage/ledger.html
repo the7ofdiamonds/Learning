@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<link rel="icon" href="orb.jpeg">
+	<title>LEARN. MANAGE. INVEST.</title>
+	<link rel="stylesheet" href="/style.css">
+	<meta name="google-signin-scope" content="profile email">
+	<meta name="google-signin-client_id"
+		content="1073451047758-53dlo80jcgseidu4cbmkqn2r3okmd8vh.apps.googleusercontent.com">
+	<script src="https://code.jquery.com/jquery-3.4.1.js"
+		integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+	<script src="https://apis.google.com/js/platform.js" async defer></script>
+	<script src="https://cdn.firebase.com/libs/firebaseui/4.1.0/firebaseui.js"></script>
+	<link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.css" />
+	<script src="https://apis.google.com/js/api.js"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+	<script type="text/javascript"
+		src="https://appleid.cdn-apple.com/appleauth/static/jsapi/appleid/1/en_US/appleid.auth.js"></script>
+	<meta name="appleid-signin-client-id" content="[CLIENT_ID]">
+	<meta name="appleid-signin-scope" content="[SCOPES]">
+	<meta name="appleid-signin-redirect-uri" content="https://theorb-f3a48.firebaseapp.com/">
+	<meta name="appleid-signin-state" content="[STATE]">
+</head>
+
+<body>
+	<header>
+		<div>
+			<center>
+				<a href="#" class="black-text modal-trigger" data-target="modal-home"><img src="/orb.jpeg" width="150px"
+          height="150px"></a>
+					<nav class="orbNav"><a href="#" class="white-text modal-trigger"
+							data-target="modal-learn"><strong>LEARN.</strong></a>
+						<a href="#" class="white-text modal-trigger"
+							data-target="modal-manage"><strong>MANAGE.</strong></a>
+						<a href="#" class="white-text modal-trigger"
+							data-target="modal-invest"><strong>INVEST.</strong></a></nav>
+			</center>
+		</div>
+
+		<!--Home-->
+		<div class="modal" id="modal-home">
+			<div class="modal-content">
+				<h4><strong>ORB&trade;</strong></h4>
+				<p>The Future of Financial Systems.</p>
+				<center>
+					<nav>
+						<div class="orbNav">
+							<a class="white-text modal-trigger" href="/shop.html">
+								<strong>SHOP</strong></a></div>
+						<div class="logged-in" style="display:none">
+							<div class="orbNav">
+								<a class="white-text modal-trigger" onClick="accountDetailsPage()">
+									<strong>ACCOUNT DETAILS</strong></a></div>
+						</div>
+						<div class="logged-out" style="display:none">
+							<div class="orbNav">
+								<a href="#" class="white-text modal-trigger" data-target="modal-login">
+									<strong>LOG IN</strong></a></div>
+						</div>
+						<div class="orbNav">
+							<a href="#" class="white-text modal-trigger"
+								data-target="modal-about"><strong>ABOUT</strong></a></div>
+						<div class="orbNav">
+							<a href="#" class="white-text modal-trigger"
+								data-target="modal-faq"><strong>FAQ</strong></a></div>
+					</nav>
+				</center>
+				<!--Copyrights
+            	<div>
+					<p>
+						Copyright © 2010-2018 J.C. LYONS ENTERPRISES LLC. All Rights Reserved.</p>
+				</div> -->
+			</div>
+		</div>
+
+		<!--Account-->
+		<div style="display:none" id="accountdetails">
+			<h4><strong>ACCOUNT DETAILS</strong></h4><br />
+			<div class="account-details"></div>
+			<center>
+				<div class="orbNav">
+					<a href="#" class="white-text modal-trigger" id="logout">
+						<strong>LOG OUT</strong></a>
+				</div>
+			</center>
+		</div>
+
+		<!--Login-->
+		<div id="modal-login" class="modal">
+			<div class="modal-content">
+				<center>
+					<h4><strong>LOG IN</strong></h4>
+					<div id="appleid-signin" class="signin-button" data-color="white" data-border="true"
+						data-type="sign in">
+					</div>
+					<div id="firebaseui-auth-container"></div>
+					<div id="loader">Loading...</div>
+				</center>
+			</div>
+		</div>
+
+		<!--About-->
+		<div id="modal-about" class="modal">
+			<div class="modal-content">
+				<center>
+					<h4><strong>ABOUT</strong></h4>
+					<p><strong>ORB™</strong> is the Future of financial systems with a holistic approach to learning,
+						managing and investing money available on multiple platforms.</p>
+					<nav>
+						<div class="orbNav">
+							<a href="#" class="white-text modal-trigger"
+								data-target="modal-privacy"><strong>PRIVACY</strong></a></div>
+						<div class="orbNav">
+							<a href="#" class="white-text modal-trigger"
+								data-target="modal-tc"><strong>TERMS &amp CONDITIONS</strong></a></div>
+					</nav>
+				</center>
+			</div>
+		</div>
+
+		<!--FAQ-->
+		<div id="modal-faq" class="modal">
+			<div class="modal-content">
+				<center>
+					<h4><strong>FAQ</strong></h4>
+					<p>Questions</p>
+					<nav>
+						<div class="orbNav">
+							<a href="#" class="white-text modal-trigger"
+								data-target="modal-contact"><strong>CONTACT</strong></a></div>
+					</nav>
+				</center>
+			</div>
+		</div>
+
+		<!--Privacy-->
+		<div id="modal-privacy" class="modal">
+			<div class="modal-content">
+				<center>
+					<h4><strong>PRIVACY</strong></h4>
+				</center>
+			</div>
+		</div>
+
+		<!--Terms & Conditions-->
+		<div id="modal-tc" class="modal">
+			<div class="modal-content">
+				<center>
+					<h4><strong>TERMS &amp CONDITIONS</strong></h4>
+				</center>
+			</div>
+		</div>
+
+		<!--Contact-->
+		<div id="modal-contact" class="modal">
+			<div class="modal-content">
+				<center>
+					<h4><strong>CONTACT</strong></h4>
+					<p>Questions</p>
+					<nav>
+						<div class="orbNav">
+							<a href="https://jclyonsenterprises.wordpress.com/"><strong>WORDPRESS</strong></a></div>
+						<div class="orbNav">
+							<a href="https://www.instagram.com/theorbdotapp/"><strong>INSTAGRAM</strong></a></div>
+						<div class="orbNav">
+							<a href="#"><strong>FACEBOOK</strong></a></div>
+						<div class="orbNav">
+							<a href="#"><strong>TWITTER</strong></a></div>
+						<div class="orbNav">
+							<a href="#"><strong>LINKEDIN</strong></a></div>
+					</nav>
+				</center>
+			</div>
+		</div>
+
+		<!--Learn-->
+		<div class="modal" id="modal-learn">
+			<div class="modal-content">
+				<h4><strong>LEARN.</strong></h4>
+				<center>
+					<p><strong>ORB&trade;</strong> users can read and play <strong><em>THE HOUSE FOREVER
+              WINS&trade;</em></strong> a book/game which teaches you how to manage and invest money holisticly.</p>
+				</center>
+				<div>
+					<center>
+						<nav class="orbNav">
+							<div>
+								<strong><a href="/learn/read.html">READ</a> <a href="/learn/play.html">PLAY</a></strong>
+							</div>
+						</nav>
+					</center>
+				</div>
+			</div>
+		</div>
+
+		<!--Manage-->
+		<div class="modal" id="modal-manage">
+			<div class="modal-content">
+				<h4><strong>MANAGE.</strong></h4>
+				<center>
+					<p><strong>ORB&trade;</strong> users can manage with the ledger and the following services which are
+						available for everyone.</p>
+					<nav class="orbNav">
+						<div><a href="/manage/ledger.html"><strong>LEDGER</strong></a></div>
+						<div class="orbNav">
+							<a href="#" class="white-text modal-trigger"
+								data-target="modal-banking"><strong>CURRENCY</strong></a>
+							<a href="#" class="white-text modal-trigger"
+								data-target="modal-finance"><strong>DEBT</strong></a>
+							<a href="#" class="white-text modal-trigger"
+								data-target="modal-insurance"><strong>INSURANCE</strong></a>
+						</div>
+				</center>
+				</nav>
+			</div>
+		</div>
+
+		<!--Transaction Details-->
+		<div class="modal" id="transactiondetails">
+			<div class="modal-content">
+				<h4><strong>DETAILS</strong></h4>
+				<div id="detailscategory"></div>
+				<div id="detailssubcategory"></div>
+				<div id="detailstimestamp"></div>
+				<div id="detailsto"></div>
+				<div id="detailsfrom"></div>
+				<div id="detailstotal"></div>
+				<div id="detailstransactionid"></div>
+			</div>
+		</div>
+
+		<!--Banking-->
+		<div class="modal" id="modal-banking">
+			<div class="modal-content">
+				<h4><strong>CURRENCY</strong></h4>
+				<center>
+					<p><strong>ORB&trade;</strong> users can send & receive money.</p>
+					<nav>
+						<div class="orbNav"><a href="manage/currency/sendmoney.html"><strong>SEND
+                MONEY</strong></a>
+						</div>
+						<div class="orbNav"><a href="manage/currency/billpayment.html"><strong>BILL
+                PAYMENT</strong></a>
+						</div>
+						<div class="orbNav"><a href="manage/currency/recievemoney.html"><strong>RECEIVE
+                MONEY</strong></a></div>
+					</nav>
+				</center>
+			</div>
+		</div>
+
+		<!--Finance-->
+		<div class="modal" id="modal-finance">
+			<div class="modal-content">
+				<h4><strong>DEBT</strong></h4>
+				<center>
+					<p>Find financing.</p>
+					<nav class="orbNav">
+						<a href="/manage/debt/autofinance.html">AUTO</a>
+						<a href="/manage/debt/mortgage.html">MORTGAGE</a>
+						<a href="/manage/debt/businessfinance.html">BUSINESS</a>
+					</nav>
+				</center>
+			</div>
+		</div>
+
+		<!--Insurance-->
+		<div class="modal" id="modal-insurance">
+			<div class="modal-content">
+				<h4><strong>INSURANCE</strong></h4>
+				<center>
+					<p>Choose from the life, home, renters, auto and business insurance
+						options.
+					</p>
+					<nav class="orbNav">
+						<a href="/manage/insurance/life.html">LIFE</a>
+						<a href="/manage/insurance/property.html">HOME</a>
+						<a href="/manage/insurance/auto.html">AUTO</a>
+						<a href="/manage/insurance/business.html">BUSINESS</a>
+					</nav>
+				</center>
+			</div>
+		</div>
+
+		<!--Invest-->
+		<div class="modal" id="modal-invest">
+			<div class="modal-content">
+				<h4><strong>INVEST.</strong></h4>
+				<center>
+					<p>Available to everyone are the following:</p>
+					<nav class="orbNav">
+						<a href="#" class="white-text modal-trigger"
+							data-target="modal-realestate"><strong>REAL ESTATE</strong></a>
+						<a href="#" class="white-text modal-trigger"
+							data-target="modal-paperassets"><strong>PAPER ASSETS</strong></a>
+						<a href="#" class="white-text modal-trigger" data-target="modal-tangibleassets"><strong>TANGIBLE
+              ASSETS</strong></a>
+					</nav>
+				</center>
+			</div>
+		</div>
+
+		<div class="modal" id="modal-realestate">
+			<div class="modal-content">
+				<h4><strong>REAL ESTATE</strong></h4>
+				<center>
+					<p>Purchase residential and commercial real estate.</p>
+					<nav class="orbNav">
+						<strong><a href="/invest/realestate/residential.html">RESIDENTIAL</a></strong>
+						<strong><a href="/invest/realestate/commercial.html">COMMERCIAL</a></strong>
+					</nav>
+				</center>
+			</div>
+		</div>
+
+		<!--Paper Assets-->
+		<div class="modal" id="modal-paperassets">
+			<div class="modal-content">
+				<h4><strong>PAPER ASSETS</strong></h4>
+				<center>
+					<p>Invest in stocks, bonds, liens, and notes.</p>
+					<nav class="orbNav">
+						<strong><a href="/invest/paperassets/stocks.html">STOCKS</a></strong>
+						<strong><a href="/invest/paperassets/bonds.html">BONDS</a></strong>
+						<strong><a href="/invest/paperassets/liens.html">LIENS</a></strong>
+						<strong><a href="/invest/paperassets/notes.html">NOTES</a></strong>
+				</center>
+				</nav>
+			</div>
+		</div>
+
+		<!--Tangible Assets-->
+		<div class="modal" id="modal-tangibleassets">
+			<div class="modal-content">
+				<h4><strong>TANGIBLE ASSETS</strong></h4>
+				<center>
+					<p>Acquire investment properties and businesses.</p>
+					<nav class="orbNav">
+						<strong><a href="/invest/tangibleassets/investmentproperties.html">INVESTMENT PROPERTIES</a></strong>
+						<strong><a href="/invest/tangibleassets/businesses.html">BUSINESS</a></strong>
+					</nav>
+				</center>
+			</div>
+		</div>
+		<div id="ledger">
+			<div class="header">
+				<center>
+					<nav class="orbNav">
+						<div id="ledgerNetworthHeader">
+							<a href="#" class="white-text modal-trigger"
+								onClick="ledgerNetworth()"><strong>NETWORTH</strong></a></div>
+						<div style="display:none" id="ledgerBankingHeader">
+							<a href="#" class="white-text modal-trigger"
+								data-target="modal-banking"><strong>CURRENCY</strong></a></div>
+						<div style="display:none" id="ledgerFinanceHeader">
+							<a href="#" class="white-text modal-trigger"
+								data-target="modal-finance"><strong>DEBT</strong></a></div>
+						<div style="display:none" id="ledgerRealEstateHeader">
+							<a onClick="realestate()"><strong>REAL ESTATE</strong></a></div>
+						<div style="display:none" id="ledgerInsuranceHeader">
+							<a href="#" class="white-text modal-trigger"
+								data-target="modal-insurance"><strong>INSURANCE</strong></a>
+						</div>
+						<div style="display:none" id="ledgerPaperAssetsHeader">
+							<a onClick="paperassets()"><strong>PAPER ASSETS</strong></a></div>
+						<div style="display:none" id="ledgerTangibleAssetsHeader">
+							<a onClick="tangibleassets()"><strong>TANGIBLE ASSETS</strong></a></div>
+					</nav>
+				</center>
+			</div>
+	</header>
+
+	<div style="display:none" id="ledgerNetworth"></div>
+	<div id="ledgerBanking">
+		<table class="bankingtable">
+			<thead>
+				<tr>
+					<th width="520px">Timestamp</th>
+					<th width="200px">To</th>
+					<th width="200px">From</th>
+					<th width="200px">Beginning Balance</th>
+					<th width="200px">Debit</th>
+					<th width="200px">Credit</th>
+					<th width="200px">Ending Balance</th>
+				</tr>
+			</thead>
+			<tbody id="bankingtransactions"></tbody>
+		</table>
+	</div>
+	<div style="display:none" id="ledgerFinance"></div>
+	<div style="display:none" id="ledgerRealEstate"></div>
+	<div style="display:none" id="ledgerInsurance"></div>
+	<div style="display:none" id="ledgerPaperAssets"></div>
+	<div style="display:none" id="ledgerTangibleAssets"></div>
+
+	<footer>
+		<div class="row">
+			<center>
+				<nav class="orbNavFooter"><strong>
+            <div class="column"><a onClick="ledgerBanking()">CURRENCY</a></div>
+            <div class="column"><a onClick="ledgerFinance()">DEBT</a></div>
+            <div class="column"><a onClick="ledgerRealEstate()">REAL ESTATE</a></div>
+            <div class="column"><a onClick="ledgerInsurance()">INSURANCE</a></div>
+            <div class="column"><a onClick="ledgerPaperAssets()">PAPER ASSETS</a></div>
+            <div class="column"><a onClick="ledgerTangibleAssets()">TANGIBLE ASSETS</a></div>
+          </strong></nav>
+			</center>
+		</div>
+	</footer>
+
+	<script defer src="https://www.gstatic.com/firebasejs/6.4.0/firebase-app.js"></script>
+	<script defer src="https://www.gstatic.com/firebasejs/6.4.0/firebase-auth.js"></script>
+	<script defer src="https://www.gstatic.com/firebasejs/6.4.0/firebase-firestore.js"></script>
+	<script defer src="/init-firebase.js"></script>
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+	<script defer src="/navigation.js"></script>
+	<script defer src="/auth.js"></script>
+
+	<script defer src="/manage/ledger.js"></script>
+</body>
+
+</html>
