@@ -1,59 +1,31 @@
 # THEORB
 
-This project is split between frontend and backend. The frontend collects
-the who, what, when, where, why and how. Backend records data collected from frontend in multple cloud platforms.
+This project is split into #Frontend and #Backend. The #Frontend collects
+the who, what, when, where, why and how. #Backend records data collected from frontend on multple cloud platforms.
 
-#Frontend
-Who? - Login and/or Proof of Identity
-What? - Product and/or Service 
-When? - Timestamp 
-Where? - Collect location information 
-Why? - Memo 
-How? - Debit Credit Wire Cash
+<--Database-->
+Public 
+Private
+----
 
-<--Quote--> (Cart)
-These are needed to keep database in order -->
-ORB Shop Quote#
-ORB Send Money Quote#
-ORB Recieve Money Quote#
-ORB Bill Payment Quote#
-ORB Debt Payment Quote#
-ORB Insurance Payment Quote#
-ORB Real Estate Quote#
-ORB Paper Assets Quote#
-ORB Tangible Assets Quote#
---> Saved to Local Storage 
---> Included in Invoice
-
-<--Invoice-->(Checkout)
-ORB Shop Invoice#
-ORB Send Money Invoice#
-ORB Recieve Money Invoice#
-ORB Bill Payment Invoice#
-ORB Debt Payment Invoice#
-ORB Insurance Payment Invoice#
-ORB Real Estate Invoice#
-ORB Paper Assets Invoice#
-ORB Tangible Assets Invoice#
---> Saved to Local Storage
---> Included in Receipt
-
-
-#Backend
-<--Receipt-->
-These are saved publicly for blockchain use -->
+<--Public-->
+Timestamp
 ORB Transaction#
-ORB Shop Transaction#
-ORB Send Money Transaction#
-ORB Recieve Money Transaction#
-ORB Bill Payment Transaction#
-ORB Debt Payment Transaction#
-ORB Insurance Payment Transaction#
-ORB Real Estate Transaction#
-ORB Paper Assets Transaction#
-ORB Tangible Assets Transaction#
-ORB Transaction Hash#
---> Saved to Google, Apple & Microsoft clouds
+ORB Transaction Hash
+----
+
+<--Private-->
+User
+ORB
+----
+
+<--User-->
+Cloud Service
+Local Storage
+----
+
+<--ORB-->
+Saved to -->
 Google
     Cloud Spanner
     Cloud Memcache
@@ -61,11 +33,98 @@ Google
     Cloud Run on GKE
 Apple*
 Microsoft*
---
-These are private and may be only viewed by the user -->
-User Transaction# (Private)
-Other transaction details
---> Saved to local Storage
---> User cloud service
+----
 
-*More information coming soon 1/6/20
+*More information coming soon 1/7/20
+
+#Frontend
+Collect information via form and metadata -->
+Who? - Login and/or Proof of Identity
+What? - Product and/or Service 
+When? - Timestamp 
+Where? - Collect location information 
+Why? - Memo 
+How? - Payment Method
+-->
+
+<--Login-->
+----
+
+<--Proof of Identity-->
+----
+
+<--Products-->
+ORB Shop
+----
+
+<--Services-->
+ORB Send Money
+ORB Recieve Money
+ORB Bill Payment
+ORB Debt Payment
+ORB Insurance Payment
+ORB Real Estate
+ORB Paper Assets
+ORB Tangible Assets
+----
+
+<--Timestamp-->
+----
+
+<--Location-->
+----
+
+<--Memo-->
+----
+
+<--Payment Method-->
+debit
+credit
+wire transfer
+cash
+----
+
+Each of the Products and Services provided are counted three times -->
+Quote#
+Invoice#
+Reciept# 
+-->
+
+<--Quote-->
+Click from Product or Service -->
+Quote#
+Login and/or Proof of Identity
+Product or Service requested
+Timestamp
+Location
+--> Saved to Local Storage -->
+--> Made available to Invoice -->
+
+<--Invoice-->
+Click from Quote -->
+Invoice# 
+Login and/or Proof of Identity 
+Product(s) or Service requested 
+Timestamp 
+Location
+--> Saved to Local Storage -->
+Option to add Memo -->
+Payment Method Options -->
+--> Request sent to #Backend or Receipt -->
+
+#Backend
+<--Receipt-->
+Click from Invoice -->
+Get Invoice data collected
+Receipt#
+Get ORB Transaction#
+--> Hash -->
+Invoice data collected 
+Receipt#
+ORB Transaction#
+--> Save/log to Database-->
+Invoice data collected 
+Receipt#
+ORB Transaction#
+ORB Transaction Hash
+----
