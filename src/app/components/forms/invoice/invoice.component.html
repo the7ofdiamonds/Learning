@@ -1,0 +1,24 @@
+<form #invoice="ngForm" (ngSubmit)="sendMoney(invoice)">
+  <label>From</label>
+  <input type="text" placeholder="" ngModel name="from">
+
+  <label>To</label>
+  <input type="text" placeholder="Send Money to" ngModel name="to">
+
+  <label>Amount</label>
+  <input type="number" placeholder="How much" ngModel name="amount" onkeyup="sendMoneyGetTotal()" aria-required="true">
+
+  <label>Fee</label>
+  <div id="fee" type="number" name="fee">
+
+  <label>Total</label>
+  <div id="total" type="number" name="total"></div>
+
+  <label>Current Balance</label>
+   <div id="currentbalance" type="number" name="currentbalance"></div>
+
+  <label>Ending Balance</label>
+  <div id="endingbalance" type="number" name="endingbalance"></div>
+
+  <label>Last Transaction ID</label>
+  <div id="lasttransaction" type="text" name="last-transaction"></div>

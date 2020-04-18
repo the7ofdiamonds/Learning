@@ -1,0 +1,25 @@
+<div id="sendmoneyquote">
+    <label>From</label>
+    <input id="from" type="text" name="from" aria-required="true">
+    <label>To</label>
+    <input id="to" type="text" name="to" aria-required="true">
+    <label>Amount</label>
+    <input id="amount" type="number" name="amount" onkeyup="sendMoneyGetTotal()" aria-required="true">
+    <label>Fee</label>
+    <div id="fee" type="number" name="fee"></div>
+    <label>Total</label>
+    <div id="total" type="number" name="total"></div>
+    <button><strong>CONFIRM</strong></button>
+</div>
+<h1 mat-dialog-title>Hi {{data.name}}</h1>
+<div mat-dialog-content>
+  <p>What's your favorite animal?</p>
+  <mat-form-field>
+    <mat-label>Favorite Animal</mat-label>
+    <input matInput [(ngModel)]="data.animal">
+  </mat-form-field>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="onNoClick()">No Thanks</button>
+  <button mat-button mat-dialog-close="data.animal" cdkFocusInitial>Ok</button>
+</div>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="icon" href="orb.jpeg">
+  <title>THE ORB</title>
+  <link rel="stylesheet" href="/style.css">
+  <meta name="google-signin-scope" content="profile email">
+  <meta name="google-signin-client_id"
+    content="1073451047758-53dlo80jcgseidu4cbmkqn2r3okmd8vh.apps.googleusercontent.com">
+  <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+    crossorigin="anonymous"></script>
+  <script src="https://apis.google.com/js/platform.js" async defer></script>
+  <script src="https://cdn.firebase.com/libs/firebaseui/4.1.0/firebaseui.js"></script>
+  <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.css" />
+  <script src="https://apis.google.com/js/api.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <script type="text/javascript"
+    src="https://appleid.cdn-apple.com/appleauth/static/jsapi/appleid/1/en_US/appleid.auth.js"></script>
+  <meta name="appleid-signin-client-id" content="[CLIENT_ID]">
+  <meta name="appleid-signin-scope" content="[SCOPES]">
+  <meta name="appleid-signin-redirect-uri" content="https://theorb-f3a48.firebaseapp.com/">
+  <meta name="appleid-signin-state" content="[STATE]">
+  <meta charset="utf-8">
+  <base href="/">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+
+<body class="mat-typography">
+
+  <router-outlet></router-outlet>
+
+  <script defer src="https://www.gstatic.com/firebasejs/6.4.0/firebase-app.js"></script>
+  <script defer src="https://www.gstatic.com/firebasejs/6.4.0/firebase-auth.js"></script>
+  <script defer src="https://www.gstatic.com/firebasejs/6.4.0/firebase-firestore.js"></script>
+  <script defer src="/init-firebase.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <script defer src="/navigation.js"></script>
+  <script defer src="/auth.js"></script>
+
+  <script defer src="/manage/currency/sendmoney.js"></script>
+  <script defer src="/manage/currency/billpayment.js"></script>
+  <script defer src="/manage/currency/recievemoney.js"></script>
+  <script src="/manage/currency/algorithm.js"></script>
+  <script>
+    method = sha512;
+
+  </script>
+
+</body>
+
+</html>
