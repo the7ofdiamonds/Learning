@@ -12,6 +12,10 @@ import { HomeComponent } from './pages/home/home.component';
 import { LearnComponent } from './pages/home/learn/learn.component';
 import { CurrencyComponent } from './pages/home/manage/currency/currency.component';
 import { SendmoneyComponent } from './pages/home/manage/currency/sendmoney/sendmoney.component';
+import { DebtComponent } from './pages/home/manage/debt/debt.component';
+import { InsuranceComponent } from './pages/home/manage/insurance/insurance.component';
+import { ReadComponent } from './pages/home/learn/read/read.component';
+import { SimulationComponent } from './pages/home/learn/simulation/simulation.component';
 
 @NgModule({
   imports: [
@@ -29,6 +33,10 @@ import { SendmoneyComponent } from './pages/home/manage/currency/sendmoney/sendm
     LearnComponent,
     CurrencyComponent,
     SendmoneyComponent,
+    DebtComponent,
+    InsuranceComponent,
+    ReadComponent,
+    SimulationComponent,
   ],
   bootstrap: [ AppComponent ]
 })

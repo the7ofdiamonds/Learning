@@ -1,4 +1,4 @@
-<form #invoice="ngForm" (ngSubmit)="sendMoney(invoice)">
+<form>
   <label>From</label>
   <input type="text" placeholder="" ngModel name="from">
 
@@ -6,7 +6,7 @@
   <input type="text" placeholder="Send Money to" ngModel name="to">
 
   <label>Amount</label>
-  <input type="number" placeholder="How much" ngModel name="amount" onkeyup="sendMoneyGetTotal()" aria-required="true">
+  <input type="number" placeholder="How much" ngModel name="amount" aria-required="true">
 
   <label>Fee</label>
   <div id="fee" type="number" name="fee">
