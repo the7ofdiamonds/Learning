@@ -1,9 +1,7 @@
-import {Component, Inject} from '@angular/core';
+import { Component } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
+import { SendmoneyComponent } from './sendmoney/sendmoney.component';
 
-export interface DialogData {
-  animal: string;
-  name: string;
-}
 @Component({
   selector: 'app-currency',
   templateUrl: './currency.component.html',
@@ -11,6 +9,21 @@ export interface DialogData {
 })
 export class CurrencyComponent {
 
-  constructor() {}
+  // animal: string;
+  // name: string;
+
+  // constructor(public dialog: MatDialog) { }
+
+  openDialog(): void {
+    // const dialogRef = this.dialog.open(SendmoneyComponent, {
+    //   width: '250px',
+    //   data: { name: 'Leo', animal: 'Lion' }
+    // });
+    // dialogRef.afterClosed().subscribe(result => {
+    //   console.log('The dialog was closed');
+    //   this.animal = result;
+    // });
+    console.log('This button works!');
+  }
 
 }
