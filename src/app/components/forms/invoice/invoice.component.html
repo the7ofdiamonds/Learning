@@ -1,4 +1,3 @@
-<form>
   <label>From</label>
   <input type="text" placeholder="" ngModel name="from">
 
@@ -11,14 +10,15 @@
   <label>Fee</label>
   <div id="fee" type="number" name="fee">
 
-  <label>Total</label>
-  <div id="total" type="number" name="total"></div>
+    <label>Total</label>
+    <div id="total" type="number" name="total"></div>
 
-  <label>Current Balance</label>
-   <div id="currentbalance" type="number" name="currentbalance"></div>
+    <label>Current Balance</label>
+    <div id="currentbalance" type="number" name="currentbalance"></div>
 
-  <label>Ending Balance</label>
-  <div id="endingbalance" type="number" name="endingbalance"></div>
+    <label>Ending Balance</label>
+    <div id="endingbalance" type="number" name="endingbalance"></div>
 
-  <label>Last Transaction ID</label>
-  <div id="lasttransaction" type="text" name="last-transaction"></div>
+    <label>Last Transaction ID</label>
+    <div id="lasttransaction" type="text" name="last-transaction"></div>
+    <button (click)="openReceipt()">SEND MONEY</button>

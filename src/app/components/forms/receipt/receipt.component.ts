@@ -5,11 +5,11 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './receipt.component.html',
   styleUrls: ['./receipt.component.css']
 })
-export class ReceiptComponent implements OnInit {
+export class ReceiptComponent {
 
   constructor() { }
 
-  ngOnInit(): void {
+  sendReceipt(): void {
+    console.log('Receipt sent');
   }
-
 }

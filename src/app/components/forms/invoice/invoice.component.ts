@@ -1,5 +1,5 @@
-import { Component, OnInit, Input } from '@angular/core';
-import { NgForm } from '@angular/forms';
+import { Component} from '@angular/core';
+import { ActivatedRoute, Router, ParamMap } from '@angular/router';
 
 @Component({
   selector: 'app-invoice',
@@ -8,7 +8,11 @@ import { NgForm } from '@angular/forms';
 })
 
 export class InvoiceComponent {
-sendMoney(invoice: NgForm) {
-  console.log(invoice.value);
-}
+
+  constructor(private route: ActivatedRoute, private router: Router) { }
+
+  openReceipt() {
+    this.router.navigate(['receipt'], { relativeTo: this.route });
+  }
+
 }

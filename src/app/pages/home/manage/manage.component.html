@@ -2,12 +2,12 @@
 <p><strong>ORB&trade;</strong> users can manage with accounts and the following services which are
   available for everyone.</p>
 
-<button class="btn black" routerLink="accounts">
-    <strong>ACCOUNTS</strong></button>
-<button class="btn black" routerLink="currency">
-    <strong>CURRENCY</strong></button>
-<button class="btn black" routerLink="debt">
-    <strong>DEBT</strong></button>
-<button class="btn black" routerLink="insurance">
-    <strong>INSURANCE</strong></button>
+<button class="btn black" (click)="openAccounts()">
+  <strong>ACCOUNTS</strong></button>
+<button class="btn black" (click)="openCurrency()">
+  <strong>CURRENCY</strong></button>
+<button class="btn black" (click)="openDebt()">
+  <strong>DEBT</strong></button>
+<button class="btn black" (click)="openInsurance()">
+  <strong>INSURANCE</strong></button>
 <router-outlet></router-outlet>

@@ -1,8 +1,8 @@
 <h4>CURRENCY</h4>
-<button class="btn black" mat-raised-button (click)="openDialog()">
- <strong>SEND MONEY</strong></button>
-<button class="btn black" routerLink="billpayment">
+<button class="btn black" (click)='openSendMoney()' >
+  <strong>SEND MONEY</strong></button>
+<button class="btn black" (click)="openBillPayment()">
   <strong>BILL PAYMENT</strong></button>
-<button class="btn black" routerLink="receivemoney">
+<button class="btn black" (click)="openReceiveMoney()">
   <strong>RECEIVE MONEY</strong></button>
 <router-outlet></router-outlet>

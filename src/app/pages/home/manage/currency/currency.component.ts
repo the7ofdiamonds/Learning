@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
-import { MatDialog } from '@angular/material/dialog';
-import { SendmoneyComponent } from './sendmoney/sendmoney.component';
+import { ActivatedRoute, Router, ParamMap } from '@angular/router';
 
 @Component({
   selector: 'app-currency',
@@ -9,21 +8,18 @@ import { SendmoneyComponent } from './sendmoney/sendmoney.component';
 })
 export class CurrencyComponent {
 
-  // animal: string;
-  // name: string;
+  constructor(private route: ActivatedRoute, private router: Router) { }
 
-  // constructor(public dialog: MatDialog) { }
+  openSendMoney() {
+    this.router.navigate(['sendmoney'], { relativeTo: this.route });
+  }
 
-  openDialog(): void {
-    // const dialogRef = this.dialog.open(SendmoneyComponent, {
-    //   width: '250px',
-    //   data: { name: 'Leo', animal: 'Lion' }
-    // });
-    // dialogRef.afterClosed().subscribe(result => {
-    //   console.log('The dialog was closed');
-    //   this.animal = result;
-    // });
-    console.log('This button works!');
+  openBillPayment() {
+    this.router.navigate(['billpayment'], { relativeTo: this.route });
+  }
+
+  openReceiveMoney() {
+    this.router.navigate(['receivemoney'], { relativeTo: this.route });
   }
 
 }

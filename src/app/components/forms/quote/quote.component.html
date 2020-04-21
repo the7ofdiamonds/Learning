@@ -1,0 +1,12 @@
+    <label>From</label>
+    <input id="from" type="text" name="from" aria-required="true">
+    <label>To</label>
+    <input id="to" type="text" name="to" aria-required="true">
+    <label>Amount</label>
+    <input id="amount" type="number" name="amount" onkeyup="sendMoneyGetTotal()" aria-required="true">
+    <label>Fee</label>
+    <div id="fee" type="number" name="fee"></div>
+    <label>Total</label>
+    <div id="total" type="number" name="total"></div>
+    <button (click)="openInvoice()"><strong>CONFIRM</strong></button>
+    <router-outlet></router-outlet>                                                   

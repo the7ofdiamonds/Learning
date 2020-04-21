@@ -1,10 +1,5 @@
 import { Component, Inject } from '@angular/core';
-import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
-
-export interface DialogData {
-  animal: string;
-  name: string;
-}
+import { ActivatedRoute, Router, ParamMap } from '@angular/router';
 
 @Component({
   selector: 'app-quote',
@@ -13,12 +8,11 @@ export interface DialogData {
 })
 export class QuoteComponent {
 
-  constructor(
-    public dialogRef: MatDialogRef<QuoteComponent>,
-    @Inject(MAT_DIALOG_DATA) public data: DialogData) { }
+  constructor(private route: ActivatedRoute, private router: Router) { }
 
-  onNoClick(): void {
-    this.dialogRef.close();
+  openInvoice() {
+    this.router.navigate(['invoice'], { relativeTo: this.route });
   }
+
 
 }
