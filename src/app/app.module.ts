@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { ReactiveFormsModule } from '@angular/forms';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -19,11 +20,15 @@ import { SimulationComponent } from './pages/home/learn/simulation/simulation.co
 import { QuoteComponent } from './components/forms/quote/quote.component';
 import { InvoiceComponent } from './components/forms/invoice/invoice.component';
 import { ReceiptComponent } from './components/forms/receipt/receipt.component';
+import { AccountsComponent } from './pages/home/manage/accounts/accounts.component';
+import { AccountDetailComponent } from './pages/home/manage/accounts/account-detail/account-detail.component';
+import { TransactionsService } from './services/transactions.service';
 
 @NgModule({
   imports: [
     BrowserModule,
     AppRoutingModule,
+    ReactiveFormsModule,
     FormsModule,
     BrowserAnimationsModule
   ],
@@ -42,8 +47,11 @@ import { ReceiptComponent } from './components/forms/receipt/receipt.component';
     SimulationComponent,
     QuoteComponent,
     InvoiceComponent,
-    ReceiptComponent
+    ReceiptComponent,
+    AccountsComponent,
+    AccountDetailComponent
   ],
-  bootstrap: [ AppComponent ]
+  bootstrap: [ AppComponent ],
+  providers: [TransactionsService]
 })
 export class AppModule {}

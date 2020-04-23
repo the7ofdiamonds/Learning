@@ -9,6 +9,7 @@ import { CurrencyComponent } from './pages/home/manage/currency/currency.compone
 import { SendmoneyComponent } from './pages/home/manage/currency/sendmoney/sendmoney.component';
 import { InvestComponent } from './pages/home/invest/invest.component';
 import { AccountsComponent } from './pages/home/manage/accounts/accounts.component';
+import { AccountDetailComponent } from './pages/home/manage/accounts/account-detail/account-detail.component';
 import { DebtComponent } from './pages/home/manage/debt/debt.component';
 import { InsuranceComponent } from './pages/home/manage/insurance/insurance.component';
 import { QuoteComponent } from './components/forms/quote/quote.component';
@@ -28,7 +29,9 @@ const routes: Routes = [
   },
   {
     path: 'manage', component: ManageComponent, children: [
-      { path: 'accounts', component: AccountsComponent },
+      { path: 'accounts', component: AccountsComponent, children: [
+       { path: 'accountdetail', component: AccountDetailComponent }
+      ] },
       {
         path: 'currency', component: CurrencyComponent, children: [
           {

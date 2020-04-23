@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router, ParamMap } from '@angular/router';
 
 @Component({
   selector: 'app-receipt',
@@ -7,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ReceiptComponent {
 
-  constructor() { }
+  constructor(private route: ActivatedRoute, private router: Router) { }
 
   sendReceipt(): void {
     console.log('Receipt sent');
