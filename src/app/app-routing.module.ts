@@ -18,6 +18,13 @@ import { ReceiptComponent } from './components/forms/receipt/receipt.component';
 import { RealEstateComponent } from './pages/home/invest/real-estate/real-estate.component';
 import { PaperAssetsComponent } from './pages/home/invest/paper-assets/paper-assets.component';
 import { TangibleAssetsComponent } from './pages/home/invest/tangible-assets/tangible-assets.component';
+import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component';
+
+import { AuthGuard } from './auth/auth.guard';
+import { QuoteSubscriberComponent } from './components/forms/quote/quote-subscriber/quote-subscriber.component';
+import { InvoiceSubscriberComponent } from './components/forms/invoice/invoice-subscriber/invoice-subscriber.component';
+import { LoginComponent } from './pages/home/login/login.component';
+import { ShopComponent } from './pages/home/shop/shop.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -29,17 +36,29 @@ const routes: Routes = [
   },
   {
     path: 'manage', component: ManageComponent, children: [
-      { path: 'accounts', component: AccountsComponent, children: [
-       { path: 'accountdetail', component: AccountDetailComponent }
-      ] },
+      {
+        path: 'accounts', component: AccountsComponent, canActivate: [AuthGuard], children: [
+          { path: 'accountdetail', component: AccountDetailComponent }
+        ]
+      },
       {
         path: 'currency', component: CurrencyComponent, children: [
           {
             path: 'sendmoney', component: SendmoneyComponent, children: [
               {
+                path: 'quote-subscriber', component: QuoteSubscriberComponent, canActivate: [AuthGuard], children: [
+
+                  {
+                    path: 'invoice-subscriber', component: InvoiceSubscriberComponent
+
+                  }
+                ]
+              },
+              {
                 path: 'quote', component: QuoteComponent, children: [
                   {
-                    path: 'invoice', component: InvoiceComponent, children: [
+                    path: 'invoice', component: InvoiceComponent,
+                    children: [
                       { path: 'receipt', component: ReceiptComponent }
                     ]
                   }
@@ -59,7 +78,10 @@ const routes: Routes = [
       { path: 'paperassets', component: PaperAssetsComponent },
       { path: 'tangibleassets', component: TangibleAssetsComponent }
     ]
-  }
+  },
+  { path: 'shop', component: ShopComponent },
+  { path: 'login', component: LoginComponent },
+  { path: '**', component: PageNotFoundComponent }
 ];
 
 @NgModule({

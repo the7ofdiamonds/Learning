@@ -1,5 +1,3 @@
-import { NgModel } from '@angular/forms';
-
 export interface Transaction {
     from: string;
     to: string;

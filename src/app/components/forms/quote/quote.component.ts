@@ -1,24 +1,34 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { TransactionsService } from 'src/app/services/transactions.service';
+import { FormControl, Validators } from '@angular/forms';
+import { Fees } from 'src/app/models/MockFees';
+import { MatInputModule, MatInput } from '@angular/material/input';
 
 @Component({
   selector: 'app-quote',
   templateUrl: './quote.component.html',
   styleUrls: ['./quote.component.css'],
-  providers: [TransactionsService]
+  providers: [MatInputModule, MatInput]
 })
-export class QuoteComponent implements OnInit {
 
-  public fees = [];
+export class QuoteComponent {
+  subscriber: boolean;
+  name;
+  to = new FormControl('');
+  amount = new FormControl('');
+  fees = Fees;
+  fee = new FormControl('');
+  subscriberFee;
+  total;
 
-  constructor(private transactionService: TransactionsService, private route: ActivatedRoute, private router: Router) { }
-
-  openInvoice() {
-    this.router.navigate(['invoice'], { relativeTo: this.route });
+  constructor(private route: ActivatedRoute, private router: Router, public matInput: MatInput) {
   }
 
-ngOnInit(){
-  this.fees = this.transactionService.getFees();
-}
+  @Input() getTotal(amount, fee) {
+    return this.total = parseFloat(`${amount.value}`) + parseFloat(`${fee.value}`);
+  }
+
+  showInvoice() {
+    return this.router.navigate(['invoice'], { relativeTo: this.route });
+  }
 }

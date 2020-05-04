@@ -1,25 +1,17 @@
 <label>From</label>
-<input type="text" placeholder="" ngModel name="from">
-
+<p>{{quoteComponent.name}}</p>
+<br>
 <label>To</label>
-<input type="text" placeholder="Send Money to" ngModel name="to">
-
+<p>{{quoteComponent.to.value}}</p>
+<br>
 <label>Amount</label>
-<input type="number" placeholder="How much" ngModel name="amount" aria-required="true">
-
+<p>{{quoteComponent.amount.value | currency}}</p>
+<br>
 <label>Fee</label>
-<div id="fee" type="number" name="fee">
-
+<p>{{quoteComponent.fee.value | currency}}</p>
+<br>
 <label>Total</label>
-<div id="total" type="number" name="total"></div>
-<label>Current Balance</label>
-<div id="currentbalance" type="number" name="currentbalance"></div>
-
-<label>Ending Balance</label>
-<div id="endingbalance" type="number" name="endingbalance"></div>
-
-<label>Last Transaction ID</label>
-<div id="lasttransaction" type="text" name="last-transaction"></div>
-
+<p>{{this.quoteComponent.total | currency}}</p>
+<br>
 <button (click)="openReceipt()">SEND MONEY</button>
 <router-outlet></router-outlet>

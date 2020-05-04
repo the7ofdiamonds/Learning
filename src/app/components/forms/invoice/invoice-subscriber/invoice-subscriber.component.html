@@ -1,0 +1,20 @@
+<label>From</label>
+<p>{{quoteSubscriberComponent.name}}</p>
+<br>
+<label>To</label>
+<p>{{quoteSubscriberComponent.to.value}}</p>
+<br>
+<label>Amount</label>
+<p>{{quoteSubscriberComponent.amount.value | currency}}</p>
+<br>
+<label>Beginning Balance</label>
+<div>{{this.beginningbalance}}</div>
+<br>
+<label>Ending Balance</label>
+{{this.endingbalance}}
+<br>
+<label>Last Transaction ID</label>
+<p>{{this.lasttransactionid}}</p>
+<br>
+<button (click)="openReceipt()">SEND MONEY</button>
+<router-outlet></router-outlet>
