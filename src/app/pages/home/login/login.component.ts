@@ -4,6 +4,7 @@ import { AuthService } from 'src/app/services/auth/auth.service';
 import { AngularFireAuth } from '@angular/fire/auth';
 import * as firebase from 'firebase';
 
+
 @Component({
     selector: 'app-login',
     templateUrl: './login.component.html',
@@ -13,7 +14,6 @@ export class LoginComponent implements OnInit {
     auth;
     ui;
     constructor(public authService: AuthService, public afAuth: AngularFireAuth) {
-        const auth = firebase.auth();
         this.ui = firebaseui.auth.AuthUI.getInstance() || new firebaseui.auth.AuthUI(firebase.auth());
 
     }
@@ -35,7 +35,7 @@ export class LoginComponent implements OnInit {
             },
             // Will use popup for IDP Providers sign-in flow instead of the default, redirect.
             signInFlow: 'popup',
-            signInSuccessUrl: 'https://theorb-f3a48.firebaseapp.com/',
+            signInSuccessUrl: '/login',
             signInOptions: [
                 // Leave the lines as is for the providers you want to offer your users.
                 {
@@ -72,48 +72,5 @@ export class LoginComponent implements OnInit {
         };
         // The start method will wait until the DOM is loaded.
         this.ui.start('#firebaseui-auth-container', uiConfig);
-
     }
-
-
-    // Google Sign In//
-    isUserEqual(googleUser, firebaseUser) {
-        if (firebaseUser) {
-            const providerData = firebaseUser.providerData;
-            // tslint:disable-next-line: prefer-for-of
-            for (let i = 0; i < providerData.length; i++) {
-                if (providerData[i].providerId === firebase.auth.GoogleAuthProvider.PROVIDER_ID &&
-                    providerData[i].uid === googleUser.getBasicProfile().getId()) {
-                    return true;
-                }
-            }
-            return false;
-        }
-    }
-
-    onSignIn(googleUser, isUserEqual, providerData, response) {
-
-        const provider = new firebase.auth.GoogleAuthProvider();
-        provider.addScope('https://www.googleapis.com/auth/drive.file');
-        provider.addScope('https://www.googleapis.com/auth/spreadsheets');
-
-        const unsubscribe = firebase.auth().onAuthStateChanged(async (firebaseUser) => {
-            unsubscribe();
-            if (!isUserEqual(googleUser, firebaseUser)) {
-                const credential = firebase.auth.GoogleAuthProvider.credential(
-                    googleUser.getAuthResponse().id_token);
-                firebase.auth().signInWithCredential(credential).catch((error) => {
-                    const errorCode = error.code;
-                    const errorMessage = error.message;
-                    const errorEmail = error.email;
-                    const errorcredential = error.credential;
-
-                    console.log(`${errorCode}`, `${errorMessage}`, `${errorEmail}`, `${errorcredential}`);
-                });
-            } else {
-                console.log('User already signed-in Firebase.');
-            }
-        });
-    }
-
 }

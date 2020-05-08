@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { ReactiveFormsModule } from '@angular/forms';
+import { ReactiveFormsModule, FormControlName } from '@angular/forms';
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AuthGuard } from './auth/auth.guard';
@@ -10,8 +10,7 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatInputModule } from '@angular/material/input';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFireAuthModule } from '@angular/fire/auth';
-import { AngularFirestoreModule } from '@angular/fire/firestore';
-
+import { AngularFireFunctionsModule } from '@angular/fire/functions';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/layout/header/header.component';
@@ -62,7 +61,7 @@ const config = {
     MatInputModule,
     AngularFireModule.initializeApp(config),
     AngularFireAuthModule,
-    AngularFirestoreModule
+    AngularFireFunctionsModule
   ],
   declarations: [
     AppComponent,
@@ -92,6 +91,6 @@ const config = {
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   bootstrap: [AppComponent],
   providers: [TransactionsService, MatFormFieldModule,
-    MatSelectModule, AuthGuard]
+    MatSelectModule, AuthGuard, FormControlName]
 })
 export class AppModule { }

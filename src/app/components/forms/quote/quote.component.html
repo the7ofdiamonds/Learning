@@ -1,41 +1,41 @@
-<form>
+<form [formGroup]="quoteForm">
   <mat-form-field>
     <mat-label>From</mat-label>
-    <input matInput [(formControl)]="name" name="name" type="text" required>
+    <input matInput formControlName="name" type="text" name="name" required>
   </mat-form-field>
   <br>
   <mat-form-field>
     <mat-label>To</mat-label>
-    <input matInput [(formControl)]="to" placeholder="Who are you sending money to?" name="to" type="text" required>
+    <input matInput formControlName="to" type="text" name="to" required>
   </mat-form-field>
   <br>
   <mat-form-field>
     <mat-label>Amount</mat-label>
-    <input matInput placeholder="How much are you sending?" [(formControl)]="amount" name="amount" type="text"
-      (keyup)="getTotal(amount, fee)" required>
+    <input matInput formControlName="amount" name="amount" type="text"
+      (keyup)="getTotal(this.quoteForm.value.amount, this.quoteForm.value.fee)" required>
   </mat-form-field>
   <br>
-  <mat-form-field *ngIf="!subscriber">
+  <mat-form-field>
     <mat-label>Fee</mat-label>
-    <mat-select matInput [(formControl)]="fee" name="fee" type="number" (selectionChange)="getTotal(amount, fee)"
-      required>
+    <mat-select matInput formControlName="fee" name="fee"
+      (selectionChange)="getTotal(quoteForm.value.amount, quoteForm.value.fee)" required>
       <mat-option *ngFor="let fee of fees" [value]="fee.cost">
         {{fee.type}} {{fee.cost | currency}}
       </mat-option>
     </mat-select>
   </mat-form-field>
   <br>
-  <mat-form-field *ngIf="subscriber">
-    <mat-label>Fee</mat-label>
-    <input disabled matInput (formControl)="subscriberFee" name="subscriberFee"
-      [value]="subscriberFee | currency" required>
-  </mat-form-field>
-  <br>
   <mat-form-field>
     <mat-label>Total</mat-label>
-    <input disabled matInput (formControl)="total" name="total" [value]="total | currency" required>
+    <input matInput disabled [(formControl)]="total" name="total" [value]="total | currency" required>
   </mat-form-field>
   <br>
   <button (click)="showInvoice()"><strong>CONFIRM</strong></button>
 </form>
+<p>
+  Form Value: {{quoteForm.value | json}}
+</p>
+<p>
+  Form status: {{quoteForm.status}}
+</p>
 <router-outlet></router-outlet>

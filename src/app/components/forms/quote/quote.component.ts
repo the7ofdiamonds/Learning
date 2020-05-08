@@ -1,6 +1,6 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { FormControl, Validators } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Fees } from 'src/app/models/MockFees';
 import { MatInputModule, MatInput } from '@angular/material/input';
 
@@ -13,19 +13,25 @@ import { MatInputModule, MatInput } from '@angular/material/input';
 
 export class QuoteComponent {
   subscriber: boolean;
-  name;
-  to = new FormControl('');
-  amount = new FormControl('');
+  amount;
   fees = Fees;
-  fee = new FormControl('');
-  subscriberFee;
+  fee;
   total;
+  quoteForm = new FormGroup({
+    name: new FormControl(''),
+    to: new FormControl(''),
+    amount: new FormControl(''),
+    fee: new FormControl(''),
+    total: new FormControl('')
+  });
 
-  constructor(private route: ActivatedRoute, private router: Router, public matInput: MatInput) {
-  }
+  constructor(private route: ActivatedRoute, private router: Router) { }
 
   @Input() getTotal(amount, fee) {
-    return this.total = parseFloat(`${amount.value}`) + parseFloat(`${fee.value}`);
+
+    return this.quoteForm.patchValue({
+      total: this.total = parseFloat(`${amount}`) + parseFloat(`${fee}`)
+    });
   }
 
   showInvoice() {

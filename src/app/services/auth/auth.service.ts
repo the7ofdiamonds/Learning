@@ -2,10 +2,6 @@ import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 
 import { AngularFireAuth } from '@angular/fire/auth';
-import {
-  AngularFirestore,
-  AngularFirestoreDocument
-} from '@angular/fire/firestore';
 
 import { Observable, of } from 'rxjs';
 import { switchMap } from 'rxjs/operators';
@@ -18,45 +14,55 @@ export class AuthService {
 
   constructor(
     public afAuth: AngularFireAuth,
-    private afs: AngularFirestore,
     private router: Router
-  ) {
-    this.user$ = this.afAuth.authState.pipe(
-      switchMap(user => {
-        if (user) {
-          return this.afs.doc<User>(`users/${user.uid}`).valueChanges();
-        } else {
-          return of(null);
-        }
-      })
-    );
-  }
-
-
-  async googleSignin() {
-    const provider = new firebase.auth.GoogleAuthProvider();
-    const credential = await this.afAuth.auth.signInWithPopup(provider);
-    return this.updateUserData(credential.user);
-  }
+  ) { }
 
   async signOut() {
-    await this.afAuth.auth.signOut();
-    return this.router.navigate(['/']);
+    return await this.afAuth.auth.signOut()
+      .then(() => console.log('User Logged Out'))
+      .catch((error) => console.log(error))
+      .finally(() => { this.router.navigate(['/']); });
   }
 
-  private updateUserData(user) {
-    // Sets user data to firestore on login
-    const userRef: AngularFirestoreDocument<User> = this.afs.doc(`users/${user.uid}`);
+  // Google Sign In//
+  isUserEqual(googleUser, firebaseUser) {
+    if (firebaseUser) {
+      const providerData = firebaseUser.providerData;
+      // tslint:disable-next-line: prefer-for-of
+      for (let i = 0; i < providerData.length; i++) {
+        if (providerData[i].providerId === firebase.auth.GoogleAuthProvider.PROVIDER_ID &&
+          providerData[i].uid === googleUser.getBasicProfile().getId()) {
+          return true;
+        }
+      }
+      return false;
+    }
+  }
 
-    const data = {
-      uid: user.uid,
-      email: user.email,
-      displayName: user.displayName,
-      photoURL: user.photoURL
-    };
+  onSignIn(googleUser, isUserEqual, providerData, response) {
 
-    return userRef.set(data, { merge: true });
+    const provider = new firebase.auth.GoogleAuthProvider();
+    provider.addScope('https://www.googleapis.com/auth/drive.file');
+    provider.addScope('https://www.googleapis.com/auth/spreadsheets');
 
+    const unsubscribe = firebase.auth().onAuthStateChanged(async (firebaseUser) => {
+      unsubscribe();
+      if (!isUserEqual(googleUser, firebaseUser)) {
+        const credential = firebase.auth.GoogleAuthProvider.credential(
+          googleUser.getAuthResponse().id_token);
+        firebase.auth().signInWithCredential(credential).catch((error) => {
+          const errorCode = error.code;
+          const errorMessage = error.message;
+          const errorEmail = error.email;
+          const errorcredential = error.credential;
+
+          console.log(`${errorCode}`, `${errorMessage}`, `${errorEmail}`, `${errorcredential}`);
+        });
+      } else {
+        console.log('User already signed-in Firebase.');
+      }
+    });
   }
 
 }
+
