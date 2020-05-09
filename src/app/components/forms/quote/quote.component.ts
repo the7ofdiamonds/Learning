@@ -18,11 +18,11 @@ export class QuoteComponent {
   fee;
   total;
   quoteForm = new FormGroup({
-    name: new FormControl(''),
-    to: new FormControl(''),
-    amount: new FormControl(''),
-    fee: new FormControl(''),
-    total: new FormControl('')
+    name: new FormControl('', Validators.required),
+    to: new FormControl('', Validators.required),
+    amount: new FormControl('', Validators.required),
+    fee: new FormControl('', Validators.required),
+    total: new FormControl('', Validators.required)
   });
 
   constructor(private route: ActivatedRoute, private router: Router) { }

@@ -1,17 +1,17 @@
-<!-- <label>From</label>
-<p>{{quoteComponent.quote.name.value}}</p>
+<label>From</label>
+<p>{{quoteComponent.quoteForm.value.name}}</p>
 <br>
 <label>To</label>
-<p>{{quoteComponent.to.value}}</p>
+<p>{{quoteComponent.quoteForm.value.to}}</p>
 <br>
 <label>Amount</label>
-<p>{{quoteComponent.amount.value | currency}}</p>
+<p>{{quoteComponent.quoteForm.value.amount | currency}}</p>
 <br>
 <label>Fee</label>
-<p>{{quoteComponent.fee.value | currency}}</p>
+<p>{{quoteComponent.quoteForm.value.fee | currency}}</p>
 <br>
 <label>Total</label>
-<p>{{this.quoteComponent.total | currency}}</p>
-<br> -->
+<p>{{quoteComponent.quoteForm.value.total | currency}}</p>
+<br>
 <button (click)="openReceipt()">SEND MONEY</button>
 <router-outlet></router-outlet>

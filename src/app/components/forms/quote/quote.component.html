@@ -30,12 +30,6 @@
     <input matInput disabled [(formControl)]="total" name="total" [value]="total | currency" required>
   </mat-form-field>
   <br>
-  <button (click)="showInvoice()"><strong>CONFIRM</strong></button>
+  <button [disabled]="!quoteForm.valid" (click)="showInvoice()"><strong>CONFIRM</strong></button>
 </form>
-<p>
-  Form Value: {{quoteForm.value | json}}
-</p>
-<p>
-  Form status: {{quoteForm.status}}
-</p>
 <router-outlet></router-outlet>

@@ -13,28 +13,42 @@ const db = admin.firestore();
 const functions = require('firebase-functions');
 
 //1. Financial Institution
-exports.sendMoney = functions.https.onCall((transactionDetails) => {
-  const timestamp = transactionDetails.timestamp;
-  const from = transactionDetails.from;
-  const to = transactionDetails.to;
-  const amount = transactionDetails.amount;
-  const fee = transactionDetails.fee;
-  const total = transactionDetails.total;
-  const currentbalance = transactionDetails.currentbalance;
-  const endingbalance = transactionDetails.endingbalance;
-  const hash = transactionDetails.endingbalance;
+exports.sendMoney = functions.https.onCall((transaction) => {
+  const from = transaction.name;
+  const to = transaction.to;
+  const amount = transaction.amount;
+  const fee = transaction.fee;
+  const total = transaction.total;
 
   return db
     .collection('transactions')
-    .doc(hash)
+    .doc('receipts')
     .set({
-      "Timestamp": timestamp,
+      "Timestamp": Timestamp,
       "From": from,
       "To": to,
       "Amount": amount,
       "Fee": fee,
       "Total": total,
-      "Current Balance": currentbalance,
+    });
+});
+
+exports.useToken = functions.https.onCall((transactionDetails) => {
+  const from = transactionDetails.name;
+  const to = transactionDetails.to;
+  const amount = transactionDetails.amount;
+  const beginningbalance = transactionDetails.beginningbalance;
+  const endingbalance = transactionDetails.endingbalance;
+
+  return db
+    .collection('transactions')
+    .doc('tokens')
+    .set({
+      "Timestamp": Timestamp,
+      "From": from,
+      "To": to,
+      "Amount": amount,
+      "Beginning Balance": beginningbalance,
       "Ending Balance": endingbalance
     });
 });
