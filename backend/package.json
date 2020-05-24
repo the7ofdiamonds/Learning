@@ -1,0 +1,19 @@
+{
+  "name": "api-theorb-app",
+  "version": "1.0.0",
+  "description": "ORB API",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server.js"
+  },
+  "author": "J.C. LYONS ENTERPRISES LLC",
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^2.0.4"
+  },
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "morgan": "^1.10.0"
+  }
+}
