@@ -1,0 +1,11 @@
+{
+  "rules": {
+    "queue": {
+      "task": {
+        ".read": "auth.admin === true",
+        ".write": "auth.admin === true",
+        ".indexOn": "_state"
+      }
+    }
+  }
+}

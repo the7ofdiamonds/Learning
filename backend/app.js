@@ -6,7 +6,7 @@ const getRoutes = require('./get')
 const postRoutes = require('./post')
 const invoicesRoutes = require('./invoices')
 const paymentsRoutes = require('./payments')
-const pendingTransactionsRoutes = require('./pending_transactions')
+const pendingTransactionsRoutes = require('./pendingTransactions')
 const receiptsRoutes = require('./receipts')
 
 

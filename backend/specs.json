@@ -1,0 +1,29 @@
+{
+  "queue": {
+    "specs": {
+      "hashTransaction": {
+        "error_state": "hashTransaction_Failed",
+        "finished_state": "hashTransaction_finished",
+        "in_progress_state": "hashTransaction_in_progress",
+        "retries": 3,
+        "start_state": "updateTransaction_finished",
+        "timeout": 5000
+      },
+      "saveTransaction": {
+        "error_state": "saveTransaction_Failed",
+        "finished_state": "saveTransaction_finished",
+        "in_progress_state": "saveTransaction_in_progress",
+        "retries": 3,
+        "start_state": "hashTransaction_finished",
+        "timeout": 5000
+      },
+      "updateTransaction": {
+        "error_state": "updateTransaction_Failed",
+        "finished_state": "updateTransaction_finished",
+        "in_progress_state": "updateTransaction_in_progress",
+        "retries": 3,
+        "timeout": 5000
+      }
+    }
+  }
+}
