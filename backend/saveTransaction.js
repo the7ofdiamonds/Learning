@@ -26,20 +26,20 @@ var saveQueue = new Queue({
   const db = admin.firestore();
   const saveTransaction = db.collection('transactions')
     .doc().set({
+      "transactionNumber": data.transactionNumber,
       "successfulTransactionTimestamp": data.successfulTransactionTimestamp,
       "from": data.from,
       "to": data.to,
       "amount": data.amount,
       "fee": data.fee,
       "total": data.total,
-      "transactionNumber": data.transactionNumber,
       "lastTransactionID": data.lastTransactionID,
       "transactionID": data.transactionID
     });
 
   return saveTransaction
-    .then(progress(100))
-    .then(resolve())
+    .then(progress(75))
+    .then(resolve(data))
     .catch(reject());
 
 });

@@ -17,6 +17,7 @@ admin.initializeApp(firebaseConfig);
 const updateTransaction = require('./updateTransaction');
 const hashTransaction = require('./hashTransaction');
 const saveTransaction = require('./saveTransaction');
+const spreadsheets = require('./spreadsheets');
 
 router.post('', (req, res) => {
   var tasksRef = admin.database().ref('queue/tasks');

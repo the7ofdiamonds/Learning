@@ -1,7 +1,16 @@
 {
   "queue": {
     "specs": {
+      "updateTransaction": {
+        "_progress": 25,
+        "error_state": "updateTransaction_Failed",
+        "finished_state": "updateTransaction_finished",
+        "in_progress_state": "updateTransaction_in_progress",
+        "retries": 3,
+        "timeout": 5000
+      },
       "hashTransaction": {
+        "_progress": 50,
         "error_state": "hashTransaction_Failed",
         "finished_state": "hashTransaction_finished",
         "in_progress_state": "hashTransaction_in_progress",
@@ -10,6 +19,7 @@
         "timeout": 5000
       },
       "saveTransaction": {
+        "_progress": 75,
         "error_state": "saveTransaction_Failed",
         "finished_state": "saveTransaction_finished",
         "in_progress_state": "saveTransaction_in_progress",
@@ -17,11 +27,12 @@
         "start_state": "hashTransaction_finished",
         "timeout": 5000
       },
-      "updateTransaction": {
-        "error_state": "updateTransaction_Failed",
-        "finished_state": "updateTransaction_finished",
-        "in_progress_state": "updateTransaction_in_progress",
+      "spreadsheets": {
+        "_progress": 100,
+        "error_state": "spreadsheets_Failed",
+        "in_progress_state": "spreadsheets_in_progress",
         "retries": 3,
+        "start_state": "saveTransaction_finished",
         "timeout": 5000
       }
     }

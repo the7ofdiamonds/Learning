@@ -30,22 +30,22 @@ var updateQueue = new Queue({
   return getLastTransaction.get()
     .then(function (querySnapshot) {
       querySnapshot.forEach(function (doc) {
-        let transactionNumber = doc.data().transactionNumber + 1;
-        let lastTransactionID = doc.data().transactionID;
-        const updateTransaction = {
-          "successfulTransactionTimestamp": data.successfulTransactionTimestamp,
-          "from": data.from,
-          "to": data.to,
-          "amount": data.amount,
-          "fee": data.fee,
-          "total": data.total,
-          "transactionNumber": transactionNumber,
-          "lastTransactionID": lastTransactionID
-        };
-        resolve(updateTransaction)
-      })
+          let transactionNumber = doc.data().transactionNumber + 1;
+          let lastTransactionID = doc.data().transactionID;
+          const updateTransaction = {
+            "successfulTransactionTimestamp": data.successfulTransactionTimestamp,
+            "from": data.from,
+            "to": data.to,
+            "amount": data.amount,
+            "fee": data.fee,
+            "total": data.total,
+            "transactionNumber": transactionNumber,
+            "lastTransactionID": lastTransactionID
+          };
+          resolve(updateTransaction)
+
+        })
+        progress(25)
+        .catch(reject())
     })
-    .then(progress(25))
-    .catch(error => reject(error))
-});
-updateQueue;
+})
