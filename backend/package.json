@@ -10,10 +10,13 @@
   "author": "J.C. LYONS ENTERPRISES LLC",
   "license": "ISC",
   "devDependencies": {
-    "nodemon": "^2.0.4"
+    "nodemon": "^2.0.4",
+    "webpack": "^4.43.0"
   },
   "dependencies": {
     "body-parser": "^1.19.0",
+    "elliptic": "^6.5.2",
+    "email-templates": "^7.0.5",
     "express": "^4.17.1",
     "firebase": "^7.15.0",
     "firebase-admin": "^8.12.1",
@@ -22,6 +25,8 @@
     "google-spreadsheet": "^3.0.11",
     "googleapis": "^39.2.0",
     "morgan": "^1.10.0",
+    "nodemailer": "^6.4.10",
+    "nodemailer-express-handlebars": "^4.0.0",
     "require-from-url": "^3.1.3",
     "sha256": "^0.2.0"
   }

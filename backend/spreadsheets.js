@@ -4,12 +4,12 @@ const {
 const {
   promisify
 } = require('util');
-const creds = require('./serviceAccountKey.json');
+const serviceAccount = require('./serviceAccountKey.json');
 var admin = require('firebase-admin');
 var Queue = require('firebase-queue');
 var firebaseConfig = {
   apiKey: "AIzaSyAPAZWDdVaO5C0roWiGSetzNG5uLd-qNHc",
-  credential: admin.credential.cert(creds),
+  credential: admin.credential.cert(serviceAccount),
   authDomain: "theorb-f3a48.firebaseapp.com",
   databaseURL: "https://theorb-f3a48.firebaseio.com",
   projectId: "theorb-f3a48",
@@ -27,25 +27,22 @@ var options = {
 var spreadsheetsQueue = new Queue({
   tasksRef: tasksRef,
   specsRef: specsRef
-}, options, function (data, progress, resolve, reject) {
+}, options, (data, progress, resolve, reject) => {
 
   async function saveToSpreadsheet() {
     // spreadsheet key is the long id in the sheets URL
-    const doc = new GoogleSpreadsheet('1zmcgm2HNh8imxgMb-ZNlXRkgzUniyY_0-KH895b63fw');
+    const spreadsheetID = '1zmcgm2HNh8imxgMb-ZNlXRkgzUniyY_0-KH895b63fw';
+    const doc = new GoogleSpreadsheet(spreadsheetID);
     await doc.useServiceAccountAuth({
-      client_email: creds.client_email,
-      private_key: creds.private_key,
+      client_email: serviceAccount.client_email,
+      private_key: serviceAccount.private_key,
     });
 
     // loads document properties and worksheets
     await doc.loadInfo();
-    console.log(`Title: ${doc.title}`);
 
     const sheet = doc.sheetsByIndex[0]; // or use doc.sheetsById[id]
-    console.log(sheet.title);
-    console.log(sheet.rowCount);
-
-    const newTransaction = await sheet.addRow({
+    await sheet.addRow({
       "Transaction Number": data.transactionNumber,
       "Timestamp": data.successfulTransactionTimestamp,
       "From": data.from,
@@ -55,14 +52,12 @@ var spreadsheetsQueue = new Queue({
       "Total": data.total,
       "Last Transaction ID": data.lastTransactionID,
       "Transaction ID": data.transactionID
-    });
-
-    return newTransaction;
-
+    })
+    console.log(`Step 3/4 Complete - Transaction was successfully saved to Google Sheets ID : ${spreadsheetID} Title: ${doc.title} on Sheet: ${sheet.title}`)
   };
-saveToSpreadsheet()
-.then(progress(100))
-.then(resolve())
-.catch(reject());
 
+  return saveToSpreadsheet()
+    .then(progress(80))
+    .then(resolve(data))
+    .catch((error) => reject(error))
 });

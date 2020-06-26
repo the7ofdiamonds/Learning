@@ -16,8 +16,10 @@ const firebaseConfig = {
 admin.initializeApp(firebaseConfig);
 const updateTransaction = require('./updateTransaction');
 const hashTransaction = require('./hashTransaction');
+// const blockchain = require('./main');
 const saveTransaction = require('./saveTransaction');
 const spreadsheets = require('./spreadsheets');
+const sendReceipt = require('./sendReceipt');
 
 router.post('', (req, res) => {
   var tasksRef = admin.database().ref('queue/tasks');

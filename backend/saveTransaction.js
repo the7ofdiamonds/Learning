@@ -22,10 +22,10 @@ var options = {
 var saveQueue = new Queue({
   tasksRef: tasksRef,
   specsRef: specsRef
-}, options, function (data, progress, resolve, reject) {
+}, options, async function (data, progress, resolve, reject) {
   const db = admin.firestore();
-  const saveTransaction = db.collection('transactions')
-    .doc().set({
+  async function transaction() {
+    const saveToFirestore = await db.collection('transactions').add({
       "transactionNumber": data.transactionNumber,
       "successfulTransactionTimestamp": data.successfulTransactionTimestamp,
       "from": data.from,
@@ -35,12 +35,14 @@ var saveQueue = new Queue({
       "total": data.total,
       "lastTransactionID": data.lastTransactionID,
       "transactionID": data.transactionID
-    });
+    })
+    console.log('Step 2/4 Complete - Transaction was successfully saved to Google Firebase Database Doc ID: ', saveToFirestore.id)
+  };
 
-  return saveTransaction
+  return transaction()
     .then(progress(75))
     .then(resolve(data))
-    .catch(reject());
-
+    .catch((error) => {
+      reject(error)
+    })
 });
-saveQueue;
