@@ -5,7 +5,7 @@ import { AngularFireAuth } from '@angular/fire/auth';
 
 import { Observable, of } from 'rxjs';
 import { switchMap } from 'rxjs/operators';
-import { User } from 'src/app/models/user.model';
+import { User } from 'src/app/models/user/user.model';
 import * as firebase from 'firebase';
 
 @Injectable({ providedIn: 'root' })
@@ -18,7 +18,7 @@ export class AuthService {
   ) { }
 
   async signOut() {
-    return await this.afAuth.auth.signOut()
+    return await this.afAuth.signOut()
       .then(() => console.log('User Logged Out'))
       .catch((error) => console.log(error))
       .finally(() => { this.router.navigate(['/']); });
