@@ -1,0 +1,24 @@
+<header>
+  <button mat-raised-button (click)='openLearn();'>
+    <h2>LEARN</h2>
+  </button>
+  <button mat-raised-button (click)='openManage();'>
+    <h2>MANAGE</h2>
+  </button>
+  <button mat-raised-button (click)='openInvest();'>
+    <h2>INVEST</h2>
+  </button>
+</header>
+
+<div id="aboutorb" class="content">
+  <p>
+    <strong>ORB™</strong> is the future of financial systems with a holistic approach to learning, managing
+    and investing available on multiple platforms.
+  </p>
+</div>
+<app-contactorb></app-contactorb>
+<nav>
+  <button mat-button (click)='openPrivacy();'><strong>PRIVACY</strong></button>
+  <button mat-button (click)='openTerms();'><strong>TERMS &
+      CONDITIONS</strong></button>
+</nav>
