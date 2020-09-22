@@ -1,10 +1,7 @@
 import { Component, Inject } from '@angular/core';
-import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
+import { QuoteComponent } from '../../../../../../components/forms/quote/quote.component';
 
-export interface DialogData {
-  animal: string;
-  name: string;
-}
 @Component({
   selector: 'app-sendmoney',
   templateUrl: './sendmoney.component.html',
@@ -12,33 +9,20 @@ export interface DialogData {
 })
 export class SendmoneyComponent {
 
-  animal: string;
-  name: string;
-
   constructor(public dialog: MatDialog) { }
 
-  openDialog(): void {
-    const dialogRef = this.dialog.open(QuoteComponent, {
-      width: '250px',
-      data: { name: this.name, animal: this.animal }
-    });
+  openQuote() {
+    const dialogConfig = new MatDialogConfig();
+
+    dialogConfig.hasBackdrop = true;
+    dialogConfig.backdropClass
+    dialogConfig.panelClass
+
+    const dialogRef = this.dialog.open(QuoteComponent, dialogConfig);
 
     dialogRef.afterClosed().subscribe(result => {
-      console.log('The dialog was closed');
-      this.animal = result;
+      console.log(`Dialog result: ${result}`);
     });
-  }
-
-}
-
-export class QuoteComponent {
-
-  constructor(
-    public dialogRef: MatDialogRef<QuoteComponent>,
-    @Inject(MAT_DIALOG_DATA) public data: DialogData) { }
-
-  onNoClick(): void {
-    this.dialogRef.close();
   }
 
 }

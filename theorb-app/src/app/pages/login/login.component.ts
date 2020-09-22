@@ -35,7 +35,7 @@ export class LoginComponent implements OnInit {
       },
       // Will use popup for IDP Providers sign-in flow instead of the default, redirect.
       signInFlow: 'popup',
-      signInSuccessUrl: '/login',
+      signInSuccessUrl: '/login/welcome',
       signInOptions: [
         // Leave the lines as is for the providers you want to offer your users.
         {
