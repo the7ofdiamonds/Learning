@@ -15,51 +15,22 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  isShown: boolean;
-  isHidden: boolean;
+  isShown: boolean = false;
+  isVisible: boolean = false;
 
   openHeader() {
-    if (this.isShown === false && this.isHidden === false) {
-      this.isShown = true;
-    }
-
-    if (this.isShown === false) {
+    if (this.isShown === false ) {
       this.isShown = true;
     } else {
       this.isShown = false;
     }
-  }
-
-  openAbout() {
-    this.dialog.open(AboutComponent);
-  }
-
-  openServices() {
-    this.dialog.open(ServicesComponent);
-  }
-
-  openDesign() {
-    this.dialog.open(DesignComponent);
-  }
-
-  openDevelopment() {
-    this.dialog.open(DevelopmentComponent);
-  }
-
-  openShop() {
-   this.dialog.open(ShopComponent);
   }
 
   openORBHeader() {
-    if (this.isShown === true && this.isHidden === false) {
-      this.isHidden = true;
-      this.isShown = false;
-    }
-
-    if (this.isHidden === false) {
-      this.isHidden = true;
+    if (this.isVisible === false) {
+      this.isVisible = true;
     } else {
-      this.isHidden = false;
+      this.isVisible = false;
     }
   }
 }

@@ -3,7 +3,7 @@
     <img src="assets/image2.jpg">
   </button>
   
-  <app-header></app-header>
+  <app-header *ngIf='!isShown'></app-header>
 </section>
 
 <section id="orb">
@@ -11,5 +11,5 @@
     <img src="assets/black-orb-ft.jpg" style="height: 100px; width: 100px;">
   </button>
 
-  <app-headerorb></app-headerorb>
+  <app-headerorb *ngIf='!isVisible'></app-headerorb>
 </section>

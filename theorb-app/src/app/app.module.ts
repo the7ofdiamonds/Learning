@@ -9,7 +9,7 @@ import { MatInputModule } from '@angular/material/input';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { AppComponent } from './app.component';
-import { HeaderComponent } from './components/layout/header/header.component';
+import { HeaderComponent } from './pages/home/the7ofdiamonds/header/header.component';
 import { HomeComponent } from './pages/home/home.component';
 import { AboutComponent } from './pages/home/the7ofdiamonds/about/about.component';
 import { DesignComponent } from './pages/home/the7ofdiamonds/services/design/design.component';
