@@ -1,24 +1,21 @@
-<header>
-  <button mat-raised-button (click)='openLearn();'>
-    <h2>LEARN</h2>
-  </button>
-  <button mat-raised-button (click)='openManage();'>
-    <h2>MANAGE</h2>
-  </button>
-  <button mat-raised-button (click)='openInvest();'>
-    <h2>INVEST</h2>
-  </button>
-</header>
+<mat-card>
+  <mat-toolbar mat-tab-nav-bar>
+    <a mat-tab-link class="learnHeader" (click)='openLearn();'>
+      <h2>LEARN</h2>
+    </a>
+    <a mat-tab-link class="manageHeader" (click)='openManage();'>
+      <h2>MANAGE</h2>
+    </a>
+    <a mat-tab-link class="investHeader" (click)='openInvest();'>
+      <h2>INVEST</h2>
+    </a>
+  </mat-toolbar>
 
-<div id="aboutorb" class="content">
-  <p>
-    <strong>ORB™</strong> is the future of financial systems with a holistic approach to learning, managing
-    and investing available on multiple platforms.
-  </p>
-</div>
-<app-contactorb></app-contactorb>
-<nav>
-  <button mat-button (click)='openPrivacy();'><strong>PRIVACY</strong></button>
-  <button mat-button (click)='openTerms();'><strong>TERMS &
-      CONDITIONS</strong></button>
-</nav>
+  <div id="aboutorb" class="content">
+    <p>
+      <strong>ORB™</strong> is the future of financial systems with a holistic approach to learning, managing
+      and investing available on multiple platforms.
+    </p>
+  </div>
+  <app-contactorb></app-contactorb>
+</mat-card>

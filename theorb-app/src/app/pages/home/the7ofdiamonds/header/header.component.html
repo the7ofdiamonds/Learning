@@ -1,0 +1,29 @@
+<mat-toolbar>
+    <a mat-tab-link class="the7ofdiamondsheader" (click)='openHeader();'>
+      <strong>
+        <h1>
+          THE7OFDIAMONDS.TECH
+        </h1>
+      </strong>
+    </a>
+    <a mat-tab-link class="aboutheader" (click)="openAbout()">
+      <h2>ABOUT</h2>
+    </a>
+    <button mat-tab-link [matMenuTriggerFor]="services" class='servicesheader' (click)="openServices()">
+      <h2>SERVICES</h2>
+    </button>
+    <mat-menu #services="matMenu">
+      <a mat-tab-link class="designheader" (click)="openDesign()">
+        <h3>DESIGN</h3>
+      </a>
+      <a mat-tab-link class="developmentheader" (click)="openDevelopment()">
+        <h3>WEB/APPLICATION DEVELOPMENT</h3>
+      </a>
+    </mat-menu>
+    <a mat-tab-link class="shopheader" (click)="openShop()">
+      <h2>SHOP</h2>
+    </a>
+    <a mat-tab-link class="orbheader" (click)="openORBHeader()">
+      <h2>ORB</h2>
+    </a>
+  </mat-toolbar>

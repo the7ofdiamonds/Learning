@@ -66,9 +66,9 @@ export class LoginComponent implements OnInit {
         firebase.auth.PhoneAuthProvider.PROVIDER_ID
       ],
       // Terms of service url.
-      tosUrl: '<your-tos-url>',
+      tosUrl: '/about/t&c',
       // Privacy policy url.
-      privacyPolicyUrl: '<your-privacy-policy-url>'
+      privacyPolicyUrl: '/about/privacy'
     };
     // The start method will wait until the DOM is loaded.
     this.ui.start('#firebaseui-auth-container', uiConfig);

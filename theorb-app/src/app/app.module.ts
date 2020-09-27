@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AuthGuard } from './services/auth/auth.guard';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatSelectModule } from '@angular/material/select';
@@ -18,6 +18,7 @@ import { ContactComponent } from './pages/home/the7ofdiamonds/about/contact/cont
 import { ShopComponent } from './pages/shop/shop.component';
 import { LoginComponent } from './pages/login/login.component';
 
+import { MatStepperModule } from '@angular/material/stepper';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatSliderModule } from '@angular/material/slider';
@@ -25,7 +26,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatCardModule } from '@angular/material/card';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
-import { MatBottomSheet, MatBottomSheetModule } from '@angular/material/bottom-sheet';
+import { MatBottomSheetModule } from '@angular/material/bottom-sheet';
 import { CopyrightsComponent } from './pages/home/the7ofdiamonds/about/copyrights/copyrights.component';
 import { ServicesComponent } from './pages/home/the7ofdiamonds/services/services.component';
 import { AboutorbComponent } from './pages/home/orb/aboutorb/aboutorb.component';
@@ -48,6 +49,10 @@ import { ReceiptComponent } from './components/forms/receipt/receipt.component';
 import { WelcomeComponent } from './pages/login/welcome/welcome.component';
 import { AccountDetailComponent } from './pages/home/orb/manage/accounts/account-detail/account-detail.component';
 import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component';
+import { ReceiveComponent } from './pages/home/orb/manage/currency/receive/receive.component';
+import { SendComponent } from './pages/home/orb/manage/currency/send/send.component';
+import { HttpClientModule } from '@angular/common/http';
+import { HeaderorbComponent } from './pages/home/orb/headerorb/headerorb.component';
 
 const config = {
   apiKey: 'AIzaSyD1ub97o3TSNnW3NRFR0aEKk5u4pnR4wbE',
@@ -65,7 +70,7 @@ const config = {
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    FormsModule,
+    ReactiveFormsModule,
     BrowserAnimationsModule,
     MatFormFieldModule,
     MatSelectModule,
@@ -79,7 +84,9 @@ const config = {
     MatMenuModule,
     MatCardModule,
     MatSnackBarModule,
-    MatBottomSheetModule
+    MatBottomSheetModule,
+    MatStepperModule,
+    HttpClientModule
   ],
   declarations: [
     AppComponent,
@@ -120,11 +127,15 @@ const config = {
     LoginComponent,
     ShopComponent,
     WelcomeComponent,
+    ReceiveComponent,
+    SendComponent,
+    ReceiveComponent,
+    HeaderorbComponent
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   bootstrap: [AppComponent],
-  entryComponents: [ShopComponent, ContactComponent, ContactorbComponent],
+  entryComponents: [ShopComponent, ContactComponent, ContactorbComponent, QuoteComponent],
   providers: [MatFormFieldModule,
-    MatSelectModule, AuthGuard]
+    MatSelectModule, MatStepperModule, FormsModule, AuthGuard]
 })
 export class AppModule { }

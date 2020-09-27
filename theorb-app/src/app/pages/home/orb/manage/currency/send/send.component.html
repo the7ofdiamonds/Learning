@@ -1,0 +1,71 @@
+<mat-horizontal-stepper linear #stepper>
+  <mat-step [stepControl]="quoteForm" [editable]="true">
+    <mat-card>
+      <form [formGroup]="quoteForm">
+        <ng-template matStepLabel>Quote</ng-template>
+        <mat-form-field>
+          <mat-label>Amount</mat-label>
+          <input matInput formControlName="amount" name="amount" type="text"
+            (keyup)="getTotal(this.quoteForm.value.amount, this.quoteForm.value.fee)" required>
+        </mat-form-field>
+        <br>
+        <mat-form-field>
+          <mat-label>Fee</mat-label>
+          <mat-select matInput formControlName="fee" name="fee"
+            (selectionChange)="getTotal(quoteForm.value.amount, quoteForm.value.fee)" required>
+            <mat-option *ngFor="let fee of fees" [value]="fee.cost">
+              {{fee.type}} {{fee.cost | currency}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+        <br>
+      </form>
+      <mat-label>Total</mat-label>
+      {{total | currency}}
+      <br>
+      <div>
+        <button mat-button matStepperNext><strong>CONFIRM</strong></button>
+      </div>
+    </mat-card>
+  </mat-step>
+  <mat-step [stepControl]="invoiceForm" [editable]="true">
+    <mat-card>
+      <form [formGroup]="invoiceForm">
+        <ng-template matStepLabel>Invoice</ng-template>
+        <mat-form-field>
+          <mat-label>From</mat-label>
+          <input matInput formControlName="name" type="text" name="name" required>
+        </mat-form-field>
+        <br>
+        <mat-form-field>
+          <mat-label>To</mat-label>
+          <input matInput formControlName="to" type="text" name="to" required>
+        </mat-form-field>
+      </form>
+      <br>
+      <label>Amount</label>
+      <p>{{quoteForm.value.amount | currency}}</p>
+      <br>
+      <label>Fee</label>
+      <p>{{quoteForm.value.fee | currency}}</p>
+      <br>
+      <label>Total</label>
+      <p>{{total | currency}}</p>
+      <br>
+      <div>
+        <button mat-button matStepperPrevious>Back</button>
+        <button mat-button (click)="getReceipt();">SEND</button>
+      </div>
+    </mat-card>
+  </mat-step>
+  <mat-step [editable]="false">
+    <mat-card>
+      <ng-template matStepLabel>Receipt</ng-template>
+      <p>You are now done.</p>
+      <div>
+        <button mat-button matStepperPrevious>Back</button>
+        <button mat-button (click)="stepper.reset()">Reset</button>
+      </div>
+    </mat-card>
+  </mat-step>
+</mat-horizontal-stepper>

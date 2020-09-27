@@ -1,12 +1,15 @@
-<mat-toolbar>
-  <button mat-raised-button (click)='openRealEstate();'>
-    <strong>REAL ESTATE</strong></button>
-  <button mat-raised-button (click)='openPaperAssets();'>
-    <strong>PAPER ASSETS</strong></button>
-  <button mat-raised-button (click)='openTangibleAssets();'>
-    <strong>TANGIBLE ASSETS</strong></button>
-</mat-toolbar>
+<mat-card>
+  <mat-toolbar mat-tab-nav-bar>
+    <a mat-tab-link class="realestateHeader" (click)='openRealEstate();'>
+      <strong>REAL ESTATE</strong></a>
+    <a mat-tab-link class="paperassetsHeader" (click)='openPaperAssets();'>
+      <strong>PAPER ASSETS</strong></a>
+    <a mat-tab-link class="tangibleassetsHeader" (click)='openTangibleAssets();'>
+      <strong>TANGIBLE ASSETS</strong></a>
+  </mat-toolbar>
 
-<div class="content">
-  <p>Make investments that will get you to your personal and/or financial goals</p>
-</div>
+  <div class="content">
+    <p>Make investments that will get you to your personal and/or financial goals</p>
+  </div>
+
+</mat-card>

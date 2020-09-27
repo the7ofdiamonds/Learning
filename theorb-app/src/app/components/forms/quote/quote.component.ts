@@ -1,24 +1,40 @@
-import { Component, Inject } from '@angular/core';
-import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
-
-export interface DialogData {
-  animal: string;
-  name: string;
-}
+import { Component, Input, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { Fees } from 'src/app/models/MockFees';
+import { MatInputModule, MatInput } from '@angular/material/input';
 
 @Component({
   selector: 'app-quote',
   templateUrl: './quote.component.html',
-  styleUrls: ['./quote.component.css']
+  styleUrls: ['./quote.component.css'],
+  providers: [MatInputModule, MatInput]
 })
+
 export class QuoteComponent {
+  subscriber: boolean;
+  amount;
+  fees = Fees;
+  fee;
+  total;
+  quoteForm = new FormGroup({
+    name: new FormControl('', Validators.required),
+    to: new FormControl('', Validators.required),
+    amount: new FormControl('', Validators.required),
+    fee: new FormControl('', Validators.required),
+    total: new FormControl('', Validators.required)
+  });
 
-  constructor(
-    public dialogRef: MatDialogRef<QuoteComponent>,
-    @Inject(MAT_DIALOG_DATA) public data: DialogData) { }
+  constructor(private route: ActivatedRoute, private router: Router) { }
 
-  onNoClick(): void {
-    this.dialogRef.close();
+  @Input() getTotal(amount, fee) {
+
+    return this.quoteForm.patchValue({
+      total: this.total = parseFloat(`${amount}`) + parseFloat(`${fee}`)
+    });
   }
 
+  showInvoice() {
+    return this.router.navigate(['invoice'], { relativeTo: this.route });
+  }
 }

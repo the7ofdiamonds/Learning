@@ -22,70 +22,45 @@ export class AboutorbComponent implements OnInit {
     const dialogConfig = new MatDialogConfig();
 
     dialogConfig.hasBackdrop = true;
-    dialogConfig.backdropClass
-    dialogConfig.panelClass
+    dialogConfig.panelClass = 'custom-modalbox';
 
-    const dialogRef = this.dialog.open(LearnComponent, dialogConfig);
-
-    dialogRef.afterClosed().subscribe(result => {
-      console.log(`Dialog result: ${result}`);
-    });
+    this.dialog.open(LearnComponent, dialogConfig);
   }
 
   openManage() {
     const dialogConfig = new MatDialogConfig();
 
     dialogConfig.hasBackdrop = true;
-    dialogConfig.backdropClass
-    dialogConfig.panelClass
+    dialogConfig.panelClass = 'custom-modalbox';
 
-    const dialogRef = this.dialog.open(ManageComponent, dialogConfig);
-
-    dialogRef.afterClosed().subscribe(result => {
-      console.log(`Dialog result: ${result}`);
-    });
+    this.dialog.open(ManageComponent, dialogConfig);
   }
 
   openInvest() {
     const dialogConfig = new MatDialogConfig();
 
     dialogConfig.hasBackdrop = true;
-    dialogConfig.backdropClass
-    dialogConfig.panelClass
+    dialogConfig.panelClass = 'custom-modalbox';
 
-    const dialogRef = this.dialog.open(InvestComponent, dialogConfig);
-
-    dialogRef.afterClosed().subscribe(result => {
-      console.log(`Dialog result: ${result}`);
-    });
+    this.dialog.open(InvestComponent, dialogConfig);
   }
 
   openPrivacy() {
     const dialogConfig = new MatDialogConfig();
 
     dialogConfig.hasBackdrop = true;
-    dialogConfig.backdropClass
-    dialogConfig.panelClass
+    dialogConfig.panelClass = 'custom-modalbox';
 
-    const dialogRef = this.dialog.open(PrivacyComponent, dialogConfig);
-
-    dialogRef.afterClosed().subscribe(result => {
-      console.log(`Dialog result: ${result}`);
-    });
+    this.dialog.open(PrivacyComponent, dialogConfig);
   }
 
   openTerms() {
     const dialogConfig = new MatDialogConfig();
 
     dialogConfig.hasBackdrop = true;
-    dialogConfig.backdropClass
-    dialogConfig.panelClass
+    dialogConfig.panelClass = 'custom-modalbox';
 
-    const dialogRef = this.dialog.open(TermsAndConditionsComponent, dialogConfig);
-
-    dialogRef.afterClosed().subscribe(result => {
-      console.log(`Dialog result: ${result}`);
-    });
+    this.dialog.open(TermsAndConditionsComponent, dialogConfig);
   }
 
 }

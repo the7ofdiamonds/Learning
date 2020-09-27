@@ -1,13 +1,15 @@
-<mat-toolbar>
-  <button mat-raised-button (click)='openRead();'>
-    <strong>READ</strong>
-  </button>
-  <button mat-raised-button (click)='openSimulation();'>
-    <strong>SIMULATION</strong>
-  </button>
-</mat-toolbar>
+<mat-card>
+  <mat-toolbar mat-tab-nav-bar>
+    <a mat-tab-link class="readHeader" (click)='openRead();'>
+      <strong>READ</strong>
+    </a>
+    <a mat-tab-link class="simulationHeader" (click)='openSimulation();'>
+      <strong>SIMULATION</strong>
+    </a>
+  </mat-toolbar>
 
-<div class='content'>
-  <p><strong>ORB&trade;</strong> users can read and play <strong><em>THE HOUSE FOREVER
-        WINS&trade;</em></strong> a book/game which teaches you how to manage and invest money holisticly.</p>
-</div>
+  <div class='content'>
+    <p><strong>ORB&trade;</strong> users can read and play <strong><em>THE HOUSE FOREVER
+          WINS&trade;</em></strong> a book/game which teaches you how to manage and invest money holisticly.</p>
+  </div>
+</mat-card>

@@ -22,15 +22,21 @@ import { ReadComponent } from './pages/home/orb/learn/read/read.component';
 import { SimulationComponent } from './pages/home/orb/learn/simulation/simulation.component';
 import { DebtComponent } from './pages/home/orb/manage/debt/debt.component';
 import { InsuranceComponent } from './pages/home/orb/manage/insurance/insurance.component';
-import { SendmoneyComponent } from './pages/home/orb/manage/currency/sendmoney/sendmoney.component';
+import { SendComponent } from './pages/home/orb/manage/currency/send/send.component';
+import { ReceiveComponent } from './pages/home/orb/manage/currency/receive/receive.component';
 import { ManageComponent } from './pages/home/orb/manage/manage.component';
+import { TermsAndConditionsComponent } from './pages/home/orb/aboutorb/terms-and-conditions/terms-and-conditions.component';
+import { PrivacyComponent } from './pages/home/orb/aboutorb/privacy/privacy.component';
+import { HeaderComponent } from './pages/home/the7ofdiamonds/header/header.component';
 
 const redirectUnauthorizedToLogin = () => redirectUnauthorizedTo(['login']);
 const belongsToAccount = (next) => hasCustomClaim(`account-${next.params.id}`);
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
-  { path: 'about', component: AboutComponent },
+  { path: 'about', component: AboutComponent },  
+  { path: 'about/t&c', component: TermsAndConditionsComponent },
+  { path: 'about/privacy', component: PrivacyComponent },
   { path: 'shop', component: ShopComponent },
   { path: 'login', component: LoginComponent },
   { path: 'login/welcome', component: WelcomeComponent, canActivate: [AngularFireAuthGuard], data: { authGuardPipe: redirectUnauthorizedToLogin } },
@@ -38,10 +44,11 @@ const routes: Routes = [
   { path: 'learn/simulation', component: SimulationComponent, canActivate: [AngularFireAuthGuard], data: { authGuardPipe: redirectUnauthorizedToLogin } },
   { path: 'manage', component: ManageComponent },
   { path: 'manage/currency', component: CurrencyComponent },
-  { path: 'manage/currency/send', component: SendmoneyComponent },
+  { path: 'manage/currency/send', component: SendComponent },
   { path: 'manage/currency/send/quote', component: QuoteComponent },
   { path: 'manage/currency/send/invoice', component: InvoiceComponent, canActivate: [AngularFireAuthGuard], data: { authGuardPipe: redirectUnauthorizedToLogin } },
   { path: 'manage/currency/send/receipt', component: ReceiptComponent, canActivate: [AngularFireAuthGuard], data: { authGuardPipe: redirectUnauthorizedToLogin } },
+  { path: 'manage/currency/receive', component: ReceiveComponent },
   { path: 'manage/debt', component: DebtComponent, canActivate: [AngularFireAuthGuard], data: { authGuardPipe: redirectUnauthorizedToLogin } },
   { path: 'manage/insurance', component: InsuranceComponent, canActivate: [AngularFireAuthGuard], data: { authGuardPipe: redirectUnauthorizedToLogin } },
   { path: 'invest/paper-assets', component: PaperAssetsComponent, canActivate: [AngularFireAuthGuard], data: { authGuardPipe: redirectUnauthorizedToLogin } }

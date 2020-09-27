@@ -1,14 +1,8 @@
-import { Component, OnInit, ɵɵresolveBody } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
-import { AboutComponent } from '../home/the7ofdiamonds/about/about.component';
-import { ServicesComponent } from '../home/the7ofdiamonds/services/services.component';
-import { DesignComponent } from '../home/the7ofdiamonds/services/design/design.component';
-import { DevelopmentComponent } from '../home/the7ofdiamonds/services/development/development.component';
-import { ShopComponent } from '../shop/shop.component';
-import { AboutorbComponent } from '../home/orb/aboutorb/aboutorb.component';
-import { LoginComponent } from '../login/login.component';
+import { HeaderComponent } from '../home/the7ofdiamonds/header/header.component';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { MatBottomSheet, MatBottomSheetRef } from '@angular/material/bottom-sheet';
+import { MatBottomSheet } from '@angular/material/bottom-sheet';
 
 @Component({
   selector: 'app-home',
@@ -21,13 +15,12 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  isShown: boolean = false;
-  isHidden: boolean = false;
+  isShown: boolean;
+  isHidden: boolean;
 
   openHeader() {
-    if (this.isShown === false && this.isHidden === true) {
+    if (this.isShown === false && this.isHidden === false) {
       this.isShown = true;
-      this.isHidden = false;
     }
 
     if (this.isShown === false) {
@@ -38,73 +31,23 @@ export class HomeComponent implements OnInit {
   }
 
   openAbout() {
-    const dialogConfig = new MatDialogConfig();
-
-    dialogConfig.hasBackdrop = true;
-    dialogConfig.backdropClass
-    dialogConfig.panelClass
-
-    const dialogRef = this.dialog.open(AboutComponent, dialogConfig);
-
-    dialogRef.afterClosed().subscribe(result => {
-      console.log(`Dialog result: ${result}`);
-    });
+    this.dialog.open(AboutComponent);
   }
 
   openServices() {
-    const dialogConfig = new MatDialogConfig();
-
-    dialogConfig.hasBackdrop = true;
-    dialogConfig.backdropClass
-    dialogConfig.panelClass
-
-    const dialogRef = this.dialog.open(ServicesComponent, dialogConfig);
-
-    dialogRef.afterClosed().subscribe(result => {
-      console.log(`Dialog result: ${result}`);
-    });
+    this.dialog.open(ServicesComponent);
   }
 
   openDesign() {
-    const dialogConfig = new MatDialogConfig();
-
-    dialogConfig.hasBackdrop = true;
-    dialogConfig.backdropClass
-    dialogConfig.panelClass
-
-    const dialogRef = this.dialog.open(DesignComponent, dialogConfig);
-
-    dialogRef.afterClosed().subscribe(result => {
-      console.log(`Dialog result: ${result}`);
-    });
+    this.dialog.open(DesignComponent);
   }
 
   openDevelopment() {
-    const dialogConfig = new MatDialogConfig();
-
-    dialogConfig.hasBackdrop = true;
-    dialogConfig.backdropClass
-    dialogConfig.panelClass
-
-    const dialogRef = this.dialog.open(DevelopmentComponent, dialogConfig);
-
-    dialogRef.afterClosed().subscribe(result => {
-      console.log(`Dialog result: ${result}`);
-    });
+    this.dialog.open(DevelopmentComponent);
   }
 
   openShop() {
-    const dialogConfig = new MatDialogConfig();
-
-    dialogConfig.hasBackdrop = true;
-    dialogConfig.backdropClass
-    dialogConfig.panelClass
-
-    const dialogRef = this.dialog.open(ShopComponent, dialogConfig);
-
-    dialogRef.afterClosed().subscribe(result => {
-      console.log(`Dialog result: ${result}`);
-    });
+   this.dialog.open(ShopComponent);
   }
 
   openORBHeader() {
@@ -118,28 +61,5 @@ export class HomeComponent implements OnInit {
     } else {
       this.isHidden = false;
     }
-  }
-
-  openAboutORB() {
-    const dialogConfig = new MatDialogConfig();
-
-    dialogConfig.hasBackdrop = true;
-    dialogConfig.backdropClass
-    dialogConfig.panelClass
-
-    const dialogRef = this.dialog.open(AboutorbComponent, dialogConfig);
-
-    dialogRef.afterClosed().subscribe(result => {
-      console.log(`Dialog result: ${result}`);
-    });
-  }
-
-  openLogin() {
-    const dialogRef = this.dialog.open(LoginComponent);
-
-    dialogRef.afterClosed().subscribe(result => {
-      console.log(`Dialog result: ${result}`);
-    });
-
   }
 }
