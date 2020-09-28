@@ -164,6 +164,9 @@
 
     button {
       color: black;
+      touch-action: none;
+      border: none;
+      background: none;
     }
   }
   

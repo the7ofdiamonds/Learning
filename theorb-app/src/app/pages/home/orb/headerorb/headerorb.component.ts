@@ -3,9 +3,6 @@ import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { ShopComponent } from '../../../shop/shop.component';
 import { AboutorbComponent } from '../../../home/orb/aboutorb/aboutorb.component';
 import { LoginComponent } from '../../../login/login.component';
-import { MatSnackBar } from '@angular/material/snack-bar';
-import { MatBottomSheet } from '@angular/material/bottom-sheet';
-
 
 @Component({
   selector: 'app-headerorb',
@@ -14,43 +11,21 @@ import { MatBottomSheet } from '@angular/material/bottom-sheet';
 })
 export class HeaderorbComponent {
 
-  constructor(public dialog: MatDialog, private _snackBar: MatSnackBar, private _bottomDialog: MatBottomSheet) { }
+  constructor(public dialog: MatDialog) { }
 
   isShown: boolean = false;
-  isHidden: boolean = false;
-
-  openHeader() {
-    if (this.isShown === false && this.isHidden === true) {
-      this.isShown = true;
-      this.isHidden = false;
-    }
-
-    if (this.isShown === false) {
-      this.isShown = true;
-    } else {
-      this.isShown = false;
-    }
-  }
+  isVisible: boolean = false;
 
   openORBShop() {
-    const dialogConfig = new MatDialogConfig();
-
-    dialogConfig.hasBackdrop = true;
-    dialogConfig.panelClass = 'custom-modalbox';
-
-    this.dialog.open(ShopComponent, dialogConfig);
+    this.dialog.open(ShopComponent);
   }
 
   openORBHeader() {
-    if (this.isShown === true && this.isHidden === false) {
-      this.isHidden = true;
+    if (this.isVisible === false) {
+      this.isVisible = true;
       this.isShown = false;
-    }
-
-    if (this.isHidden === false) {
-      this.isHidden = true;
     } else {
-      this.isHidden = false;
+      this.isVisible = false;
     }
   }
 
@@ -72,5 +47,13 @@ export class HeaderorbComponent {
     this.dialog.open(LoginComponent, dialogConfig);
   }
 
+  openHeader() {
+    if (this.isShown === false) {
+      this.isShown = true;
+      this.isVisible = false;
+    } else {
+      this.isShown = false;
+    }
+  }
 
 }

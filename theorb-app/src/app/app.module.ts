@@ -134,7 +134,7 @@ const config = {
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   bootstrap: [AppComponent],
-  entryComponents: [ShopComponent, ContactComponent, ContactorbComponent, QuoteComponent],
+  entryComponents: [ShopComponent, ContactComponent, ContactorbComponent],
   providers: [MatFormFieldModule,
     MatSelectModule, MatStepperModule, FormsModule, AuthGuard]
 })

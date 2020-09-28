@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
-import { HeaderComponent } from '../home/the7ofdiamonds/header/header.component';
-import { MatSnackBar } from '@angular/material/snack-bar';
-import { MatBottomSheet } from '@angular/material/bottom-sheet';
+import { HeaderorbComponent } from './orb/headerorb/headerorb.component';
+import { HeaderComponent } from './the7ofdiamonds/header/header.component';
 
 @Component({
   selector: 'app-home',
@@ -11,7 +10,7 @@ import { MatBottomSheet } from '@angular/material/bottom-sheet';
 })
 export class HomeComponent implements OnInit {
 
-  constructor(public dialog: MatDialog, private _snackBar: MatSnackBar, private _bottomDialog: MatBottomSheet) { }
+  constructor(public dialog: MatDialog) { }
   ngOnInit(): void {
   }
 
@@ -21,6 +20,7 @@ export class HomeComponent implements OnInit {
   openHeader() {
     if (this.isShown === false ) {
       this.isShown = true;
+      this.isVisible = false;
     } else {
       this.isShown = false;
     }
@@ -29,6 +29,7 @@ export class HomeComponent implements OnInit {
   openORBHeader() {
     if (this.isVisible === false) {
       this.isVisible = true;
+      this.isShown = false;
     } else {
       this.isVisible = false;
     }
