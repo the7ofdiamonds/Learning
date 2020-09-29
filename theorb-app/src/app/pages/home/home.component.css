@@ -25,6 +25,7 @@ mat-menu {
 button {
   background-color: white;
   border: none;
+  z-index: 1;
 }
 
 a:link {
@@ -88,9 +89,18 @@ a:visited {
 /* ORB */
 
 @media screen and (min-width: 1000px) {
-  button {
+  .t7odLogo button {
+    position: fixed;
     pointer-events: auto;
+    z-index: 2;
   }
+
+  .orbLogo button {
+    position: fixed;
+    pointer-events: auto;
+    z-index: 2;
+  }
+
 
   .logoLarge {
     display: block;

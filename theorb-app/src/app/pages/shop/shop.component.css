@@ -67,3 +67,29 @@ mat-card-title {
 font-weight: bold;
 text-align: center;
 }
+
+mat-card-header {
+  justify-content: center;
+}
+
+mat-card-actions {
+  display: flex;
+  justify-content: center;
+  margin: 8px 8px 8px 0;
+}
+
+button {
+  background-color: Red;
+  color: white;
+  cursor: pointer;
+  text-align: center;
+  box-sizing: border-box;
+  width: fit-content;
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+
+  -webkit-user-drag: none;
+  -webkit-tap-highlight-color: transparent;
+}

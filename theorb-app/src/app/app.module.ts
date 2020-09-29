@@ -8,6 +8,7 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatInputModule } from '@angular/material/input';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFireAuthModule } from '@angular/fire/auth';
+import { MatButtonModule } from '@angular/material/button';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './pages/home/the7ofdiamonds/header/header.component';
 import { HomeComponent } from './pages/home/home.component';
@@ -53,6 +54,12 @@ import { ReceiveComponent } from './pages/home/orb/manage/currency/receive/recei
 import { SendComponent } from './pages/home/orb/manage/currency/send/send.component';
 import { HttpClientModule } from '@angular/common/http';
 import { HeaderorbComponent } from './pages/home/orb/headerorb/headerorb.component';
+import { BoardGamesComponent } from './pages/shop/board-games/board-games.component';
+import { BooksComponent } from './pages/shop/books/books.component';
+import { HatsComponent } from './pages/shop/hats/hats.component';
+import { TShirtsComponent } from './pages/shop/t-shirts/t-shirts.component';
+import { LongSleevesComponent } from './pages/shop/long-sleeves/long-sleeves.component';
+import { BackpackComponent } from './pages/shop/backpack/backpack.component';
 
 const config = {
   apiKey: 'AIzaSyD1ub97o3TSNnW3NRFR0aEKk5u4pnR4wbE',
@@ -86,7 +93,8 @@ const config = {
     MatSnackBarModule,
     MatBottomSheetModule,
     MatStepperModule,
-    HttpClientModule
+    HttpClientModule,
+    MatButtonModule
   ],
   declarations: [
     AppComponent,
@@ -130,12 +138,18 @@ const config = {
     ReceiveComponent,
     SendComponent,
     ReceiveComponent,
-    HeaderorbComponent
+    HeaderorbComponent,
+    BoardGamesComponent,
+    BooksComponent,
+    HatsComponent,
+    TShirtsComponent,
+    LongSleevesComponent,
+    BackpackComponent
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   bootstrap: [AppComponent],
   entryComponents: [ShopComponent, ContactComponent, ContactorbComponent],
   providers: [MatFormFieldModule,
-    MatSelectModule, MatStepperModule, FormsModule, AuthGuard]
+    MatSelectModule, MatStepperModule, FormsModule, AuthGuard, MatButtonModule]
 })
 export class AppModule { }

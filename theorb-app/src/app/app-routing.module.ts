@@ -28,6 +28,13 @@ import { ManageComponent } from './pages/home/orb/manage/manage.component';
 import { TermsAndConditionsComponent } from './pages/home/orb/aboutorb/terms-and-conditions/terms-and-conditions.component';
 import { PrivacyComponent } from './pages/home/orb/aboutorb/privacy/privacy.component';
 import { HeaderComponent } from './pages/home/the7ofdiamonds/header/header.component';
+import { ServicesComponent } from './pages/home/the7ofdiamonds/services/services.component';
+import { BackpackComponent } from './pages/shop/backpack/backpack.component';
+import { BoardGamesComponent } from './pages/shop/board-games/board-games.component';
+import { BooksComponent } from './pages/shop/books/books.component';
+import { HatsComponent } from './pages/shop/hats/hats.component';
+import { LongSleevesComponent } from './pages/shop/long-sleeves/long-sleeves.component';
+import { TShirtsComponent } from './pages/shop/t-shirts/t-shirts.component';
 
 const redirectUnauthorizedToLogin = () => redirectUnauthorizedTo(['login']);
 const belongsToAccount = (next) => hasCustomClaim(`account-${next.params.id}`);
@@ -37,7 +44,14 @@ const routes: Routes = [
   { path: 'about', component: AboutComponent },  
   { path: 'about/t&c', component: TermsAndConditionsComponent },
   { path: 'about/privacy', component: PrivacyComponent },
+  { path: 'services', component: ServicesComponent },
   { path: 'shop', component: ShopComponent },
+  { path: 'shop/backpack', component: BackpackComponent },
+  { path: 'shop/board-games', component: BoardGamesComponent },
+  { path: 'shop/books', component: BooksComponent },
+  { path: 'shop/hats', component: HatsComponent },
+  { path: 'shop/long-sleeves', component: LongSleevesComponent },
+  { path: 'shop/t-shirts', component: TShirtsComponent },
   { path: 'login', component: LoginComponent },
   { path: 'login/welcome', component: WelcomeComponent, canActivate: [AngularFireAuthGuard], data: { authGuardPipe: redirectUnauthorizedToLogin } },
   { path: 'learn/read', component: ReadComponent, canActivate: [AngularFireAuthGuard], data: { authGuardPipe: redirectUnauthorizedToLogin } },

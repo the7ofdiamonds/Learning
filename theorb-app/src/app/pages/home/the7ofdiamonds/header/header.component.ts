@@ -5,6 +5,7 @@ import { ServicesComponent } from '../services/services.component';
 import { DesignComponent } from '../services/design/design.component';
 import { DevelopmentComponent } from '../services/development/development.component';
 import { ShopComponent } from '../../../shop/shop.component';
+import { Overlay, ScrollStrategy } from '@angular/cdk/overlay';
 
 @Component({
   selector: 'app-header',

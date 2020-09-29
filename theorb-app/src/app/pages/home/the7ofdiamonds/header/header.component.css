@@ -4,6 +4,7 @@
   
   mat-toolbar {
     display: none;
+    z-index: 1;
   }
   
   div.headerSmall {
