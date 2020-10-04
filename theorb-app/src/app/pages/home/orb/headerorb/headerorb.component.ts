@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
-import { ShopComponent } from '../../../shop/shop.component';
+import { ShopComponent } from '../../../home/thehouseforeverwins/shop/shop.component';
 import { AboutorbComponent } from '../../../home/orb/aboutorb/aboutorb.component';
 import { LoginComponent } from '../../../login/login.component';
 

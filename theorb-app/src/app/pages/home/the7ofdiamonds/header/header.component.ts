@@ -4,7 +4,7 @@ import { AboutComponent } from '../about/about.component';
 import { ServicesComponent } from '../services/services.component';
 import { DesignComponent } from '../services/design/design.component';
 import { DevelopmentComponent } from '../services/development/development.component';
-import { ShopComponent } from '../../../shop/shop.component';
+import { ShopComponent } from '../../../home/thehouseforeverwins/shop/shop.component';
 import { Overlay, ScrollStrategy } from '@angular/cdk/overlay';
 
 @Component({

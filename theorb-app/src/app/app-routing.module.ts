@@ -5,7 +5,7 @@ import { AboutComponent } from '../app/pages/home/the7ofdiamonds/about/about.com
 import { DesignComponent } from '../app/pages/home/the7ofdiamonds/services/design/design.component';
 import { DevelopmentComponent } from '../app/pages/home/the7ofdiamonds/services/development/development.component';
 import { ContactComponent } from '../app/pages/home/the7ofdiamonds/about/contact/contact.component';
-import { ShopComponent } from './pages/shop/shop.component';
+import { ShopComponent } from './pages/home/thehouseforeverwins/shop/shop.component';
 import { LoginComponent } from './pages/login/login.component';
 import { WelcomeComponent } from './pages/login/welcome/welcome.component';
 import { AngularFireAuthGuard, hasCustomClaim, redirectUnauthorizedTo, redirectLoggedInTo } from '@angular/fire/auth-guard';
@@ -29,12 +29,13 @@ import { TermsAndConditionsComponent } from './pages/home/orb/aboutorb/terms-and
 import { PrivacyComponent } from './pages/home/orb/aboutorb/privacy/privacy.component';
 import { HeaderComponent } from './pages/home/the7ofdiamonds/header/header.component';
 import { ServicesComponent } from './pages/home/the7ofdiamonds/services/services.component';
-import { BackpackComponent } from './pages/shop/backpack/backpack.component';
-import { BoardGamesComponent } from './pages/shop/board-games/board-games.component';
-import { BooksComponent } from './pages/shop/books/books.component';
-import { HatsComponent } from './pages/shop/hats/hats.component';
-import { LongSleevesComponent } from './pages/shop/long-sleeves/long-sleeves.component';
-import { TShirtsComponent } from './pages/shop/t-shirts/t-shirts.component';
+import { BackpackComponent } from './pages/home/thehouseforeverwins/shop/backpack/backpack.component';
+import { BoardGamesComponent } from './pages/home/thehouseforeverwins/shop/board-games/board-games.component';
+import { BooksComponent } from './pages/home/thehouseforeverwins/shop/books/books.component';
+import { HatsComponent } from './pages/home/thehouseforeverwins/shop/hats/hats.component';
+import { LongSleevesComponent } from './pages/home/thehouseforeverwins/shop/long-sleeves/long-sleeves.component';
+import { TShirtsComponent } from './pages/home/thehouseforeverwins/shop/t-shirts/t-shirts.component';
+import { CartComponent } from './pages/home/thehouseforeverwins/shop/cart/cart.component';
 
 const redirectUnauthorizedToLogin = () => redirectUnauthorizedTo(['login']);
 const belongsToAccount = (next) => hasCustomClaim(`account-${next.params.id}`);
@@ -51,7 +52,8 @@ const routes: Routes = [
   { path: 'shop/books', component: BooksComponent },
   { path: 'shop/hats', component: HatsComponent },
   { path: 'shop/long-sleeves', component: LongSleevesComponent },
-  { path: 'shop/t-shirts', component: TShirtsComponent },
+  { path: 'shop/t-shirts', component: TShirtsComponent },  
+  { path: 'shop/cart', component: CartComponent },
   { path: 'login', component: LoginComponent },
   { path: 'login/welcome', component: WelcomeComponent, canActivate: [AngularFireAuthGuard], data: { authGuardPipe: redirectUnauthorizedToLogin } },
   { path: 'learn/read', component: ReadComponent, canActivate: [AngularFireAuthGuard], data: { authGuardPipe: redirectUnauthorizedToLogin } },

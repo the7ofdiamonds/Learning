@@ -2,23 +2,14 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { AuthGuard } from './services/auth/auth.guard';
+import { AuthGuard } from './services/navigation/auth.guard';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatSelectModule } from '@angular/material/select';
 import { MatInputModule } from '@angular/material/input';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { MatButtonModule } from '@angular/material/button';
-import { AppComponent } from './app.component';
-import { HeaderComponent } from './pages/home/the7ofdiamonds/header/header.component';
-import { HomeComponent } from './pages/home/home.component';
-import { AboutComponent } from './pages/home/the7ofdiamonds/about/about.component';
-import { DesignComponent } from './pages/home/the7ofdiamonds/services/design/design.component';
-import { DevelopmentComponent } from './pages/home/the7ofdiamonds/services/development/development.component';
-import { ContactComponent } from './pages/home/the7ofdiamonds/about/contact/contact.component';
-import { ShopComponent } from './pages/shop/shop.component';
-import { LoginComponent } from './pages/login/login.component';
-
+import {MatIconModule} from '@angular/material/icon';
 import { MatStepperModule } from '@angular/material/stepper';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatDialogModule } from '@angular/material/dialog';
@@ -28,6 +19,17 @@ import { MatMenuModule } from '@angular/material/menu';
 import { MatCardModule } from '@angular/material/card';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatBottomSheetModule } from '@angular/material/bottom-sheet';
+import { HttpHeaders, HttpClientModule } from '@angular/common/http';
+
+import { AppComponent } from './app.component';
+import { HeaderComponent } from './pages/home/the7ofdiamonds/header/header.component';
+import { HomeComponent } from './pages/home/home.component';
+import { AboutComponent } from './pages/home/the7ofdiamonds/about/about.component';
+import { DesignComponent } from './pages/home/the7ofdiamonds/services/design/design.component';
+import { DevelopmentComponent } from './pages/home/the7ofdiamonds/services/development/development.component';
+import { ContactComponent } from './pages/home/the7ofdiamonds/about/contact/contact.component';
+import { ShopComponent } from './pages/home/thehouseforeverwins/shop/shop.component';
+import { LoginComponent } from './pages/login/login.component';
 import { CopyrightsComponent } from './pages/home/the7ofdiamonds/about/copyrights/copyrights.component';
 import { ServicesComponent } from './pages/home/the7ofdiamonds/services/services.component';
 import { AboutorbComponent } from './pages/home/orb/aboutorb/aboutorb.component';
@@ -52,14 +54,15 @@ import { AccountDetailComponent } from './pages/home/orb/manage/accounts/account
 import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component';
 import { ReceiveComponent } from './pages/home/orb/manage/currency/receive/receive.component';
 import { SendComponent } from './pages/home/orb/manage/currency/send/send.component';
-import { HttpClientModule } from '@angular/common/http';
 import { HeaderorbComponent } from './pages/home/orb/headerorb/headerorb.component';
-import { BoardGamesComponent } from './pages/shop/board-games/board-games.component';
-import { BooksComponent } from './pages/shop/books/books.component';
-import { HatsComponent } from './pages/shop/hats/hats.component';
-import { TShirtsComponent } from './pages/shop/t-shirts/t-shirts.component';
-import { LongSleevesComponent } from './pages/shop/long-sleeves/long-sleeves.component';
-import { BackpackComponent } from './pages/shop/backpack/backpack.component';
+import { BoardGamesComponent } from './pages/home/thehouseforeverwins/shop/board-games/board-games.component';
+import { BooksComponent } from './pages/home/thehouseforeverwins/shop/books/books.component';
+import { HatsComponent } from './pages/home/thehouseforeverwins/shop/hats/hats.component';
+import { TShirtsComponent } from './pages/home/thehouseforeverwins/shop/t-shirts/t-shirts.component';
+import { LongSleevesComponent } from './pages/home/thehouseforeverwins/shop/long-sleeves/long-sleeves.component';
+import { BackpackComponent } from './pages/home/thehouseforeverwins/shop/backpack/backpack.component';
+import { CheckoutComponent } from './pages/login/checkout/checkout.component';
+import { CartComponent } from './pages/home/thehouseforeverwins/shop/cart/cart.component';
 
 const config = {
   apiKey: 'AIzaSyD1ub97o3TSNnW3NRFR0aEKk5u4pnR4wbE',
@@ -144,7 +147,9 @@ const config = {
     HatsComponent,
     TShirtsComponent,
     LongSleevesComponent,
-    BackpackComponent
+    BackpackComponent,
+    CheckoutComponent,
+    CartComponent
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   bootstrap: [AppComponent],

@@ -1,4 +1,3 @@
-
 const firebaseConfig = {
   apiKey: 'AIzaSyAPAZWDdVaO5C0roWiGSetzNG5uLd-qNHc',
   authDomain: 'theorb-f3a48.firebaseapp.com',
@@ -12,5 +11,6 @@ const firebaseConfig = {
 export const environment = {
   constructor(){
   },
-  production: false
+  production: false,
+  FULLFILLMENT_URL: "https://api.printful.com/store/products"
 };
