@@ -8,8 +8,9 @@ import { Product } from '../../models/thehouseforeverwins/product';
   providedIn: 'root'
 })
 export class ProductsService {
-  TEST_URL = 'https://api.printful.com/store/products';
+ 
   FULLFILLMENT_URL = environment.FULLFILLMENT_URL;
+
   constructor(private http: HttpClient) { }
 
   apiKey = 'rzz83f74-w61p-5661:7d5s-7iahctbus4bj';

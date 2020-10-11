@@ -9,13 +9,15 @@ import { Product } from 'src/app/models/thehouseforeverwins/product';
 })
 export class LongSleevesComponent implements OnInit {
 
-  products: Product;
-
+  prod: Product;
+  products: Product[];
+  productDetail: any[];
   constructor(private productsService: ProductsService) { }
 
   ngOnInit() {
-    this.productsService.getLongsleeves().subscribe((products) => {
-      this.products = products.result.sync_product;
+    this.productsService.getLongsleeves().subscribe((prods) => {
+      this.products = prods.result.sync_variants;
+      console.log(this.products)
     });
   }
 

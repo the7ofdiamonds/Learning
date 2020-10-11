@@ -70,6 +70,7 @@ text-align: center;
 
 mat-card-header {
   justify-content: center;
+  padding: 10px;
 }
 
 mat-card-actions {
@@ -79,8 +80,6 @@ mat-card-actions {
 }
 
 button {
-  background-color: Red;
-  color: white;
   cursor: pointer;
   text-align: center;
   box-sizing: border-box;
@@ -92,4 +91,9 @@ button {
 
   -webkit-user-drag: none;
   -webkit-tap-highlight-color: transparent;
+}
+
+img {
+  height: 400px;
+  width: auto;
 }

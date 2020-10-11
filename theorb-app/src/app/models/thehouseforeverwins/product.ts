@@ -1,12 +1,18 @@
 export interface Product {
-    "id": number,
-    "name": "Test",
-    "sku": string,
-    "thumbnail_url": string,
-    "retail_price": number,
-    "quantity": number,
-    "length": string,
-    "width": string,
-    "height": string,
-    "weight": string
+    id: number,
+    name: string,
+    image: string,
+    quantity: number,
+}
+
+export interface ProductDetail {
+    id: number,
+    name: string,
+    image: string,
+    quantity: number,
+    retail_price: string,
+    sku: number,
+    sync_product_id: number,
+    variant_id: number,
+    warehouse_product_variant_id: number
 }

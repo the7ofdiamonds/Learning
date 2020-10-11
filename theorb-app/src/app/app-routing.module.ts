@@ -36,24 +36,25 @@ import { HatsComponent } from './pages/home/thehouseforeverwins/shop/hats/hats.c
 import { LongSleevesComponent } from './pages/home/thehouseforeverwins/shop/long-sleeves/long-sleeves.component';
 import { TShirtsComponent } from './pages/home/thehouseforeverwins/shop/t-shirts/t-shirts.component';
 import { CartComponent } from './pages/home/thehouseforeverwins/shop/cart/cart.component';
+import { ProductComponent } from './pages/home/thehouseforeverwins/shop/product/product.component';
 
 const redirectUnauthorizedToLogin = () => redirectUnauthorizedTo(['login']);
 const belongsToAccount = (next) => hasCustomClaim(`account-${next.params.id}`);
 
 const routes: Routes = [
-  { path: '', component: HomeComponent },
-  { path: 'about', component: AboutComponent },  
+  { path: 'about', component: AboutComponent },
   { path: 'about/t&c', component: TermsAndConditionsComponent },
   { path: 'about/privacy', component: PrivacyComponent },
   { path: 'services', component: ServicesComponent },
-  { path: 'shop', component: ShopComponent },
+  { path: 'shop/product/:id', component: ProductComponent },
   { path: 'shop/backpack', component: BackpackComponent },
   { path: 'shop/board-games', component: BoardGamesComponent },
   { path: 'shop/books', component: BooksComponent },
   { path: 'shop/hats', component: HatsComponent },
   { path: 'shop/long-sleeves', component: LongSleevesComponent },
-  { path: 'shop/t-shirts', component: TShirtsComponent },  
+  { path: 'shop/t-shirts', component: TShirtsComponent },
   { path: 'shop/cart', component: CartComponent },
+  { path: 'shop', component: ShopComponent },
   { path: 'login', component: LoginComponent },
   { path: 'login/welcome', component: WelcomeComponent, canActivate: [AngularFireAuthGuard], data: { authGuardPipe: redirectUnauthorizedToLogin } },
   { path: 'learn/read', component: ReadComponent, canActivate: [AngularFireAuthGuard], data: { authGuardPipe: redirectUnauthorizedToLogin } },
@@ -67,7 +68,8 @@ const routes: Routes = [
   { path: 'manage/currency/receive', component: ReceiveComponent },
   { path: 'manage/debt', component: DebtComponent, canActivate: [AngularFireAuthGuard], data: { authGuardPipe: redirectUnauthorizedToLogin } },
   { path: 'manage/insurance', component: InsuranceComponent, canActivate: [AngularFireAuthGuard], data: { authGuardPipe: redirectUnauthorizedToLogin } },
-  { path: 'invest/paper-assets', component: PaperAssetsComponent, canActivate: [AngularFireAuthGuard], data: { authGuardPipe: redirectUnauthorizedToLogin } }
+  { path: 'invest/paper-assets', component: PaperAssetsComponent, canActivate: [AngularFireAuthGuard], data: { authGuardPipe: redirectUnauthorizedToLogin } },
+  { path: '', component: HomeComponent }
 ];
 
 

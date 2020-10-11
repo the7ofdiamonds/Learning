@@ -9,10 +9,10 @@ import { MatInputModule } from '@angular/material/input';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { MatButtonModule } from '@angular/material/button';
-import {MatIconModule} from '@angular/material/icon';
+import { MatIconModule } from '@angular/material/icon';
 import { MatStepperModule } from '@angular/material/stepper';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatDialogModule } from '@angular/material/dialog';
+import { MatDialog, MatDialogModule, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { MatSliderModule } from '@angular/material/slider';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatMenuModule } from '@angular/material/menu';
@@ -63,6 +63,7 @@ import { LongSleevesComponent } from './pages/home/thehouseforeverwins/shop/long
 import { BackpackComponent } from './pages/home/thehouseforeverwins/shop/backpack/backpack.component';
 import { CheckoutComponent } from './pages/login/checkout/checkout.component';
 import { CartComponent } from './pages/home/thehouseforeverwins/shop/cart/cart.component';
+import { ProductComponent } from './pages/home/thehouseforeverwins/shop/product/product.component';
 
 const config = {
   apiKey: 'AIzaSyD1ub97o3TSNnW3NRFR0aEKk5u4pnR4wbE',
@@ -149,11 +150,12 @@ const config = {
     LongSleevesComponent,
     BackpackComponent,
     CheckoutComponent,
-    CartComponent
+    CartComponent,
+    ProductComponent
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   bootstrap: [AppComponent],
-  entryComponents: [ShopComponent, ContactComponent, ContactorbComponent],
+  entryComponents: [ShopComponent, ContactComponent, ContactorbComponent, ProductComponent],
   providers: [MatFormFieldModule,
     MatSelectModule, MatStepperModule, FormsModule, AuthGuard, MatButtonModule]
 })

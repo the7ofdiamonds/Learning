@@ -1,0 +1,14 @@
+<section class="card-list">
+  <mat-card *ngFor="let variant of variants">
+    <mat-card-header>
+      <mat-card-title>{{variant.name}}</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <img mat-card-image [src]="variant.product.image">
+      <p>${{variant.retail_price}}</p>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-raised-button (click)="addtoCart()">ADD TO CART</button>
+    </mat-card-actions>
+  </mat-card>
+</section>
