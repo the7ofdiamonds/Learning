@@ -1,10 +1,12 @@
-<div class="modal" id="modal-tangibleassets">
-  <div class="modal-content">
-    <h4><strong>TANGIBLE ASSETS</strong></h4>
+<mat-card>
+  <mat-toolbar mat-tab-nav-bar>
+    <a mat-tab-link class="investmentPropertiesHeader" (click)='openInvestmentProperties();'>
+      INVESTMENT PROPERTIES</a>
+    <a mat-tab-link class="businessesHeader" (click)='openBusinessesForSale();'>
+      BUSINESSES</a>
+  </mat-toolbar>
+
+  <div class="content">
     <p>Acquire investment properties and businesses.</p>
-    <nav class="orbNav">
-      <strong><a href="/invest/tangibleassets/investmentproperties.html">INVESTMENT PROPERTIES</a></strong>
-      <strong><a href="/invest/tangibleassets/businesses.html">BUSINESS</a></strong>
-    </nav>
   </div>
-</div>
+</mat-card>

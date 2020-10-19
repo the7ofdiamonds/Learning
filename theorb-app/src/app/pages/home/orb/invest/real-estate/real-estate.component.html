@@ -1,10 +1,13 @@
-<div class="modal" id="modal-realestate">
-  <div class="modal-content">
-    <h4><strong>REAL ESTATE</strong></h4>
+<mat-card>
+  <mat-toolbar mat-tab-nav-bar>
+    <a mat-tab-link class="commercialHeader" routerLink="/invest/real-estate/commercial">
+      <strong>COMMERCIAL</strong>
+    </a>
+    <a mat-tab-link class="residentialHeader" routerLink="/invest/real-estate/residential">
+      <strong>RESIDENTIAL</strong>
+    </a>
+  </mat-toolbar>
+  <div class="content">
     <p>Purchase residential and commercial real estate.</p>
-    <nav class="orbNav">
-      <strong><a href="/invest/realestate/residential.html">RESIDENTIAL</a></strong>
-      <strong><a href="/invest/realestate/commercial.html">COMMERCIAL</a></strong>
-    </nav>
   </div>
-</div>
+</mat-card>

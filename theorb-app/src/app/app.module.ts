@@ -20,6 +20,7 @@ import { MatCardModule } from '@angular/material/card';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatBottomSheetModule } from '@angular/material/bottom-sheet';
 import { HttpHeaders, HttpClientModule } from '@angular/common/http';
+import { CommonModule } from '@angular/common';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './pages/home/the7ofdiamonds/header/header.component';
@@ -55,15 +56,31 @@ import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.com
 import { ReceiveComponent } from './pages/home/orb/manage/currency/receive/receive.component';
 import { SendComponent } from './pages/home/orb/manage/currency/send/send.component';
 import { HeaderorbComponent } from './pages/home/orb/headerorb/headerorb.component';
-import { BoardGamesComponent } from './pages/home/thehouseforeverwins/shop/board-games/board-games.component';
-import { BooksComponent } from './pages/home/thehouseforeverwins/shop/books/books.component';
-import { HatsComponent } from './pages/home/thehouseforeverwins/shop/hats/hats.component';
-import { TShirtsComponent } from './pages/home/thehouseforeverwins/shop/t-shirts/t-shirts.component';
-import { LongSleevesComponent } from './pages/home/thehouseforeverwins/shop/long-sleeves/long-sleeves.component';
-import { BackpackComponent } from './pages/home/thehouseforeverwins/shop/backpack/backpack.component';
 import { CheckoutComponent } from './pages/login/checkout/checkout.component';
-import { CartComponent } from './pages/home/thehouseforeverwins/shop/cart/cart.component';
 import { ProductComponent } from './pages/home/thehouseforeverwins/shop/product/product.component';
+import { InvestmentPropertyComponent } from './pages/home/orb/invest/tangible-assets/investment-properties/investment-property/investment-property.component';
+import { BusinessComponent } from './pages/home/orb/invest/tangible-assets/businesses-for-sale/business/business.component';
+import { CommercialPropertiesComponent } from './pages/home/orb/invest/real-estate/commercial-properties/commercial-properties.component';
+import { ResidentialPropertiesComponent } from './pages/home/orb/invest/real-estate/residential-properties/residential-properties.component';
+import { BusinessesForSaleComponent } from './pages/home/orb/invest/tangible-assets/businesses-for-sale/businesses-for-sale.component';
+import { InvestmentPropertiesComponent } from './pages/home/orb/invest/tangible-assets/investment-properties/investment-properties.component';
+import { CommercialPropertyComponent } from './pages/home/orb/invest/real-estate/commercial-properties/commercial-property/commercial-property.component';
+import { StocksComponent } from './pages/home/orb/invest/paper-assets/stocks/stocks.component';
+import { BondsComponent } from './pages/home/orb/invest/paper-assets/bonds/bonds.component';
+import { LiensComponent } from './pages/home/orb/invest/paper-assets/liens/liens.component';
+import { NotesComponent } from './pages/home/orb/invest/paper-assets/notes/notes.component';
+import { BondComponent } from './pages/home/orb/invest/paper-assets/bonds/bond/bond.component';
+import { LienComponent } from './pages/home/orb/invest/paper-assets/liens/lien/lien.component';
+import { NoteComponent } from './pages/home/orb/invest/paper-assets/notes/note/note.component';
+import { StockComponent } from './pages/home/orb/invest/paper-assets/stocks/stock/stock.component';
+import { AutoFinanceComponent } from './pages/home/orb/manage/debt/auto-finance/auto-finance.component';
+import { BusinessFinanceComponent } from './pages/home/orb/manage/debt/business-finance/business-finance.component';
+import { MortgageComponent } from './pages/home/orb/manage/debt/mortgage/mortgage.component';
+import { AutoInsuranceComponent } from './pages/home/orb/manage/insurance/auto-insurance/auto-insurance.component';
+import { BusinessInsuranceComponent } from './pages/home/orb/manage/insurance/business-insurance/business-insurance.component';
+import { LifeInsuranceComponent } from './pages/home/orb/manage/insurance/life-insurance/life-insurance.component';
+import { PropertyInsuranceComponent } from './pages/home/orb/manage/insurance/property-insurance/property-insurance.component';
+import { ResidentialPropertyComponent } from './pages/home/orb/invest/real-estate/residential-properties/residential-property/residential-property.component';
 
 const config = {
   apiKey: 'AIzaSyD1ub97o3TSNnW3NRFR0aEKk5u4pnR4wbE',
@@ -98,7 +115,8 @@ const config = {
     MatBottomSheetModule,
     MatStepperModule,
     HttpClientModule,
-    MatButtonModule
+    MatButtonModule,
+    CommonModule
   ],
   declarations: [
     AppComponent,
@@ -143,20 +161,37 @@ const config = {
     SendComponent,
     ReceiveComponent,
     HeaderorbComponent,
-    BoardGamesComponent,
-    BooksComponent,
-    HatsComponent,
-    TShirtsComponent,
-    LongSleevesComponent,
-    BackpackComponent,
     CheckoutComponent,
-    CartComponent,
-    ProductComponent
+    ProductComponent,
+    InvestmentPropertyComponent,
+    BusinessComponent,
+    CommercialPropertiesComponent,
+    ResidentialPropertiesComponent,
+    BusinessesForSaleComponent,
+    InvestmentPropertiesComponent,
+    CommercialPropertyComponent,
+    StocksComponent,
+    BondsComponent,
+    LiensComponent,
+    NotesComponent,
+    BondComponent,
+    LienComponent,
+    NoteComponent,
+    StockComponent,
+    AutoFinanceComponent,
+    BusinessFinanceComponent,
+    MortgageComponent,
+    AutoInsuranceComponent,
+    BusinessInsuranceComponent,
+    LifeInsuranceComponent,
+    PropertyInsuranceComponent,
+    ResidentialPropertyComponent
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   bootstrap: [AppComponent],
   entryComponents: [ShopComponent, ContactComponent, ContactorbComponent, ProductComponent],
   providers: [MatFormFieldModule,
-    MatSelectModule, MatStepperModule, FormsModule, AuthGuard, MatButtonModule]
+    MatSelectModule, MatStepperModule, FormsModule, AuthGuard, MatButtonModule, { provide: MAT_DIALOG_DATA, useValue: {} },
+    { provide: MatDialogRef, useValue: {} }]
 })
 export class AppModule { }

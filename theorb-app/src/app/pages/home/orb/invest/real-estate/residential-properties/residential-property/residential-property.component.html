@@ -1,0 +1,14 @@
+<section>
+  <div class="photo">
+    <img [src]="property.Media[0].MediaURL">
+  </div>
+  <div *ngFor='let photo of gallery' class="gallery">
+    <img [src]="photo.MediaURL" alt="">
+  </div>
+  <div class="description">
+    <p>Price: {{property.ListPrice}}</p>
+    <p>Bedrooms: {{property.BedroomsTotal}}</p>
+    <p>Bathrooms: {{property.BathroomsFull}}</p>
+    <p>Size: {{property.LotSizeSquareFeet}}</p>
+  </div>
+</section>

@@ -1,4 +1,7 @@
 <h1>Currency</h1>
-<a mat-raised-button [routerLink]="['./send']">
+<a mat-raised-button (click)='openSend();'>
   SEND
+</a>
+<a mat-raised-button (click)='openReceive();'>
+  RECIEVE
 </a>

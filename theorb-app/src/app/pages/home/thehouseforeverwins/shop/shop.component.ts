@@ -4,12 +4,6 @@ import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { Product, ProductDetail } from 'src/app/models/thehouseforeverwins/product';
 import { ProductsService } from 'src/app/services/thehouseforeverwins/products.service';
 import { ProductDetailService } from 'src/app/services/thehouseforeverwins/product-detail.service';
-import { BackpackComponent } from './backpack/backpack.component';
-import { BoardGamesComponent } from './board-games/board-games.component';
-import { BooksComponent } from './books/books.component';
-import { HatsComponent } from './hats/hats.component';
-import { LongSleevesComponent } from './long-sleeves/long-sleeves.component';
-import { TShirtsComponent } from './t-shirts/t-shirts.component';
 import { idTokenResult } from '@angular/fire/auth-guard';
 import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
@@ -70,65 +64,4 @@ export class ShopComponent implements OnInit {
 
     return this.dialog.open(ProductComponent, dialogConfig)
   }
-
-  openProduct(id: number) {
-    const dialogConfig = new MatDialogConfig();
-
-    dialogConfig.hasBackdrop = true;
-    dialogConfig.panelClass = 'custom-modalbox';
-
-    return this.dialog.open(ProductComponent, {
-      data: this.product,
-    });
-  }
-
-  openBooks() {
-    const dialogConfig = new MatDialogConfig();
-
-    dialogConfig.hasBackdrop = true;
-    dialogConfig.panelClass = 'custom-modalbox';
-
-    this.dialog.open(BooksComponent, dialogConfig);
-  }
-
-  openBackpack() {
-    const dialogConfig = new MatDialogConfig();
-
-    dialogConfig.hasBackdrop = true;
-    dialogConfig.panelClass = 'custom-modalbox';
-
-    this.dialog.open(BackpackComponent, dialogConfig);
-  }
-
-  openHats() {
-    const dialogConfig = new MatDialogConfig();
-
-    dialogConfig.hasBackdrop = true;
-    dialogConfig.panelClass = 'custom-modalbox';
-
-    this.dialog.open(HatsComponent, dialogConfig);
-  }
-
-  openLongSleeves() {
-    const dialogConfig = new MatDialogConfig();
-
-    dialogConfig.hasBackdrop = true;
-    dialogConfig.panelClass = 'custom-modalbox';
-
-    this.dialog.open(LongSleevesComponent, dialogConfig);
-  }
-
-  openTShirts() {
-    const dialogConfig = new MatDialogConfig();
-
-    dialogConfig.hasBackdrop = true;
-    dialogConfig.panelClass = 'custom-modalbox';
-
-    this.dialog.open(TShirtsComponent, dialogConfig);
-  }
-
-  addtoCart() {
-    console.log('Added to cart')
-  }
-
 }

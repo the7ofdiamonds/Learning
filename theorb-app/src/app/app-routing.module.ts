@@ -29,14 +29,10 @@ import { TermsAndConditionsComponent } from './pages/home/orb/aboutorb/terms-and
 import { PrivacyComponent } from './pages/home/orb/aboutorb/privacy/privacy.component';
 import { HeaderComponent } from './pages/home/the7ofdiamonds/header/header.component';
 import { ServicesComponent } from './pages/home/the7ofdiamonds/services/services.component';
-import { BackpackComponent } from './pages/home/thehouseforeverwins/shop/backpack/backpack.component';
-import { BoardGamesComponent } from './pages/home/thehouseforeverwins/shop/board-games/board-games.component';
-import { BooksComponent } from './pages/home/thehouseforeverwins/shop/books/books.component';
-import { HatsComponent } from './pages/home/thehouseforeverwins/shop/hats/hats.component';
-import { LongSleevesComponent } from './pages/home/thehouseforeverwins/shop/long-sleeves/long-sleeves.component';
-import { TShirtsComponent } from './pages/home/thehouseforeverwins/shop/t-shirts/t-shirts.component';
-import { CartComponent } from './pages/home/thehouseforeverwins/shop/cart/cart.component';
 import { ProductComponent } from './pages/home/thehouseforeverwins/shop/product/product.component';
+import { CommercialPropertiesComponent } from './pages/home/orb/invest/real-estate/commercial-properties/commercial-properties.component';
+import { ResidentialPropertiesComponent } from './pages/home/orb/invest/real-estate/residential-properties/residential-properties.component';
+import { ResidentialPropertyComponent } from './pages/home/orb/invest/real-estate/residential-properties/residential-property/residential-property.component';
 
 const redirectUnauthorizedToLogin = () => redirectUnauthorizedTo(['login']);
 const belongsToAccount = (next) => hasCustomClaim(`account-${next.params.id}`);
@@ -47,13 +43,6 @@ const routes: Routes = [
   { path: 'about/privacy', component: PrivacyComponent },
   { path: 'services', component: ServicesComponent },
   { path: 'shop/product/:id', component: ProductComponent },
-  { path: 'shop/backpack', component: BackpackComponent },
-  { path: 'shop/board-games', component: BoardGamesComponent },
-  { path: 'shop/books', component: BooksComponent },
-  { path: 'shop/hats', component: HatsComponent },
-  { path: 'shop/long-sleeves', component: LongSleevesComponent },
-  { path: 'shop/t-shirts', component: TShirtsComponent },
-  { path: 'shop/cart', component: CartComponent },
   { path: 'shop', component: ShopComponent },
   { path: 'login', component: LoginComponent },
   { path: 'login/welcome', component: WelcomeComponent, canActivate: [AngularFireAuthGuard], data: { authGuardPipe: redirectUnauthorizedToLogin } },
@@ -68,7 +57,12 @@ const routes: Routes = [
   { path: 'manage/currency/receive', component: ReceiveComponent },
   { path: 'manage/debt', component: DebtComponent, canActivate: [AngularFireAuthGuard], data: { authGuardPipe: redirectUnauthorizedToLogin } },
   { path: 'manage/insurance', component: InsuranceComponent, canActivate: [AngularFireAuthGuard], data: { authGuardPipe: redirectUnauthorizedToLogin } },
+  { path: 'invest/real-estate', component: RealEstateComponent, canActivate: [AngularFireAuthGuard], data: { authGuardPipe: redirectUnauthorizedToLogin } },
+  { path: 'invest/real-estate/commercial', component: CommercialPropertiesComponent, canActivate: [AngularFireAuthGuard], data: { authGuardPipe: redirectUnauthorizedToLogin } },
+  { path: 'invest/real-estate/residential', component: ResidentialPropertiesComponent, canActivate: [AngularFireAuthGuard], data: { authGuardPipe: redirectUnauthorizedToLogin } },
+  { path: 'invest/real-estate/residential/:id', component: ResidentialPropertyComponent, canActivate: [AngularFireAuthGuard], data: { authGuardPipe: redirectUnauthorizedToLogin } },
   { path: 'invest/paper-assets', component: PaperAssetsComponent, canActivate: [AngularFireAuthGuard], data: { authGuardPipe: redirectUnauthorizedToLogin } },
+  { path: 'invest/tangible-assets', component: TangibleAssetsComponent, canActivate: [AngularFireAuthGuard], data: { authGuardPipe: redirectUnauthorizedToLogin } },
   { path: '', component: HomeComponent }
 ];
 

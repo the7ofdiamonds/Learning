@@ -9,12 +9,9 @@ import { TangibleAssetsComponent } from './tangible-assets/tangible-assets.compo
   templateUrl: './invest.component.html',
   styleUrls: ['./invest.component.css']
 })
-export class InvestComponent implements OnInit {
+export class InvestComponent {
 
   constructor(public dialog: MatDialog) { }
-
-  ngOnInit(): void {
-  }
 
   openRealEstate() {
     const dialogConfig = new MatDialogConfig();

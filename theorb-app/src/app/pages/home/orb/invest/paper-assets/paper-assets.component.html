@@ -1,12 +1,16 @@
-<div class="modal" id="modal-paperassets">
-  <div class="modal-content">
-    <h4><strong>PAPER ASSETS</strong></h4>
+<mat-card>
+  <mat-toolbar mat-tab-nav-bar>
+    <a mat-tab-link class="stocksHeader" (click)='openStocks();'>
+      <strong>STOCKS</strong></a>
+    <a mat-tab-link class="bondsHeader" (click)='openBonds();'>
+      <strong>BONDS</strong></a>
+    <a mat-tab-link class="liensHeader" (click)='openLiens();'>
+      <strong>LIENS</strong></a>
+    <a mat-tab-link class="notesHeader" (click)='openNotes();'>
+      <strong>NOTES</strong></a>
+  </mat-toolbar>
+
+  <div class="content">
     <p>Invest in stocks, bonds, liens, and notes.</p>
-    <nav class="orbNav">
-      <strong><a href="/invest/paperassets/stocks.html">STOCKS</a></strong>
-      <strong><a href="/invest/paperassets/bonds.html">BONDS</a></strong>
-      <strong><a href="/invest/paperassets/liens.html">LIENS</a></strong>
-      <strong><a href="/invest/paperassets/notes.html">NOTES</a></strong>
-    </nav>
   </div>
-</div>
+</mat-card>

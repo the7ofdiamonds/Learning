@@ -1,0 +1,47 @@
+img {
+  width: 500px;
+  height: 500px;
+}
+
+section {
+  background-color: black;
+  color: white;
+  display: flex;
+  flex-direction: row;
+  align-content: space-between;
+  align-items: flex-start;
+}
+
+section > div.photo {
+  width: fit-content;
+  flex: 5;
+  order: 1;
+  height: fit-content;
+  margin: 0px;
+  padding: 0px;
+  border-style: solid;
+  border-color: limegreen;
+}
+
+section > div.description {
+  width: 25%;
+  flex: 1;
+  order: 3;
+}
+
+section > div.gallery {
+  width: fit-content;
+  flex: 1;
+  order: 2;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-content: space-between;
+}
+
+section > div.gallery > img {
+  width: 100px;
+  height: 100px;
+  margin: 1px;
+  padding: 0px;
+}
