@@ -20,15 +20,6 @@ export class HeaderorbComponent {
     this.dialog.open(ShopComponent);
   }
 
-  openORBHeader() {
-    if (this.isVisible === false) {
-      this.isVisible = true;
-      this.isShown = false;
-    } else {
-      this.isVisible = false;
-    }
-  }
-
   openAboutORB() {
     const dialogConfig = new MatDialogConfig();
 
@@ -47,13 +38,5 @@ export class HeaderorbComponent {
     this.dialog.open(LoginComponent, dialogConfig);
   }
 
-  openHeader() {
-    if (this.isShown === false) {
-      this.isShown = true;
-      this.isVisible = false;
-    } else {
-      this.isShown = false;
-    }
-  }
-
 }
+

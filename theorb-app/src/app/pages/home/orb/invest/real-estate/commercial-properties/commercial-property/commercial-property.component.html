@@ -1,1 +1,38 @@
-<p>commercial-property works!</p>
+<section>
+    <mat-card class="address">
+      <p>{{property.StreetNumber}} {{property.StreetName}} {{property.StreetSuffix}} {{property.StateOrProvince}}, {{property.City}}</p>
+    </mat-card>
+  
+    <div class="gallery">
+      <img [src]="property.Media[0].MediaURL">
+    </div>
+  
+    <mat-card class="description">
+      <p class="price">{{property.ListPrice | currency}}</p>
+      <p>Bedrooms: {{property.BedroomsTotal}}</p>
+      <p>Bathrooms: {{property.BathroomsFull}}</p>
+      <p>Parking:</p>
+      <p>Lot: {{property.LotSizeSquareFeet}}</p>
+      <p>Price/sqft:</p>
+      <p>Type:</p>
+      <p>Year Built:</p>
+      <p>Heating</p>
+      <p>Cooling</p>
+    </mat-card>
+  
+    <mat-card class="monthly-cost">
+      <p>Total Estimated Monthly Cost: $1,500</p>
+      <p>Principal & interest</p>
+      <p>Mortgage insurance</p>
+      <p>Property taxes</p>
+      <p>Home insurance</p>
+      <p>HOA fees</p>
+      <p>Utilities</p>
+    </mat-card>
+  
+    <div class="action">
+      <mat-button mat-raised-button>Get Pre-Approved</mat-button>
+      <mat-button mat-raised-button>Contact Agent</mat-button>
+    </div>
+  </section>
+  

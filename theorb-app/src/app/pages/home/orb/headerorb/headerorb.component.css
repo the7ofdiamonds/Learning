@@ -1,115 +1,39 @@
-.logoLarge {
-    display: none;
-  }
-  
   mat-toolbar {
-    display: none;
-  }
-  
-  div.headerSmall {
-    position: sticky;
-    top: 0px;
-    border: none;
-    background-color: white;
-    width: 100%;
-    height: 100px;
-    box-sizing: border-box;
-    z-index: 1;
-  }
-  
-  mat-menu {
     display: flex;
     flex-direction: column;
+    background-color: black;
+    height: fit-content;
   }
-  
-  button {
-    background-color: white;
-    border: none;
-  }
-  
-  a:link {
-    color: black;
-    background-color: transparent;
-    text-decoration: none;
-  }
-  
-  a:hover {
-    text-decoration: none;
-    border-bottom: solid;
-  }
-  
-  a:visited {
-    color: black;
-    background-color: transparent;
-    text-decoration: underline;
-  }
-  
-  .active {
-    background-color: red;
-    text-decoration: underline;
-  }
-  
-  /* Services */
-  .services {
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .social a img {
-    display: block;
-    width: 100px;
-    height: 100px;
-    padding: 10px;
-  }
-  
-  .basic {
-    flex: 1;
+
+  .orbHeader {
     order: 1;
   }
-  
-  .custom {
-    flex: 1;
+
+  .aboutOrbHeader {
     order: 2;
   }
-  
-  .enterprise {
-    flex: 1;
+
+  .loginHeader {
     order: 3;
   }
-  
-  /* Services */
-  
-  /* ORB */
-  
-  a:visited {
-    color: white;
+
+  .shopHeader {
+    order: 4;
   }
-  
-  /* ORB */
-  
-  @media screen and (min-width: 1000px) {
-    button {
-      pointer-events: auto;
-    }
-  
-    .logoLarge {
-      display: block;
-    }
-  
-    .headerSmall {
-      display: none;
-    }
-  
-    /* Navigation */
+
+  .the7ofdiamondsHeader {
+    order: 5;
+  }
+
+  @media screen and (min-width: 700px) {
     mat-toolbar {
       position: sticky;
       top: 0px;
       box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
       display: flex;
       flex-direction: row;
-      justify-content: center;
+      justify-content: space-evenly;
       align-items: center;
-      text-align: center;
       width: 100%;
       height: 100px;
       background-color: black;
@@ -119,65 +43,29 @@
       text-decoration: none;
       border-bottom: solid 1px transparent;
     }
-  
-    mat-toolbar span:hover {
-      width: 100%;
-      height: 100px;
-      text-decoration: underline;
-  
-      border-bottom: solid 1px transparent;
+
+    a {
+      color: white;
+      width: 250px;
     }
-  
-    .aboutheader {
-      flex: 1;
-      flex-basis: 0;
+
+    .aboutOrbHeader {
       order: 1;
     }
-  
-    .servicesheader {
-      flex: 1;
-      flex-basis: 0;
+
+    .loginHeader {
       order: 2;
     }
-  
-    .the7ofdiamondsheader {
-      flex: 1;
-      flex-basis: 0;
+
+    .orbHeader {
       order: 3;
     }
-  
-    .shopheader {
-      flex: 1;
-      flex-basis: 0;
+
+    .shopHeader {
       order: 4;
     }
-  
-    .orbheader {
-      flex: 1;
-      flex-basis: 0;
+
+    .the7ofdiamondsHeader {
       order: 5;
     }
-  
-    /* Navigation */
-  
-    .aboutorbheader {
-      flex: 1;
-      flex-basis: 0;
-      order: 1;
-    }
-  
-    .loginheader {
-      flex: 1;
-      flex-basis: 0;
-      order: 2;
-    }
   }
-  
-  .orbheader {
-    order: 3;
-  }
-  
-  .the7ofdiamondsheader {
-    order: 5;
-  }
-  

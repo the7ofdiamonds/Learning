@@ -3,6 +3,7 @@ import { ListingService } from 'src/app/services/orb/listing.service';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { ResidentialPropertyComponent } from './residential-property/residential-property.component';
 
+
 @Component({
   selector: 'app-residential-properties',
   templateUrl: './residential-properties.component.html',
