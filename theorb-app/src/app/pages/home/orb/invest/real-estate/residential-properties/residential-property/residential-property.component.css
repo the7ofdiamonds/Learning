@@ -1,47 +1,76 @@
-img {
-  width: 500px;
-  height: 500px;
-}
-
-section {
+mat-card {
   background-color: black;
+  margin-bottom: 5px;
+  padding: 12px;
   color: white;
   display: flex;
-  flex-direction: row;
-  align-content: space-between;
-  align-items: flex-start;
-}
-
-section > div.photo {
-  width: fit-content;
-  flex: 5;
-  order: 1;
-  height: fit-content;
-  margin: 0px;
-  padding: 0px;
-  border-style: solid;
-  border-color: limegreen;
-}
-
-section > div.description {
-  width: 25%;
-  flex: 1;
-  order: 3;
-}
-
-section > div.gallery {
-  width: fit-content;
-  flex: 1;
-  order: 2;
-  display: flex;
-  flex-direction: column;
   flex-wrap: wrap;
-  align-content: space-between;
+  flex-direction: column;
 }
 
-section > div.gallery > img {
-  width: 100px;
-  height: 100px;
-  margin: 1px;
-  padding: 0px;
+mat-card p {
+  margin: 2px;
+}
+
+
+div.gallery img {
+  width: 100%;
+  height: auto;
+}
+
+
+div.action {
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  justify-content: center;
+  grid-template-areas: 'action';
+}
+
+mat-button {
+  background-color: black;
+  color: white;
+  margin: 10px;
+  padding: 10px;
+  width: 25%;
+  height: fit-content;
+}
+
+@media (min-width: 600px) {
+  section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto auto;
+    grid-template-areas:
+      "address address"
+      "gallery description"
+      "monthly-cost action";
+  }
+
+  mat-card.address {
+    grid-area: address;
+  }
+
+  div.gallery {
+    grid-area: gallery;
+  }
+
+  mat-card.description {
+    margin-left: 10px;
+    grid-area: description;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+  }
+
+  mat-card.monthly-cost {
+    grid-area: monthly-cost;
+  }
+
+  div.action {
+    grid-area: action;
+    display: flex;
+    align-items: center;
+    justify-items: center;
+  }
 }

@@ -21,6 +21,7 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatBottomSheetModule } from '@angular/material/bottom-sheet';
 import { HttpHeaders, HttpClientModule } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
+import {MatTableModule} from '@angular/material/table';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './pages/home/the7ofdiamonds/header/header.component';
@@ -81,6 +82,8 @@ import { BusinessInsuranceComponent } from './pages/home/orb/manage/insurance/bu
 import { LifeInsuranceComponent } from './pages/home/orb/manage/insurance/life-insurance/life-insurance.component';
 import { PropertyInsuranceComponent } from './pages/home/orb/manage/insurance/property-insurance/property-insurance.component';
 import { ResidentialPropertyComponent } from './pages/home/orb/invest/real-estate/residential-properties/residential-property/residential-property.component';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatSortModule } from '@angular/material/sort';
 
 const config = {
   apiKey: 'AIzaSyD1ub97o3TSNnW3NRFR0aEKk5u4pnR4wbE',
@@ -116,7 +119,10 @@ const config = {
     MatStepperModule,
     HttpClientModule,
     MatButtonModule,
-    CommonModule
+    CommonModule,
+    MatTableModule,
+    MatPaginatorModule,
+    MatSortModule
   ],
   declarations: [
     AppComponent,
