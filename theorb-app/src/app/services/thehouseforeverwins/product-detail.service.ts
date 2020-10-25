@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
 import { Observable } from 'rxjs';
 import { Product, ProductDetail } from '../../models/thehouseforeverwins/product';
-import { ShopComponent } from 'src/app/pages/home/thehouseforeverwins/shop/shop.component';
+import { ShopComponent } from 'src/app/pages/thehouseforeverwins/shop/shop.component';
 
 @Injectable({
   providedIn: 'root'

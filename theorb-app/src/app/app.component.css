@@ -1,3 +1,125 @@
-a {
-  border-bottom: solid 1px transparent;
+#the7ofdiamonds mat-toolbar {
+  flex-direction: column;
+  background-color: white;
+  height: fit-content;
+}
+
+.the7ofdiamondsHeader {
+  order: 1;
+}
+
+.aboutHeader {
+  order: 2;
+}
+
+.servicesHeader {
+  order: 3
+}
+
+.shopHeader {
+  order: 4;
+}
+
+#the7ofdiamonds .orbHeader {
+  order: 5;
+}
+
+.the7ofdiamonds a {
+  color: black;
+}
+
+#orb mat-toolbar {
+  background-color: black;
+  flex-direction: column;
+  height: fit-content;  
+}
+
+.orb a {
+  color: white;
+}
+
+.orbHeader {
+  order: 1;
+}
+
+.aboutOrbHeader {
+  order: 2;
+}
+
+.loginHeader {
+  order: 3;
+}
+
+.shopHeader {
+  order: 4;
+}
+
+#orb .the7ofdiamondsHeader {
+  order: 5;
+}
+
+@media screen and (min-width: 700px) {
+  #the7ofdiamonds mat-toolbar {
+    flex-direction: row;
+    height: 100px;
+    background-color: white;
+    color: black;
+  }
+
+  .the7ofdiamonds a {
+    color: black;
+    width: 250px;
+  }
+
+  .aboutheader {
+    order: 1;
+  }
+
+  .servicesHeader {
+    order: 2;
+  }
+
+  #the7ofdiamonds .the7ofdiamondsHeader {
+    order: 3;
+  }
+
+  .shopHeader {
+    order: 4;
+  }
+
+  #the7ofdiamonds .orbHeader {
+    order: 5;
+  }
+
+  #orb mat-toolbar {
+    flex-direction: row;
+    background-color: black;
+    color: white;
+    height: 100px;
+  }
+
+  .orb a {
+    color: white;
+    width: 250px;
+  }
+
+  .aboutOrbHeader {
+    order: 1;
+  }
+
+  .loginHeader {
+    order: 2;
+  }
+
+  #orb .orbHeader {
+    order: 3;
+  }
+
+  .shopHeader {
+    order: 4;
+  }
+
+  #orb .the7ofdiamondsHeader {
+    order: 5;
+  }
 }
