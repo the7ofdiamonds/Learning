@@ -14,16 +14,19 @@ import { Overlay, ScrollStrategy } from '@angular/cdk/overlay';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
+  public page: string = "";
+  public isShown: boolean;
+  public isVisible: boolean;
+  panelOpenState = false;
 
   constructor(public dialog: MatDialog) { }
   ngOnInit(): void {
+    this.isShown = false;
+    this.isVisible = false;
   }
 
-  isShown: boolean = false;
-  isVisible: boolean = false;
-
   openHeader() {
-    if (this.isShown === false ) {
+    if (this.isShown === false) {
       this.isShown = true;
       this.isVisible = false;
     } else {

@@ -19,11 +19,11 @@ export class RealEstateComponent {
     dialogConfig.backdropClass
     dialogConfig.panelClass
 
-    const dialogRef = this.dialog.open(CommercialPropertiesComponent, dialogConfig);
+    // const dialogRef = this.dialog.open(CommercialPropertiesComponent, dialogConfig);
 
-    dialogRef.afterClosed().subscribe(result => {
-      console.log(`Dialog result: ${result}`);
-    });
+    // dialogRef.afterClosed().subscribe(result => {
+      console.log('Commercial');
+    // });
   }
 
   openResidential() {
@@ -33,11 +33,11 @@ export class RealEstateComponent {
     dialogConfig.backdropClass
     dialogConfig.panelClass
 
-    const dialogRef = this.dialog.open(ResidentialPropertiesComponent, dialogConfig);
+    // const dialogRef = this.dialog.open(ResidentialPropertiesComponent, dialogConfig);
 
-    dialogRef.afterClosed().subscribe(result => {
-      console.log(`Dialog result: ${result}`);
-    });
+    // dialogRef.afterClosed().subscribe(result => {
+      console.log('Residential');
+    // });
   }
 
 }

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ListingService } from 'src/app/services/orb/listing.service';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { CommercialPropertyComponent } from './commercial-property/commercial-property.component';
+import { AppComponent } from '../../../../../app.component'
 
 
 @Component({
@@ -16,7 +17,7 @@ export class CommercialPropertiesComponent implements OnInit {
   id: number;
 
 
-  constructor(private listingService: ListingService, public dialog: MatDialog) { }
+  constructor(private listingService: ListingService, public dialog: MatDialog, public appComponent: AppComponent) { }
   i: number = 0;
   Media: any[];
 
@@ -26,7 +27,7 @@ export class CommercialPropertiesComponent implements OnInit {
       
       console.log(this.properties)
     })
-
+    this.appComponent.page = "commercial";
   }
 
   openProperty(id: number) {
