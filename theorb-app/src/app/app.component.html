@@ -1,9 +1,14 @@
-<section id="the7ofdiamonds">
+<div class="background">
   <button class="t7odLogo" type="checkbox" (click)="openHeader()">
     <img src="assets/image2.jpg">
   </button>
+  <button class="orbLogo" type="checkbox" (click)="openORBHeader()">
+    <img src="assets/black-orb-ft.jpg">
+  </button>
+</div>
 
-  <mat-toolbar mat-tab-nav-bar *ngIf='isShown' class="the7ofdiamonds">
+<header id="the7ofdiamonds" class="the7ofdiamonds" *ngIf='isShown'>
+  <mat-toolbar mat-tab-nav-bar>
     <a mat-tab-link class="the7ofdiamondsHeader" (click)='openHeader()'>
       <h1>
         THE7OFDIAMONDS.TECH
@@ -22,75 +27,228 @@
       <h2>ORB</h2>
     </a>
   </mat-toolbar>
-</section>
+</header>
 
-<section id="orb">
-  <button class="orbLogo" type="checkbox" (click)="openORBHeader()">
-    <img src="assets/black-orb-ft.jpg" style="height: 100px; width: 100px;">
-  </button>
-
+<header id="orb" *ngIf='isVisible'>
   <mat-accordian class="orb">
     <mat-expansion-panel hideToggle>
-      <mat-expansion-panel-header>
-        <div>
-          <h2>Search</h2>
+      <mat-expansion-panel-header [ngSwitch]="header">
+        <div *ngSwitchCase="'tangibleassets'">
+          <h2>TANGIBLE ASSETS</h2>
+        </div>
+        <div *ngSwitchCase="'paperassets'">
+          <h2>PAPER ASSETS</h2>
+        </div>
+        <div *ngSwitchCase="'commercial'">
+          <h2>COMMERCIAL</h2>
+        </div>
+        <div *ngSwitchCase="'residential'">
+          <h2>RESIDENTIAL</h2>
+        </div>
+        <div *ngSwitchCase="'insurance'">
+          <h2>INSURANCE</h2>
+        </div>
+        <div *ngSwitchCase="'debt'">
+          <h2>DEBT</h2>
+        </div>
+        <div *ngSwitchCase="'currency'">
+          <h2>CURRENCY</h2>
+        </div>
+        <div *ngSwitchCase="'accounts'">
+          <h2>ACCOUNTS</h2>
+        </div>
+        <div *ngSwitchCase="'simulation'">
+          <h2>SIMULATION</h2>
+        </div>
+        <div *ngSwitchCase="'read'">
+          <h2>READ</h2>
         </div>
       </mat-expansion-panel-header>
       <mat-expansion-panel-body>
-        <div mat-tab-nav-bar>
-          <a mat-tab-link class="commercialHeader" routerLink="/invest/real-estate/commercial">
-            <h2>COMMERCIAL</h2>
-          </a>
-          <a mat-tab-link class="residentialHeader" routerLink="/invest/real-estate/residential">
-            <h2>RESIDENTIAL</h2>
-          </a>
+        <div [ngSwitch]="page">
+          <div *ngSwitchCase="'tangibleassets'">
+            <button mat-raised-button>
+              <a routerLink="/invest/tangible-assets/investment-properties">
+                <h2>INVESTMENT PROPERTIES</h2>
+              </a>
+            </button>
+            <button mat-raised-button>
+              <a routerLink="/invest/tangible-assets/businesses">
+                <h2>BUSINESSES</h2>
+              </a>
+            </button>
+          </div>
+          <div *ngSwitchCase="'paperassets'">
+            <button mat-raised-button>
+              <a routerLink="/invest/paper-assets/notes">
+                <h2>NOTES</h2>
+              </a>
+            </button>
+            <button mat-raised-button>
+              <a routerLink="/invest/paper-assets/liens">
+                <h2>LIENS</h2>
+              </a>
+            </button>
+            <button mat-raised-button>
+              <a routerLink="/invest/paper-assets/stocks">
+                <h2>STOCKS</h2>
+              </a>
+            </button>
+            <button mat-raised-button>
+              <a routerLink="/invest/paper-assets/bonds">
+                <h2>BONDS</h2>
+              </a>
+            </button>
+          </div>
+          <div *ngSwitchCase="'realestate'">
+            <button mat-raised-button>
+              <a routerLink="/invest/real-estate/commercial">
+                <h2>COMMERCIAL</h2>
+              </a>
+            </button>
+            <button mat-raised-button>
+              <a routerLink="/invest/real-estate/residential">
+                <h2>RESIDENTIAL</h2>
+              </a>
+            </button>
+          </div>
+          <div *ngSwitchCase="'insurance'">
+            <button mat-raised-button>
+              <a routerLink="/manage/insurance/life">
+                <h2>LIFE</h2>
+              </a>
+            </button>
+            <button mat-raised-button>
+              <a routerLink="/manage/insurance/property">
+                <h2>PROPERTY</h2>
+              </a>
+            </button>
+            <button mat-raised-button>
+              <a routerLink="/manage/insurance/auto">
+                <h2>AUTO</h2>
+              </a>
+            </button>
+            <button mat-raised-button>
+              <a routerLink="/manage/insurance/business">
+                <h2>BUSINESS</h2>
+              </a>
+            </button>
+          </div>
+          <div *ngSwitchCase="'debt'">
+            <button mat-raised-button>
+              <a routerLink="/manage/debt/personal">
+                <h2>PERSONAL</h2>
+              </a>
+            </button>
+            <button mat-raised-button>
+              <a routerLink="/manage/debt/business">
+                <h2>BUSINESS</h2>
+              </a>
+            </button>
+            <button mat-raised-button>
+              <a routerLink="/manage/debt/mortgage">
+                <h2>MORTGAGE</h2>
+              </a>
+            </button>
+            <button mat-raised-button>
+              <a routerLink="/manage/debt/auto">
+                <h2>AUTO</h2>
+              </a>
+            </button>
+          </div>
+          <div *ngSwitchCase="'currency'">
+            <button mat-raised-button>
+              <a routerLink="/manage/currency/send">
+                <h2>SEND</h2>
+              </a>
+            </button>
+            <button mat-raised-button>
+              <a routerLink="/manage/currency/receive">
+                <h2>RECIEVE</h2>
+              </a>
+            </button>
+          </div>
         </div>
-        <div mat-tab-nav-bar>
-          <a class="realestateHeader">
-            <h2>REAL ESTATE</h2>
-          </a>
-          <a class="paperHeader">
-            <h2>PAPER ASSETS</h2>
-          </a>
-          <a class="tangibleHeader">
-            <h2>TANGIBLE ASSETS</h2>
-          </a>
+        <div [ngSwitch]="section">
+          <div *ngSwitchCase="'learn'">
+            <button mat-raised-button (click)="openRead()">
+              <h2>READ</h2>
+            </button>
+            <button mat-raised-button (click)="openSimulation()">
+              <h2>SIMULATION</h2>
+            </button>
+          </div>
+          <div *ngSwitchCase="'manage'">
+            <button mat-raised-button (click)="openAccounts()">
+              <h2>ACCOUNTS</h2>
+            </button>
+            <button mat-raised-button (click)="openCurrency()">
+              <h2>CURRENCY</h2>
+            </button>
+            <button mat-raised-button (click)="openDebt()">
+              <h2>DEBT</h2>
+            </button>
+            <button mat-raised-button (click)="openInsurance()">
+              <h2>INSURANCE</h2>
+            </button>
+          </div>
+          <div *ngSwitchCase="'invest'">
+            <button mat-raised-button (click)="openRealEstate()">
+              <h2>REAL ESTATE</h2>
+            </button>
+            <button mat-raised-button (click)="openPaperAssets()">
+              <h2>PAPER ASSETS</h2>
+            </button>
+            <button mat-raised-button (click)="openTangibleAssets()">
+              <h2>TANGIBLE ASSETS</h2>
+            </button>
+          </div>
         </div>
-        <div mat-tab-nav-bar>
-          <a mat-tab-link class="learnHeader">
+        <div *ngIf="loggedIn">
+          <button mat-raised-button class="learnHeader" (click)="openLearn()">
             <h2>LEARN</h2>
-          </a>
-          <a mat-tab-link class="manageHeader">
+          </button>
+          <button mat-raised-button class="manageHeader" (click)="openManage()">
             <h2>MANAGE</h2>
-          </a>
-          <a mat-tab-link class="investHeader">
+          </button>
+          <button mat-raised-button class="investHeader" (click)="openInvest()">
             <h2>INVEST</h2>
-          </a>
+          </button>
         </div>
-        <div mat-tab-nav-bar>
-          <a mat-tab-link class="orbheader" (click)="openORBHeader()">
-            <strong>
-              <h1>ORB</h1>
-            </strong>
-          </a>
-          <a mat-tab-link class="aboutorbheader" (click)="openAboutORB()">
-            <h2>ABOUT</h2>
-          </a>
-          <a mat-tab-link class="shopheader" (click)="openShop()">
-            <h2>SHOP</h2>
-          </a>
-          <a mat-tab-link class="loginheader" (click)="openLogin()">
-            <h2>LOG IN</h2>
-          </a>
-          <a mat-tab-link class="the7ofdiamondsheader" (click)='openHeader();'>
-            <h2>
-              THE7OFDIAMONDS.TECH
-            </h2>
-          </a>
+        <div>
+          <button mat-raised-button class="orbHeader">
+            <a (click)="openORBHeader()">
+              <strong>
+                <h1>ORB</h1>
+              </strong>
+            </a>
+          </button>
+          <button mat-raised-button class="aboutorbHeader">
+            <a mat-tab-link (click)="openAboutORB()">
+              <h2>ABOUT</h2>
+            </a>
+          </button>
+          <button mat-raised-button class="loginHeader">
+            <a mat-tab-link (click)="openLogin()">
+              <h2>LOG IN</h2>
+            </a>
+          </button>
+          <button mat-raised-button class="shopHeader">
+            <a mat-tab-link routerLink="/shop">
+              <h2>SHOP</h2>
+            </a>
+          </button>
+          <button mat-raised-button class="the7ofdiamondsHeader">
+            <a mat-tab-link (click)='openHeader();'>
+              <h2>
+                THE7OFDIAMONDS.TECH
+              </h2>
+            </a>
+          </button>
         </div>
       </mat-expansion-panel-body>
     </mat-expansion-panel>
   </mat-accordian>
-</section>
+</header>
 
 <router-outlet></router-outlet>

@@ -3,6 +3,7 @@ import { MatDialog, MatDialogConfig, MatDialogRef, MAT_DIALOG_DATA } from '@angu
 import { AutoFinanceComponent } from './auto-finance/auto-finance.component';
 import { BusinessFinanceComponent } from './business-finance/business-finance.component';
 import { MortgageComponent } from './mortgage/mortgage.component';
+import { AppComponent } from '../../../../app.component'
 
 @Component({
   selector: 'app-debt',
@@ -11,7 +12,11 @@ import { MortgageComponent } from './mortgage/mortgage.component';
 })
 export class DebtComponent {
 
-  constructor(public dialog: MatDialog) { }
+  constructor(public dialog: MatDialog, public appComponent: AppComponent) { }
+
+  ngOnInit() {
+    this.appComponent.header = "debt";
+  }
 
   openAuto() {
     const dialogConfig = new MatDialogConfig();

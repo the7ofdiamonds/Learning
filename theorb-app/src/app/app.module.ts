@@ -80,6 +80,7 @@ import { ResidentialPropertyComponent } from './pages/orb/invest/real-estate/res
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
 import {MatExpansionModule} from '@angular/material/expansion';
+import { PersonalDebtComponent } from './personal-debt/personal-debt.component';
 
 const config = {
   apiKey: 'AIzaSyD1ub97o3TSNnW3NRFR0aEKk5u4pnR4wbE',
@@ -183,7 +184,8 @@ const config = {
     BusinessInsuranceComponent,
     LifeInsuranceComponent,
     PropertyInsuranceComponent,
-    ResidentialPropertyComponent
+    ResidentialPropertyComponent,
+    PersonalDebtComponent
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   bootstrap: [AppComponent],

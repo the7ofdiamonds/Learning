@@ -27,7 +27,10 @@ export class CommercialPropertiesComponent implements OnInit {
       
       console.log(this.properties)
     })
-    this.appComponent.page = "commercial";
+    this.appComponent.header = "commercial";
+    this.appComponent.page = "realestate";
+    this.appComponent.section = "invest";
+    this.appComponent.isVisible = true;
   }
 
   openProperty(id: number) {

@@ -4,15 +4,23 @@ import { StocksComponent } from './stocks/stocks.component';
 import { BondsComponent } from './bonds/bonds.component';
 import { LiensComponent } from './liens/liens.component';
 import { NotesComponent } from './notes/notes.component';
+import { AppComponent } from '../../../../app.component'
 
 @Component({
   selector: 'app-paper-assets',
   templateUrl: './paper-assets.component.html',
   styleUrls: ['./paper-assets.component.css']
 })
-export class PaperAssetsComponent {
+export class PaperAssetsComponent implements OnInit {
 
-  constructor(public dialog: MatDialog) { }
+  constructor(public dialog: MatDialog, public appComponent: AppComponent) { }
+
+  ngOnInit() {
+    this.appComponent.header = "paperassets";
+    this.appComponent.page = "paperassets";
+    this.appComponent.section = "invest";
+    this.appComponent.isVisible = true;
+  }
 
   openLiens() {
     const dialogConfig = new MatDialogConfig();

@@ -4,6 +4,7 @@ import { AutoInsuranceComponent } from './auto-insurance/auto-insurance.componen
 import { BusinessInsuranceComponent } from './business-insurance/business-insurance.component';
 import { LifeInsuranceComponent } from './life-insurance/life-insurance.component';
 import { PropertyInsuranceComponent } from './property-insurance/property-insurance.component';
+import { AppComponent } from '../../../../app.component'
 
 @Component({
   selector: 'app-insurance',
@@ -12,7 +13,14 @@ import { PropertyInsuranceComponent } from './property-insurance/property-insura
 })
 export class InsuranceComponent {
 
-  constructor(public dialog: MatDialog) { }
+  constructor(public dialog: MatDialog, public appComponent: AppComponent) { }
+
+  ngOnInit() {
+    this.appComponent.header = "insurance";
+    this.appComponent.page = "insurance";
+    this.appComponent.section = "manage";
+    this.appComponent.isVisible = true;
+  }
 
   openAuto() {
     const dialogConfig = new MatDialogConfig();

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AppComponent } from '../../../../../app.component'
 
 @Component({
   selector: 'app-auto-insurance',
@@ -7,9 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AutoInsuranceComponent implements OnInit {
 
-  constructor() { }
+  constructor(public appComponent: AppComponent) { }
 
   ngOnInit(): void {
+    this.appComponent.header = "autoinsurance";
+    this.appComponent.page = "insurance";
+    this.appComponent.section = "manage";
+    this.appComponent.isVisible = true;
   }
 
 }

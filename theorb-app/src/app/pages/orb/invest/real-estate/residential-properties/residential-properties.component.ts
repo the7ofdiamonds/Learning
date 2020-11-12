@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ListingService } from 'src/app/services/orb/listing.service';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { ResidentialPropertyComponent } from './residential-property/residential-property.component';
+import { AppComponent } from '../../../../../app.component'
 
 @Component({
   selector: 'app-residential-properties',
@@ -14,7 +15,7 @@ export class ResidentialPropertiesComponent implements OnInit {
   id: number;
   
 
-  constructor(private listingService: ListingService, public dialog: MatDialog) { }
+  constructor(private listingService: ListingService, public dialog: MatDialog, public appComponent: AppComponent) { }
   Media: any[];
 
   ngOnInit() {
@@ -23,6 +24,11 @@ export class ResidentialPropertiesComponent implements OnInit {
 
       console.log(this.properties)
     })
+    
+    this.appComponent.header = "residential";
+    this.appComponent.page = "realestate";
+    this.appComponent.section = "invest";
+    this.appComponent.isVisible = true;
   }
 
   openProperty(id: number) {

@@ -14,7 +14,11 @@ import { Overlay, ScrollStrategy } from '@angular/cdk/overlay';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
+  public header: string = "";
   public page: string = "";
+  public section: string = "";
+  notSelected = true;
+  loggedIn = true;
   public isShown: boolean;
   public isVisible: boolean;
   panelOpenState = false;
@@ -61,15 +65,6 @@ export class AppComponent implements OnInit {
     this.dialog.open(ServicesComponent, dialogConfig);
   }
 
-  openShop() {
-    const dialogConfig = new MatDialogConfig();
-
-    dialogConfig.hasBackdrop = true;
-    dialogConfig.panelClass = 'custom-modalbox';
-
-    this.dialog.open(ShopComponent, dialogConfig);
-  }
-
   openAboutORB() {
     const dialogConfig = new MatDialogConfig();
 
@@ -88,4 +83,51 @@ export class AppComponent implements OnInit {
     this.dialog.open(LoginComponent, dialogConfig);
   }
 
+  openLearn() {
+    this.section = "learn";
+  }
+
+  openManage() {
+    this.section = "manage";
+  }
+
+  openInvest() {
+    this.section = "invest";
+  }
+
+  openRead() {
+    this.page = "read";
+  }
+
+  openSimulation() {
+    this.page = "simulation";
+  }
+
+  openAccounts() {
+    this.page = "accounts";
+  }
+
+  openCurrency() {
+    this.page = "currency";
+  }
+
+  openDebt() {
+    this.page = "debt";
+  }
+
+  openInsurance() {
+    this.page = "insurance";
+  }
+
+  openRealEstate() {
+    this.page = "realestate";
+  }
+
+  openPaperAssets() {
+    this.page = "paperassets";
+  }
+
+  openTangibleAssets() {
+    this.page = "tangibleassets";
+  }
 }

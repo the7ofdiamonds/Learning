@@ -1,11 +1,35 @@
-#the7ofdiamonds mat-toolbar {
-  flex-direction: column;
-  background-color: white;
-  height: fit-content;
+.background {
+  top: 0;
+  z-index: 0;
+  position: fixed;
 }
 
-.the7ofdiamondsHeader {
+.background img {
+  width: 100px;
+  height: 100px;
+}
+
+header {
+  width: 100%;
+  position: sticky;
+  top: 0px;
+  box-shadow: 0px 8px 16px 0px #00000033;
+  height: fit-content;
+  z-index: 2;
+}
+
+/* THE7OFDIAMONDS */
+mat-toolbar {
+  background-color: white;
+  color: black;
+  height: fit-content;
+  position: flex;
+  flex-direction: column;
+}
+
+.the7ofdiamondsHeader h1 {
   order: 1;
+  color: black;
 }
 
 .aboutHeader {
@@ -28,42 +52,94 @@
   color: black;
 }
 
-.orb mat-toolbar {
+/* ORB */
+#orb mat-toolbar {
   background-color: black;
-  flex-direction: column;
-  height: fit-content;
 }
 
-.orb a {
+mat-expansion-panel {
+  background: black;
   color: white;
 }
 
-.orbHeader {
-  order: 1;
+mat-expansion-panel-header {
+  display: flex;
+  height: 100px;
+  flex-direction: column;
 }
 
-.aboutOrbHeader {
-  order: 2;
+mat-expansion-panel-header div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  width: 100%;
 }
 
-.loginHeader {
-  order: 3;
+mat-expansion-panel-body {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-content: center;
+  height: fit-content;
+  justify-content: space-evenly;
+  overflow: hidden;
+  width: 100%;
+  margin-top: 20px;
 }
 
-.shopHeader {
-  order: 4;
+mat-expansion-panel-body div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 100%;
+  padding: 10px;
 }
 
-#orb .the7ofdiamondsHeader {
+mat-expansion-panel-body div button h2,
+h1 {
+  color: white;
+  margin: 5px;
+}
+
+mat-expansion-panel-body div button {
+  background-color: black;
+  box-shadow: 0px 8px 16px 0px rgba(255, 255, 255, 0.2);
+  flex: 1;
+}
+
+mat-expansion-panel-header div button a h2,
+h1 {
+  color: white;
+  margin: 5px;
+}
+
+mat-expansion-panel-header div button {
+  background-color: black;
+  box-shadow: 0px 8px 16px 0px rgba(255, 255, 255, 0.2);
+  flex: 1;
+}
+
+mat-expansion-panel-body div button.the7ofdiamondsHeader {
   order: 5;
+}  
+
+mat-expansion-panel-body div {
+  display: flex;
+  flex-direction: column;
+  border-color: rgb(14, 133, 50);
+  border-style: solid;
 }
 
 @media screen and (min-width: 700px) {
-  #the7ofdiamonds mat-toolbar {
-    flex-direction: row;
+  header {
     height: 100px;
-    background-color: white;
-    color: black;
+  }
+
+  mat-toolbar {
+    flex-direction: row;
+    height: 6.25rem;
   }
 
   .the7ofdiamonds a {
@@ -92,102 +168,57 @@
   }
 
   /* ORB */
-  .mat-expansion-panel {
-    background: black;
-    color: white;
-    min-height: 100px;
+  #orb mat-toolbar {
+    height: 100px;
+    flex-direction: row;
   }
 
-  ::ng-deep .mat-expansion-panel-header div {
-    margin-top: 50px;
-    display: flex;
+  mat-expansion-panel-header {
+    height: 100px;
     flex-direction: row;
-    justify-content: center;
-    align-content: center;
-    width: 100%;
+  }
+
+  mat-expansion-panel-header div {
+    flex-direction: row;
   }
 
   mat-expansion-panel-body {
-    display: flex;
     flex-direction: row;
-    flex-wrap: wrap;
-    align-items: center;
-    height: fit-content;
-    justify-content: space-evenly;
-    background-color: green;
   }
 
   mat-expansion-panel-body div {
-    display: flex;
     flex-direction: row;
-    align-items: center;
-    width: 100%;
-    height: fit-content;
-    justify-items: space-evenly;
   }
 
-  .aboutOrbHeader {
-    order: 1;
-    width: 250px;
+  mat-expansion-panel-body div button a h2,
+  h1 {
+    margin: 5px;
   }
 
-  .loginHeader {
-    order: 2;
-    width: 250px;
+  mat-expansion-panel-header div button a h2,
+  h1 {
+    margin: 5px;
   }
 
-  #orb .orbHeader {
+  mat-expansion-panel-body div button.orbHeader {
     order: 3;
-    width: 250px;
   }
-
-  .shopHeader {
+  
+  mat-expansion-panel-body div button.aboutOrbHeader {
+    order: 1;
+    border-color: blue;
+    border-style: solid;
+  }
+  
+  mat-expansion-panel-body div button.loginHeader {
+    order: 2;
+  }
+  
+  mat-expansion-panel-body div button.shopHeader {
     order: 4;
-    width: 250px;
   }
-
-  #orb .the7ofdiamondsHeader {
+  
+  mat-expansion-panel-body div button.the7ofdiamondsHeader {
     order: 5;
-    width: 250px;
-  }
-
-  ::ng-deep .mat-expansion-panel-body div .commercialHeader {
-    order: 1;
-    flex: 1;
-  }
-
-  ::ng-deep .mat-expansion-panel-body div .residentialHeader {
-    order: 2;
-    flex: 1;
-  }
-
-  ::ng-deep .mat-expansion-panel-body div .realestateHeader {
-    order: 1;
-    flex: 1;
-  }
-
-  ::ng-deep .mat-expansion-panel-body div .paperHeader {
-    order: 2;
-    flex: 1;
-  }
-
-  ::ng-deep .mat-expansion-panel-body div .tangibleHeader {
-    order: 3;
-    flex: 1;
-  }
-
-  ::ng-deep .mat-expansion-panel-body div .learnHeader {
-    order: 1;
-    flex: 1;
-  }
-
-  ::ng-deep .mat-expansion-panel-body div .manageHeader {
-    order: 2;
-    flex: 1;
-  }
-
-  ::ng-deep .mat-expansion-panel-body div .investHeader {
-    order: 3;
-    flex: 1;
-  }
+  }  
 }

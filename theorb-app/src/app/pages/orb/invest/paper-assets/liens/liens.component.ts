@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AppComponent } from '../../../../../app.component'
 
 @Component({
   selector: 'app-liens',
@@ -7,9 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LiensComponent implements OnInit {
 
-  constructor() { }
+  constructor(public appComponent: AppComponent) { }
 
   ngOnInit(): void {
+    this.appComponent.header = "liens";
+    this.appComponent.page = "paperassets";
+    this.appComponent.section = "invest";
+    this.appComponent.isVisible = true;
   }
 
 }
