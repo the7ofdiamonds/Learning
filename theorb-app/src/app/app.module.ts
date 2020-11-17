@@ -80,7 +80,8 @@ import { ResidentialPropertyComponent } from './pages/orb/invest/real-estate/res
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
 import {MatExpansionModule} from '@angular/material/expansion';
-import { PersonalDebtComponent } from './personal-debt/personal-debt.component';
+import { PersonalDebtComponent } from './pages/orb/manage/debt/personal-debt/personal-debt.component';
+import { Ng2CarouselamosModule } from 'ng2-carouselamos';
 
 const config = {
   apiKey: 'AIzaSyD1ub97o3TSNnW3NRFR0aEKk5u4pnR4wbE',
@@ -120,7 +121,9 @@ const config = {
     MatTableModule,
     MatPaginatorModule,
     MatSortModule,
-    MatExpansionModule
+    MatExpansionModule,
+    Ng2CarouselamosModule,
+    MatIconModule
   ],
   declarations: [
     AppComponent,
@@ -192,6 +195,6 @@ const config = {
   entryComponents: [ShopComponent, ContactComponent, ContactorbComponent, ProductComponent],
   providers: [MatFormFieldModule,
     MatSelectModule, MatStepperModule, FormsModule, AuthGuard, MatButtonModule, { provide: MAT_DIALOG_DATA, useValue: {} },
-    { provide: MatDialogRef, useValue: {} }]
+    { provide: MatDialogRef, useValue: {} }, ResidentialPropertyComponent]
 })
 export class AppModule { }

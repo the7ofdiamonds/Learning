@@ -1,7 +1,7 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
-import { Observable } from 'rxjs';
+import { Observable, BehaviorSubject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -26,6 +26,6 @@ export class ListingService {
   }
 
   getProperty(id: string): Observable<any> {
-    return this.http.request('GET', 'https://api.bridgedataoutput.com/api/v2/OData/test/Property('+`${id}`+')?access_token=6baca547742c6f96a6ff71b138424f21')
+    return this.http.request('GET', 'https://api.bridgedataoutput.com/api/v2/OData/test/Property(' + `${id}` + ')?access_token=6baca547742c6f96a6ff71b138424f21')
   }
 }

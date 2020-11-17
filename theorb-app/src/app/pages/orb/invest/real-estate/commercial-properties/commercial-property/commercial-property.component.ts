@@ -1,5 +1,5 @@
 import { Component, OnInit, Inject } from '@angular/core';
-import { ListingService } from '../../../../../../services/orb/listing.service';
+import { ListingService } from '../../../../../../services/orb/real-estate/listing.service';
 import { ProductDetailService } from 'src/app/services/thehouseforeverwins/product-detail.service';
 import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { ActivatedRoute } from '@angular/router';

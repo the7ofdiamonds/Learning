@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ListingService } from 'src/app/services/orb/listing.service';
+import { ListingService } from 'src/app/services/orb/real-estate/listing.service';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { CommercialPropertyComponent } from './commercial-property/commercial-property.component';
 import { AppComponent } from '../../../../../app.component'

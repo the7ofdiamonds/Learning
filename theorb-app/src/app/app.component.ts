@@ -1,12 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Inject, OnInit } from '@angular/core';
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';
-import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
+import { MatDialog, MatDialogConfig, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { AboutComponent } from './pages/the7ofdiamonds/about/about.component';
 import { ServicesComponent } from './pages/the7ofdiamonds/services/services.component';
-import { ShopComponent } from './pages/thehouseforeverwins/shop/shop.component';
 import { AboutorbComponent } from './pages/orb/aboutorb/aboutorb.component';
 import { LoginComponent } from './pages/login/login.component';
-import { Overlay, ScrollStrategy } from '@angular/cdk/overlay';
+import { ListingService } from './services/orb/real-estate/listing.service';
 
 @Component({
   selector: 'app-root',
@@ -22,11 +21,23 @@ export class AppComponent implements OnInit {
   public isShown: boolean;
   public isVisible: boolean;
   panelOpenState = false;
+  id: any;
+  property: any;
 
-  constructor(public dialog: MatDialog) { }
+  constructor(public dialog: MatDialog, private listingService: ListingService, @Inject(MAT_DIALOG_DATA) public data: any, private router: ActivatedRoute) { }
   ngOnInit(): void {
     this.isShown = false;
     this.isVisible = false;
+
+    // this.id = this.resprop.id || this.data;
+    // console.log(this.id)
+    // console.log(this.data)
+
+    // this.listingService.getProperty(this.id).subscribe((prop) => {
+    //   this.property = prop;
+
+    //   console.log(this.property)
+    // })
   }
 
   openHeader() {

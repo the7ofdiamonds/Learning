@@ -36,7 +36,7 @@ import { PropertyInsuranceComponent } from './pages/orb/manage/insurance/propert
 import { AutoFinanceComponent } from './pages/orb/manage/debt/auto-finance/auto-finance.component';
 import { BusinessFinanceComponent } from './pages/orb/manage/debt/business-finance/business-finance.component';
 import { MortgageComponent } from './pages/orb/manage/debt/mortgage/mortgage.component';
-import { PersonalDebtComponent } from './personal-debt/personal-debt.component';
+import { PersonalDebtComponent } from './pages/orb/manage/debt/personal-debt/personal-debt.component';
 
 const redirectUnauthorizedToLogin = () => redirectUnauthorizedTo(['login']);
 const belongsToAccount = (next) => hasCustomClaim(`account-${next.params.id}`);

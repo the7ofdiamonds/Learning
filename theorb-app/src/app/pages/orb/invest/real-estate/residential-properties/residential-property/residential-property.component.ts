@@ -1,8 +1,8 @@
 import { Component, OnInit, Inject } from '@angular/core';
-import { ListingService } from '../../../../../../services/orb/listing.service';
-import { ProductDetailService } from 'src/app/services/thehouseforeverwins/product-detail.service';
+import { ListingService } from '../../../../../../services/orb/real-estate/listing.service';
 import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { ActivatedRoute } from '@angular/router';
+import { AppComponent } from '../../../../../../app.component'
 
 
 @Component({
@@ -16,11 +16,17 @@ export class ResidentialPropertyComponent implements OnInit {
   property: any;
   gallery: any[];
 
-  constructor(private listingService: ListingService, @Inject(MAT_DIALOG_DATA) public data: any, private router: ActivatedRoute, private details: ProductDetailService) { }
+  constructor(private listingService: ListingService, @Inject(MAT_DIALOG_DATA) public data: any, private router: ActivatedRoute, public appComponent: AppComponent) { }
 
   ngOnInit(): void {
+    this.appComponent.header = "property";
+    this.appComponent.page = "realestate";
+    this.appComponent.section = "invest";
+    this.appComponent.isVisible = true;
+
     this.id = this.router.snapshot.paramMap.get('id') || this.data;
     console.log(this.id)
+    console.log(this.data)
 
     this.listingService.getProperty(this.id).subscribe((prop) => {
       this.property = prop;
@@ -30,5 +36,4 @@ export class ResidentialPropertyComponent implements OnInit {
       console.log(this.gallery)
     })
   }
-
 }

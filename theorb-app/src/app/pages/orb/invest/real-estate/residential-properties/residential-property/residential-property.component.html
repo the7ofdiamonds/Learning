@@ -1,23 +1,36 @@
-<section>
-  <mat-card class="address">
-    <p>{{property.StreetNumber}} {{property.StreetName}} {{property.StreetSuffix}} {{property.StateOrProvince}}, {{property.City}}</p>
-  </mat-card>
+<!-- <mat-card class="address">
+  <p>{{property.StreetNumber}} {{property.StreetName}} {{property.StreetSuffix}} {{property.StateOrProvince}}, {{property.City}}</p>
+</mat-card> -->
 
-  <div class="gallery">
-    <img [src]="property.Media[0].MediaURL">
+<section>
+  <div id="container" class="gallery">
+    <div ng2-carouselamos class="slides-wrapper" [items]="gallery" [$prev]="prev" [$next]="next" [$item]="item">
+    </div>
+    <div class="overlay">
+      <ng-template #item let-item let-i="index">
+        <img [src]="property.Media[i].MediaURL">
+      </ng-template>
+      <ng-template #prev>
+        <mat-icon [ngStyle]="{'color':'white'}" id="prev">skip_previous</mat-icon>
+      </ng-template>
+      <ng-template #next>
+        <mat-icon [ngStyle]="{'color':'white'}" id="next" mat-raised-button>skip_next</mat-icon>
+      </ng-template>
+    </div>
+  </div>
+
+  <div class="price">
+    <p>{{property.ListPrice | currency}}</p>
   </div>
 
   <mat-card class="description">
-    <p class="price">{{property.ListPrice | currency}}</p>
-    <p>Bedrooms: {{property.BedroomsTotal}}</p>
-    <p>Bathrooms: {{property.BathroomsFull}}</p>
+    <p>{{property.BedroomsTotal}} Bedroom(s) | {{property.BathroomsFull}} Bath(s) | {{property.LotSizeSquareFeet}} Sqft
+      Lot</p>
     <p>Parking:</p>
-    <p>Lot: {{property.LotSizeSquareFeet}}</p>
-    <p>Price/sqft:</p>
-    <p>Type:</p>
-    <p>Year Built:</p>
     <p>Heating</p>
     <p>Cooling</p>
+    <p>Type:</p>
+    <p>Year Built:</p>
   </mat-card>
 
   <mat-card class="monthly-cost">
@@ -27,11 +40,14 @@
     <p>Property taxes</p>
     <p>Home insurance</p>
     <p>HOA fees</p>
-    <p>Utilities</p>
   </mat-card>
 
   <div class="action">
-    <mat-button mat-raised-button>Get Pre-Approved</mat-button>
-    <mat-button mat-raised-button>Contact Agent</mat-button>
+    <mat-button mat-raised-button>
+      <p>Get Pre-Approved</p>
+    </mat-button>
+    <mat-button mat-raised-button>
+      <p>Contact Agent</p>
+    </mat-button>
   </div>
 </section>

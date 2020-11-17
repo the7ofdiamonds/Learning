@@ -1,8 +1,3 @@
-section {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-}
 .overlay {
   position: absolute;
   top: 0;
@@ -10,53 +5,43 @@ section {
   transition: .5s ease;
   opacity: 0;
   color: white;
-  width: 300px;
-  height: 300px;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-content: center;
+  justify-content: center;
 }
 
 .price {
-  margin-top: 150px;
-  height: 50%;
-  vertical-align: middle;
-  font-size: 30px;
-  text-align: center;
+  font-size: 48px;
+  margin-top: 50%;
 }
 
 img {
-  max-width: 300px;
-  max-height: 300px;
-  object-fit: cover;
+  max-width: 100%;
+  min-width: 300px;
+  height: auto;
 }
 
-mat-card>mat-card-content>div.description {
-  font-size: 20px;
+.description {
+  font-size: 1rem;
   color: white;
   text-align: center;
-  margin: 0;
-  padding: 0;
-  align-items: center;
+  margin: .5rem;
+  height: fit-content;
 }
 
 mat-card {
-  width: 100%;
-  height: auto;
-  flex: 0;
+  display: flex;
   background-color: black;
   padding: 0px;
-  margin: 10px 0 0 0;
+  width: fit-content;
 }
 
 mat-card:hover .overlay {
   opacity: 1;
 }
 
-div.body {
-  padding-top: 10px;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  justify-items: center;
-  width: 100%;
-  height: auto;
+a {
+  color: white;
 }

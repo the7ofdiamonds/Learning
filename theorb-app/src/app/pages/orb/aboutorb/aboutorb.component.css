@@ -57,6 +57,19 @@ nav {
   text-decoration: none;
 }
 
+mat-dialog-actions {
+  display: flex;
+  align-content: center;
+  justify-content: space-between;
+  width: 100%;
+  background-color: black;
+}
+
+mat-dialog-actions a img {
+  width: 100px;
+  height: 100px;
+}
+
 .privacyFooter {
   flex: 1;
   flex-basis: 0;

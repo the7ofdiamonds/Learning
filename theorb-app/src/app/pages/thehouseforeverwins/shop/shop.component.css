@@ -9,8 +9,6 @@ body {
 
 .card-list {
   display: flex;
-  padding: 3rem;
-  overflow-x: scroll;
 }
 
 
@@ -35,7 +33,6 @@ mat-card {
   display: flex;
   position: relative;
   flex-direction: column;
-  padding: 1.5rem;
 }
 
 mat-card:hover {
