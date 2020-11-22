@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { AppComponent } from '../../../../app.component'
 
 @Component({
   selector: 'app-accounts',
@@ -8,10 +7,10 @@ import { AppComponent } from '../../../../app.component'
 })
 export class AccountsComponent implements OnInit {
 
-  constructor(public appComponent: AppComponent) { }
+  constructor() { }
 
   ngOnInit(): void {
-    this.appComponent.header = "accounts";
+    // this.appComponent.header = "accounts";
   }
 
 }

@@ -37,6 +37,7 @@ import { AutoFinanceComponent } from './pages/orb/manage/debt/auto-finance/auto-
 import { BusinessFinanceComponent } from './pages/orb/manage/debt/business-finance/business-finance.component';
 import { MortgageComponent } from './pages/orb/manage/debt/mortgage/mortgage.component';
 import { PersonalDebtComponent } from './pages/orb/manage/debt/personal-debt/personal-debt.component';
+import { CommercialPropertyComponent } from './pages/orb/invest/real-estate/commercial-properties/commercial-property/commercial-property.component';
 
 const redirectUnauthorizedToLogin = () => redirectUnauthorizedTo(['login']);
 const belongsToAccount = (next) => hasCustomClaim(`account-${next.params.id}`);
@@ -66,6 +67,7 @@ const routes: Routes = [
   { path: 'manage/insurance/property', component: PropertyInsuranceComponent, canActivate: [AngularFireAuthGuard], data: { authGuardPipe: redirectUnauthorizedToLogin } },
   { path: 'invest/real-estate', component: RealEstateComponent, canActivate: [AngularFireAuthGuard], data: { authGuardPipe: redirectUnauthorizedToLogin } },
   { path: 'invest/real-estate/commercial', component: CommercialPropertiesComponent, canActivate: [AngularFireAuthGuard], data: { authGuardPipe: redirectUnauthorizedToLogin } },
+  { path: 'invest/real-estate/commercial/:id', component: CommercialPropertyComponent, canActivate: [AngularFireAuthGuard], data: { authGuardPipe: redirectUnauthorizedToLogin } },
   { path: 'invest/real-estate/residential', component: ResidentialPropertiesComponent, canActivate: [AngularFireAuthGuard], data: { authGuardPipe: redirectUnauthorizedToLogin } },
   { path: 'invest/real-estate/residential/:id', component: ResidentialPropertyComponent, canActivate: [AngularFireAuthGuard], data: { authGuardPipe: redirectUnauthorizedToLogin } },
   { path: 'invest/paper-assets', component: PaperAssetsComponent, canActivate: [AngularFireAuthGuard], data: { authGuardPipe: redirectUnauthorizedToLogin } },

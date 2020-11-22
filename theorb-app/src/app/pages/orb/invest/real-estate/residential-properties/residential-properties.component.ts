@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { ListingService } from 'src/app/services/orb/real-estate/listing.service';
-import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { AppComponent } from '../../../../../app.component'
 
 @Component({
@@ -13,7 +12,7 @@ export class ResidentialPropertiesComponent implements OnInit {
   gallery: any[];
   id: number;
   
-  constructor(private listingService: ListingService, public dialog: MatDialog, public appComponent: AppComponent) { }
+  constructor(private listingService: ListingService, public appComponent: AppComponent) { }
   Media: any[];
 
   ngOnInit() {

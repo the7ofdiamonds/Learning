@@ -9,7 +9,7 @@
         </div>
         <img [src]="property.Media[0].MediaURL">
         <div class="description">
-          {{property.BedroomsTotal}} Bed | {{property.BathroomsFull}} Bath | {{property.LotSizeSquareFeet}} Sqft
+          {{property.BedroomsTotal}} Bed | {{property.BathroomsFull}} Bath | {{property.LotSizeSquareFeet | number}} Sqft
         </div>
       </mat-card-content>
     </a>
