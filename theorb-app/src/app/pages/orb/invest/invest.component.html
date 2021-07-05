@@ -1,11 +1,19 @@
-<mat-card>
+<mat-card class="orbInvest">
   <mat-toolbar mat-tab-nav-bar>
-    <a mat-tab-link class="realestateHeader" (click)='openRealEstate();'>
-      <strong>REAL ESTATE</strong></a>
-    <a mat-tab-link class="paperassetsHeader" (click)='openPaperAssets();'>
-      <strong>PAPER ASSETS</strong></a>
-    <a mat-tab-link class="tangibleassetsHeader" (click)='openTangibleAssets();'>
-      <strong>TANGIBLE ASSETS</strong></a>
+    <button mat-raised-button class="realestateHeader" (click)='openRealEstate();'>
+      <a mat-tab-link>
+        <strong>
+          <h2>REAL ESTATE</h2>
+        </strong></a>
+    </button>
+    <button mat-raised-button class="paperassetsHeader" (click)='openPaperAssets();'>
+      <a mat-tab-link>
+        <strong><h2>PAPER ASSETS</h2></strong></a>
+    </button>
+    <button mat-raised-button class="tangibleassetsHeader" (click)='openTangibleAssets();'>
+      <a mat-tab-link>
+        <strong><h2>TANGIBLE ASSETS</h2></strong></a>
+    </button>
   </mat-toolbar>
 
   <div class="content">

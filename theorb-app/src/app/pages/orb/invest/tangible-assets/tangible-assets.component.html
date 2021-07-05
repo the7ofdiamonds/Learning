@@ -1,9 +1,17 @@
-<mat-card>
+<mat-card class="orbTangibleAssets">
   <mat-toolbar mat-tab-nav-bar>
-    <a mat-tab-link class="investmentPropertiesHeader" routerLink="/invest/tangible-assets/investment-properties">
-      INVESTMENT PROPERTIES</a>
-    <a mat-tab-link class="businessesHeader" routerLink="/invest/tangible-assets/businesses">
-      BUSINESSES</a>
+    <button mat-raised-button class="investmentPropertiesHeader" (click)='openInvestmentProperties();'>
+      <a mat-tab-link>
+        <strong>
+          <h2>PROPERTIES</h2>
+        </strong></a>
+    </button>
+    <button mat-raised-button class="businessesHeader" (click)='openBusinessesForSale();'>
+      <a mat-tab-link>
+        <strong>
+          <h2>BUSINESSES</h2>
+        </strong></a>
+    </button>
   </mat-toolbar>
 
   <div class="content">

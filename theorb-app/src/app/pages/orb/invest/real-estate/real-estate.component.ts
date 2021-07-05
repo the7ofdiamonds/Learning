@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
-import { CommercialPropertiesComponent } from './commercial-properties/commercial-properties.component';
-import { ResidentialPropertiesComponent } from './residential-properties/residential-properties.component';
+import { CommercialComponent } from './commercial/commercial.component';
+import { ResidentialComponent } from './residential/residential.component';
 
 @Component({
   selector: 'app-real-estate',
@@ -16,28 +16,18 @@ export class RealEstateComponent {
     const dialogConfig = new MatDialogConfig();
 
     dialogConfig.hasBackdrop = true;
-    dialogConfig.backdropClass
-    dialogConfig.panelClass
+    dialogConfig.panelClass = 'custom-modalbox';
 
-    // const dialogRef = this.dialog.open(CommercialPropertiesComponent, dialogConfig);
-
-    // dialogRef.afterClosed().subscribe(result => {
-      console.log('Commercial');
-    // });
+    this.dialog.open(CommercialComponent, dialogConfig);
   }
 
   openResidential() {
     const dialogConfig = new MatDialogConfig();
 
     dialogConfig.hasBackdrop = true;
-    dialogConfig.backdropClass
-    dialogConfig.panelClass
+    dialogConfig.panelClass = 'custom-modalbox';
 
-    // const dialogRef = this.dialog.open(ResidentialPropertiesComponent, dialogConfig);
-
-    // dialogRef.afterClosed().subscribe(result => {
-      console.log('Residential');
-    // });
+    this.dialog.open(ResidentialComponent, dialogConfig);
   }
 
 }

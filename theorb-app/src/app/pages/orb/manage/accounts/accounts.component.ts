@@ -10,7 +10,6 @@ export class AccountsComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    // this.appComponent.header = "accounts";
   }
 
 }

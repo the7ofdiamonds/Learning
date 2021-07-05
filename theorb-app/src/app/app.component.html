@@ -1,35 +1,18 @@
 <div class="background">
-  <button class="t7odLogo" type="checkbox" (click)="openHeader()">
+  <button class="t7odLogo" type="checkbox" routerLink="/">
     <img src="assets/image2.jpg">
   </button>
-  <button class="orbLogo" type="checkbox" (click)="openORBHeader()">
+  <button class="orbLogo" type="checkbox" routerLink="/orb">
     <img src="assets/black-orb-ft.jpg">
+  </button>
+
+  <button class="thfwLogo" type="checkbox" routerLink="/shop">
+    <img src="assets/house.jpg">
   </button>
 </div>
 
-<header id="the7ofdiamonds" class="the7ofdiamonds" *ngIf='isShown'>
-  <mat-toolbar mat-tab-nav-bar>
-    <a mat-tab-link class="the7ofdiamondsHeader" (click)='openHeader()'>
-      <h1>
-        THE7OFDIAMONDS.TECH
-      </h1>
-    </a>
-    <a mat-tab-link class="aboutHeader" (click)="openAbout()">
-      <h2>ABOUT</h2>
-    </a>
-    <a mat-tab-link class='servicesHeader' routerLink="/services">
-      <h2>SERVICES</h2>
-    </a>
-    <a mat-tab-link class="shopHeader" routerLink="/shop">
-      <h2>SHOP</h2>
-    </a>
-    <a mat-tab-link class="orbHeader" (click)="openORBHeader()">
-      <h2>ORB</h2>
-    </a>
-  </mat-toolbar>
-</header>
 
-<header id="orb" *ngIf='isVisible'>
+<!-- <header id="orb" *ngIf="hasRoute('/orb/learn')">
   <mat-accordian class="orb">
     <mat-expansion-panel hideToggle>
       <mat-expansion-panel-header [ngSwitch]="header">
@@ -207,7 +190,7 @@
             </button>
           </div>
         </div>
-        <div *ngIf="loggedIn">
+        <div *ngIf="hasRoute('/welcome')">
           <button mat-raised-button class="learnHeader" (click)="openLearn()">
             <h2>LEARN</h2>
           </button>
@@ -219,14 +202,14 @@
           </button>
         </div>
         <div>
-          <button mat-raised-button class="orbHeader">
+          <button mat-raised-button class="orb">
             <a (click)="openORBHeader()">
               <strong>
                 <h1>ORB</h1>
               </strong>
             </a>
           </button>
-          <button mat-raised-button class="aboutorbHeader">
+          <button mat-raised-button class="aboutOrbHeader">
             <a mat-tab-link (click)="openAboutORB()">
               <h2>ABOUT</h2>
             </a>
@@ -236,12 +219,12 @@
               <h2>LOG IN</h2>
             </a>
           </button>
-          <button mat-raised-button class="shopHeader">
+          <button mat-raised-button class="thehouseforeverwins">
             <a mat-tab-link routerLink="/shop">
               <h2>SHOP</h2>
             </a>
           </button>
-          <button mat-raised-button class="the7ofdiamondsHeader">
+          <button mat-raised-button class="the7ofdiamonds">
             <a mat-tab-link (click)='openHeader();'>
               <h2>
                 THE 7 OF DIAMONDS
@@ -252,6 +235,6 @@
       </mat-expansion-panel-body>
     </mat-expansion-panel>
   </mat-accordian>
-</header>
+</header> -->
 
 <router-outlet></router-outlet>

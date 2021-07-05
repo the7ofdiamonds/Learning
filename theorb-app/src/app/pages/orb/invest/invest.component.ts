@@ -17,42 +17,26 @@ export class InvestComponent {
     const dialogConfig = new MatDialogConfig();
 
     dialogConfig.hasBackdrop = true;
-    dialogConfig.backdropClass
-    dialogConfig.panelClass
+    dialogConfig.panelClass = 'custom-modalbox';
 
-    const dialogRef = this.dialog.open(RealEstateComponent, dialogConfig);
-
-    dialogRef.afterClosed().subscribe(result => {
-      console.log(`Dialog result: ${result}`);
-    });
+    this.dialog.open(RealEstateComponent, dialogConfig);
   }
 
   openPaperAssets() {
     const dialogConfig = new MatDialogConfig();
 
     dialogConfig.hasBackdrop = true;
-    dialogConfig.backdropClass
-    dialogConfig.panelClass
+    dialogConfig.panelClass = 'custom-modalbox';
 
-    const dialogRef = this.dialog.open(PaperAssetsComponent, dialogConfig);
-
-    dialogRef.afterClosed().subscribe(result => {
-      console.log(`Dialog result: ${result}`);
-    });
+    this.dialog.open(PaperAssetsComponent, dialogConfig);
   }
 
   openTangibleAssets() {
     const dialogConfig = new MatDialogConfig();
 
     dialogConfig.hasBackdrop = true;
-    dialogConfig.backdropClass
-    dialogConfig.panelClass
+    dialogConfig.panelClass = 'custom-modalbox';
 
-    const dialogRef = this.dialog.open(TangibleAssetsComponent, dialogConfig);
-
-    dialogRef.afterClosed().subscribe(result => {
-      console.log(`Dialog result: ${result}`);
-    });
+    this.dialog.open(TangibleAssetsComponent, dialogConfig);
   }
-
 }

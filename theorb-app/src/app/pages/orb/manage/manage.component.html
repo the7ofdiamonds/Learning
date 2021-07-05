@@ -1,19 +1,35 @@
-<mat-card>
+<mat-card class="orbManage">
   <mat-toolbar mat-tab-nav-bar>
-    <a mat-tab-link class="accountsHeader" (click)='openAccounts();'>
-      <strong>ACCOUNTS</strong>
-    </a>
-    <a mat-tab-link class="currencyHeader" (click)='openCurrency();'>
-      <strong>CURRENCY</strong></a>
-    <a mat-tab-link class="debtHeader" (click)='openDebt();'>
-      <strong>DEBT</strong></a>
-    <a mat-tab-link class="insuranceHeader" (click)='openInsurance();'>
-      <strong>INSURANCE</strong></a>
+    <button mat-raised-button class="accountsHeader" (click)='openAccounts();'>
+      <a mat-tab-link>
+        <strong>
+          <h2>ACCOUNTS</h2>
+        </strong>
+      </a>
+    </button>
+    <button mat-raised-button class="currencyHeader" (click)='openCurrency();'>
+      <a mat-tab-link>
+        <strong>
+          <h2>CURRENCY</h2>
+        </strong></a>
+    </button>
+    <button mat-raised-button class="debtHeader" (click)='openDebt();'>
+      <a mat-tab-link>
+        <strong>
+          <h2>DEBT</h2>
+        </strong></a>
+    </button>
+    <button mat-raised-button class="insuranceHeader" (click)='openInsurance();'>
+      <a mat-tab-link>
+        <strong>
+          <h2>INSURANCE</h2>
+        </strong></a>
+    </button>
   </mat-toolbar>
-  
+
   <div class='content'>
     <p><strong>ORB&trade;</strong> users can manage with accounts and the following services which are
       available for everyone.</p>
   </div>
-  
+
 </mat-card>

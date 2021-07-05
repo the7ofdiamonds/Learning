@@ -1,7 +1,7 @@
   <section id="design" class="card-list">
     <mat-card>
       <mat-card-header>
-        <mat-card-title>BASIC</mat-card-title>
+        <mat-card-title>APPLICATION DEVELOPMENT</mat-card-title>
       </mat-card-header>
       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae, incidunt reiciendis qui minima
         id
@@ -9,13 +9,12 @@
         Et,
         nobis distinctio! Perferendis?</p>
       <mat-card-actions>
-        <button mat-raised-button matRipple>BUY</button>
-        <button mat-raised-button matRipple>SHARE</button>
+        <button mat-raised-button matRipple (click)="openApp()">QUOTE</button>
       </mat-card-actions>
     </mat-card>
     <mat-card>
       <mat-card-header>
-        <mat-card-title>CUSTOM</mat-card-title>
+        <mat-card-title>WEBSITE DEVELOPMENT</mat-card-title>
       </mat-card-header>
       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae, incidunt reiciendis qui minima
         id
@@ -23,8 +22,20 @@
         Et,
         nobis distinctio! Perferendis?</p>
       <mat-card-actions>
-        <button mat-raised-button matRipple>INVOICE</button>
-        <button mat-raised-button matRipple>SHARE</button>
+        <button mat-raised-button matRipple (click)="openWebsite()">QUOTE</button>
+      </mat-card-actions>
+    </mat-card>
+    <mat-card>
+      <mat-card-header>
+        <mat-card-title>THEME</mat-card-title>
+      </mat-card-header>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae, incidunt reiciendis qui minima
+        id
+        necessitatibus similique debitis quibusdam unde eligendi ipsam atque, delectus nemo! Maxime, aut.
+        Et,
+        nobis distinctio! Perferendis?</p>
+      <mat-card-actions>
+        <button mat-raised-button matRipple class='themeHeader' (click)="openTheme()">BUY</button>
       </mat-card-actions>
     </mat-card>
   </section>

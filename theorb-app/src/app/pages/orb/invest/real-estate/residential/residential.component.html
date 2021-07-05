@@ -1,0 +1,19 @@
+<section>
+  <div class="body">
+    <mat-card *ngFor="let property of properties">
+      <mat-card-content mat-raised-button (click)="openProperty(property.ListingId);">
+        <div class="photo">
+          <div class="overlay">
+            <div class="price">
+              {{property.ListPrice | currency}}
+            </div>
+          </div>
+          <img [src]="property.Media[0].MediaURL">
+        </div>
+        <div class="description">
+          {{property.BedroomsTotal}} Bed | {{property.BathroomsFull}} Bath | {{property.LotSizeSquareFeet}} Sqft
+        </div>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</section>

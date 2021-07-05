@@ -24,64 +24,99 @@ import { CommonModule } from '@angular/common';
 import {MatTableModule} from '@angular/material/table';
 
 import { AppComponent } from './app.component';
-import { AboutComponent } from './pages/the7ofdiamonds/about/about.component';
-import { ContactComponent } from './pages/the7ofdiamonds/about/contact/contact.component';
-import { ShopComponent } from './pages/thehouseforeverwins/shop/shop.component';
 import { LoginComponent } from './pages/login/login.component';
 import { CopyrightsComponent } from './pages/the7ofdiamonds/about/copyrights/copyrights.component';
+import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component';
+
+/* THE7OFDIAMONDS.TECH */
+import { The7ofdiamondsComponent } from './pages/the7ofdiamonds/the7ofdiamonds.component';
+import { AboutComponent } from './pages/the7ofdiamonds/about/about.component';
+import { ContactComponent } from './pages/the7ofdiamonds/about/contact/contact.component';
 import { ServicesComponent } from './pages/the7ofdiamonds/services/services.component';
-import { AboutorbComponent } from './pages/orb/aboutorb/aboutorb.component';
-import { ContactorbComponent } from './pages/orb/aboutorb/contactorb/contactorb.component';
-import { ReadComponent } from './pages/orb/learn/read/read.component';
-import { SimulationComponent } from './pages/orb/learn/simulation/simulation.component';
-import { DebtComponent } from './pages/orb/manage/debt/debt.component';
-import { InsuranceComponent } from './pages/orb/manage/insurance/insurance.component';
+
+/* THE HOUSE FOREVER WINS */
+import { ThehouseforeverwinsComponent } from './pages/thehouseforeverwins/thehouseforeverwins.component';
+import { AboutTHFWComponent } from './pages/thehouseforeverwins/about-thfw/about-thfw.component';
+import { ShopComponent } from './pages/thehouseforeverwins/shop/shop.component';
+import { ProductComponent } from './pages/thehouseforeverwins/shop/product/product.component';
+import { MerchandiseComponent } from './pages/thehouseforeverwins/shop/product/merchandise/merchandise.component';
+import { ThemeComponent } from './pages/thehouseforeverwins/shop/theme/theme.component';
+
+/* ORB */
+import { OrbComponent } from './pages/orb/orb.component';
+import { AboutOrbComponent } from './pages/orb/about-orb/about-orb.component';
 import { LearnComponent } from './pages/orb/learn/learn.component';
 import { ManageComponent } from './pages/orb/manage/manage.component';
 import { InvestComponent } from './pages/orb/invest/invest.component';
-import { AccountsComponent } from './pages/orb/manage/accounts/accounts.component';
-import { CurrencyComponent } from './pages/orb/manage/currency/currency.component';
-import { RealEstateComponent } from './pages/orb/invest/real-estate/real-estate.component';
-import { PaperAssetsComponent } from './pages/orb/invest/paper-assets/paper-assets.component';
-import { TangibleAssetsComponent } from './pages/orb/invest/tangible-assets/tangible-assets.component';
+
+// import { ContactorbComponent } from './pages/orb/aboutorb/contactorb/contactorb.component';
+// import { ReadComponent } from './pages/orb/learn/read/read.component';
+// import { SimulationComponent } from './pages/orb/learn/simulation/simulation.component';
+// import { DebtComponent } from './pages/orb/manage/debt/debt.component';
+// import { InsuranceComponent } from './pages/orb/manage/insurance/insurance.component';
+// import { LearnComponent } from './pages/orb/learn/learn.component';
+// import { ManageComponent } from './pages/orb/manage/manage.component';
+// import { InvestComponent } from './pages/orb/invest/invest.component';
+// import { AccountsComponent } from './pages/orb/manage/accounts/accounts.component';
+// import { CurrencyComponent } from './pages/orb/manage/currency/currency.component';
+// import { RealEstateComponent } from './pages/orb/invest/real-estate/real-estate.component';
+// import { PaperAssetsComponent } from './pages/orb/invest/paper-assets/paper-assets.component';
+// import { TangibleAssetsComponent } from './pages/orb/invest/tangible-assets/tangible-assets.component';
 import { QuoteComponent } from './components/forms/quote/quote.component';
 import { InvoiceComponent } from './components/forms/invoice/invoice.component';
 import { ReceiptComponent } from './components/forms/receipt/receipt.component';
 import { WelcomeComponent } from './pages/login/welcome/welcome.component';
-import { AccountDetailComponent } from './pages/orb/manage/accounts/account-detail/account-detail.component';
-import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component';
-import { ReceiveComponent } from './pages/orb/manage/currency/receive/receive.component';
-import { SendComponent } from './pages/orb/manage/currency/send/send.component';
+// import { AccountDetailComponent } from './pages/orb/manage/accounts/account-detail/account-detail.component';
+// import { ReceiveComponent } from './pages/orb/manage/currency/receive/receive.component';
+// import { SendComponent } from './pages/orb/manage/currency/send/send.component';
 import { CheckoutComponent } from './pages/login/checkout/checkout.component';
-import { ProductComponent } from './pages/thehouseforeverwins/shop/product/product.component';
-import { InvestmentPropertyComponent } from './pages/orb/invest/tangible-assets/investment-properties/investment-property/investment-property.component';
-import { BusinessComponent } from './pages/orb/invest/tangible-assets/businesses-for-sale/business/business.component';
-import { CommercialPropertiesComponent } from './pages/orb/invest/real-estate/commercial-properties/commercial-properties.component';
-import { ResidentialPropertiesComponent } from './pages/orb/invest/real-estate/residential-properties/residential-properties.component';
-import { BusinessesForSaleComponent } from './pages/orb/invest/tangible-assets/businesses-for-sale/businesses-for-sale.component';
-import { InvestmentPropertiesComponent } from './pages/orb/invest/tangible-assets/investment-properties/investment-properties.component';
-import { CommercialPropertyComponent } from './pages/orb/invest/real-estate/commercial-properties/commercial-property/commercial-property.component';
-import { StocksComponent } from './pages/orb/invest/paper-assets/stocks/stocks.component';
-import { BondsComponent } from './pages/orb/invest/paper-assets/bonds/bonds.component';
-import { LiensComponent } from './pages/orb/invest/paper-assets/liens/liens.component';
-import { NotesComponent } from './pages/orb/invest/paper-assets/notes/notes.component';
-import { BondComponent } from './pages/orb/invest/paper-assets/bonds/bond/bond.component';
-import { LienComponent } from './pages/orb/invest/paper-assets/liens/lien/lien.component';
-import { NoteComponent } from './pages/orb/invest/paper-assets/notes/note/note.component';
-import { StockComponent } from './pages/orb/invest/paper-assets/stocks/stock/stock.component';
-import { AutoFinanceComponent } from './pages/orb/manage/debt/auto-finance/auto-finance.component';
-import { BusinessFinanceComponent } from './pages/orb/manage/debt/business-finance/business-finance.component';
-import { MortgageComponent } from './pages/orb/manage/debt/mortgage/mortgage.component';
-import { AutoInsuranceComponent } from './pages/orb/manage/insurance/auto-insurance/auto-insurance.component';
-import { BusinessInsuranceComponent } from './pages/orb/manage/insurance/business-insurance/business-insurance.component';
-import { LifeInsuranceComponent } from './pages/orb/manage/insurance/life-insurance/life-insurance.component';
-import { PropertyInsuranceComponent } from './pages/orb/manage/insurance/property-insurance/property-insurance.component';
-import { ResidentialPropertyComponent } from './pages/orb/invest/real-estate/residential-properties/residential-property/residential-property.component';
+// import { InvestmentPropertyComponent } from './pages/orb/invest/tangible-assets/investment-properties/investment-property/investment-property.component';
+// import { BusinessComponent } from './pages/orb/invest/tangible-assets/businesses-for-sale/business/business.component';
+// import { CommercialPropertiesComponent } from './pages/orb/invest/real-estate/commercial-properties/commercial-properties.component';
+// import { ResidentialPropertiesComponent } from './pages/orb/invest/real-estate/residential-properties/residential-properties.component';
+// import { BusinessesForSaleComponent } from './pages/orb/invest/tangible-assets/businesses-for-sale/businesses-for-sale.component';
+// import { InvestmentPropertiesComponent } from './pages/orb/invest/tangible-assets/investment-properties/investment-properties.component';
+// import { CommercialPropertyComponent } from './pages/orb/invest/real-estate/commercial-properties/commercial-property/commercial-property.component';
+// import { StocksComponent } from './pages/orb/invest/paper-assets/stocks/stocks.component';
+// import { BondsComponent } from './pages/orb/invest/paper-assets/bonds/bonds.component';
+// import { LiensComponent } from './pages/orb/invest/paper-assets/liens/liens.component';
+// import { NotesComponent } from './pages/orb/invest/paper-assets/notes/notes.component';
+// import { BondComponent } from './pages/orb/invest/paper-assets/bonds/bond/bond.component';
+// import { LienComponent } from './pages/orb/invest/paper-assets/liens/lien/lien.component';
+// import { NoteComponent } from './pages/orb/invest/paper-assets/notes/note/note.component';
+// import { StockComponent } from './pages/orb/invest/paper-assets/stocks/stock/stock.component';
+// import { AutoFinanceComponent } from './pages/orb/manage/debt/auto-finance/auto-finance.component';
+// import { BusinessFinanceComponent } from './pages/orb/manage/debt/business-finance/business-finance.component';
+// import { MortgageComponent } from './pages/orb/manage/debt/mortgage/mortgage.component';
+// import { AutoInsuranceComponent } from './pages/orb/manage/insurance/auto-insurance/auto-insurance.component';
+// import { BusinessInsuranceComponent } from './pages/orb/manage/insurance/business-insurance/business-insurance.component';
+// import { LifeInsuranceComponent } from './pages/orb/manage/insurance/life-insurance/life-insurance.component';
+// import { PropertyInsuranceComponent } from './pages/orb/manage/insurance/property-insurance/property-insurance.component';
+// import { ResidentialPropertyComponent } from './pages/orb/invest/real-estate/residential-properties/residential-property/residential-property.component';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
 import {MatExpansionModule} from '@angular/material/expansion';
-import { PersonalDebtComponent } from './pages/orb/manage/debt/personal-debt/personal-debt.component';
+// import { PersonalDebtComponent } from './pages/orb/manage/debt/personal-debt/personal-debt.component';
 import { Ng2CarouselamosModule } from 'ng2-carouselamos';
+import { WebsiteDevelopmentComponent } from './pages/the7ofdiamonds/services/website-development/website-development.component';
+import { ApplicationDevelopmentComponent } from './pages/the7ofdiamonds/services/application-development/application-development.component';
+import { RealEstateComponent } from './pages/orb/invest/real-estate/real-estate.component';
+import { ResidentialComponent } from './pages/orb/invest/real-estate/residential/residential.component';
+import { CommercialComponent } from './pages/orb/invest/real-estate/commercial/commercial.component';
+import { PaperAssetsComponent } from './pages/orb/invest/paper-assets/paper-assets.component';
+import { TangibleAssetsComponent } from './pages/orb/invest/tangible-assets/tangible-assets.component';
+import { AccountsComponent } from './pages/orb/manage/accounts/accounts.component';
+import { CurrencyComponent } from './pages/orb/manage/currency/currency.component';
+import { DebtComponent } from './pages/orb/manage/debt/debt.component';
+import { InsuranceComponent } from './pages/orb/manage/insurance/insurance.component';
+import { BookComponent } from './pages/thehouseforeverwins/shop/product/book/book.component';
+import { BusinessesForSaleComponent } from './pages/orb/invest/tangible-assets/businesses-for-sale/businesses-for-sale.component';
+import { InvestmentPropertiesComponent } from './pages/orb/invest/tangible-assets/investment-properties/investment-properties.component';
+import { ResidentialPropertyComponent } from './pages/orb/invest/real-estate/residential/residential-property/residential-property.component';
+// import { HomeComponent } from './pages/orb/home/home.component';
+// import { HomeOrbComponent } from './pages/orb/home-orb/home-orb.component';
+// import { HeaderOrbComponent } from './pages/orb/header-orb/header-orb.component';
+// import { OrbComponent } from './pages/orb/orb.component';
 
 const config = {
   apiKey: 'AIzaSyD1ub97o3TSNnW3NRFR0aEKk5u4pnR4wbE',
@@ -133,68 +168,97 @@ const config = {
     LoginComponent,
     CopyrightsComponent,
     ServicesComponent,
-    ContactorbComponent,
-    AboutorbComponent,
-    ReadComponent,
-    SimulationComponent,
-    DebtComponent,
-    InsuranceComponent,
-    LearnComponent,
-    ReadComponent,
-    SimulationComponent,
-    ManageComponent,
-    AccountsComponent,
-    CurrencyComponent,
-    DebtComponent,
-    InsuranceComponent,
-    InvestComponent,
-    RealEstateComponent,
-    PaperAssetsComponent,
-    TangibleAssetsComponent,
+    // ContactorbComponent,
+    // AboutorbComponent,
+    // ReadComponent,
+    // SimulationComponent,
+    // DebtComponent,
+    // InsuranceComponent,
+    // LearnComponent,
+    // ReadComponent,
+    // SimulationComponent,
+    // ManageComponent,
+    // AccountsComponent,
+    // CurrencyComponent,
+    // DebtComponent,
+    // InsuranceComponent,
+    // InvestComponent,
+    // RealEstateComponent,
+    // PaperAssetsComponent,
+    // TangibleAssetsComponent,
     QuoteComponent,
     InvoiceComponent,
     ReceiptComponent,
-    AccountsComponent,
-    AccountDetailComponent,
+    // AccountsComponent,
+    // AccountDetailComponent,
     PageNotFoundComponent,
     LoginComponent,
     ShopComponent,
     WelcomeComponent,
-    ReceiveComponent,
-    SendComponent,
-    ReceiveComponent,
+    // ReceiveComponent,
+    // SendComponent,
+    // ReceiveComponent,
     CheckoutComponent,
     ProductComponent,
-    InvestmentPropertyComponent,
-    BusinessComponent,
-    CommercialPropertiesComponent,
-    ResidentialPropertiesComponent,
+    // InvestmentPropertyComponent,
+    // BusinessComponent,
+    // CommercialPropertiesComponent,
+    // ResidentialPropertiesComponent,
+    // BusinessesForSaleComponent,
+    // InvestmentPropertiesComponent,
+    // CommercialPropertyComponent,
+    // StocksComponent,
+    // BondsComponent,
+    // LiensComponent,
+    // NotesComponent,
+    // BondComponent,
+    // LienComponent,
+    // NoteComponent,
+    // StockComponent,
+    // AutoFinanceComponent,
+    // BusinessFinanceComponent,
+    // MortgageComponent,
+    // AutoInsuranceComponent,
+    // BusinessInsuranceComponent,
+    // LifeInsuranceComponent,
+    // PropertyInsuranceComponent,
+    // ResidentialPropertyComponent,
+    // PersonalDebtComponent,
+    // HomeComponent,
+    ThemeComponent,
+    AboutTHFWComponent,
+    MerchandiseComponent,
+    // HomeOrbComponent,
+    // HeaderOrbComponent,
+    // OrbComponent,
+    The7ofdiamondsComponent,
+    ThehouseforeverwinsComponent,
+    OrbComponent,
+    AboutOrbComponent,
+    LearnComponent,
+    ManageComponent,
+    InvestComponent,
+    WebsiteDevelopmentComponent,
+    ApplicationDevelopmentComponent,
+    RealEstateComponent,
+    ResidentialComponent,
+    CommercialComponent,
+    PaperAssetsComponent,
+    TangibleAssetsComponent,
+    AccountsComponent,
+    CurrencyComponent,
+    DebtComponent,
+    InsuranceComponent,
+    BookComponent,
     BusinessesForSaleComponent,
     InvestmentPropertiesComponent,
-    CommercialPropertyComponent,
-    StocksComponent,
-    BondsComponent,
-    LiensComponent,
-    NotesComponent,
-    BondComponent,
-    LienComponent,
-    NoteComponent,
-    StockComponent,
-    AutoFinanceComponent,
-    BusinessFinanceComponent,
-    MortgageComponent,
-    AutoInsuranceComponent,
-    BusinessInsuranceComponent,
-    LifeInsuranceComponent,
-    PropertyInsuranceComponent,
-    ResidentialPropertyComponent,
-    PersonalDebtComponent
+    ResidentialPropertyComponent
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   bootstrap: [AppComponent],
-  entryComponents: [ShopComponent, ContactComponent, ContactorbComponent, ProductComponent],
+  entryComponents: [ShopComponent, ContactComponent, ProductComponent],
   providers: [MatFormFieldModule,
     MatSelectModule, MatStepperModule, FormsModule, AuthGuard, MatButtonModule, { provide: MAT_DIALOG_DATA, useValue: {} },
-    { provide: MatDialogRef, useValue: {} }, ResidentialPropertyComponent]
+    { provide: MatDialogRef, useValue: {} }]
 })
 export class AppModule { }

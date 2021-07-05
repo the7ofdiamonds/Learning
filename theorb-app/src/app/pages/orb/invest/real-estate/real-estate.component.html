@@ -1,11 +1,19 @@
-<mat-card>
+<mat-card class="orbRealEstate">
   <mat-toolbar mat-tab-nav-bar>
-    <a mat-tab-link class="commercialHeader" routerLink="/invest/real-estate/commercial">
-      <strong>COMMERCIAL</strong>
-    </a>
-    <a mat-tab-link class="residentialHeader" routerLink="/invest/real-estate/residential">
-      <strong>RESIDENTIAL</strong>
-    </a>
+    <button mat-raised-button class="commercialHeader" (click)="openCommercial()">
+      <a mat-tab-link>
+        <strong>
+          <h2>COMMERCIAL</h2>
+        </strong>
+      </a>
+    </button>
+    <button mat-raised-button class="residentialHeader" (click)=" openResidential()">
+      <a mat-tab-link>
+        <strong>
+          <h2>RESIDENTIAL</h2>
+        </strong>
+      </a>
+    </button>
   </mat-toolbar>
   <div class="content">
     <p>Purchase residential and commercial real estate.</p>

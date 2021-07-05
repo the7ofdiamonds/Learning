@@ -1,209 +1,59 @@
+body {
+  width: 100%;
+  height: 100%;
+}
+
+/* Background */
 .background {
-  top: 0;
   z-index: -1;
   position: fixed;
+  width: 100%;
+  height: 100%;
+  padding-top: 100px;
+  display: grid;
+  grid-template-columns: 20% 20% 20% 20% 20%;
+  grid-template-rows: auto;
+  grid-template-areas: "T7OD . . . ORB"
+    ". . . . ."
+    ". HOUSE HOUSE HOUSE .";
 }
 
-.background img {
-  width: 100px;
-  height: 100px;
+button.t7odLogo img {
+  width: 100%;
+  height: auto;
 }
 
-/* THE7OFDIAMONDS */
-mat-toolbar {
-  background-color: white;
-  color: black;
+button.t7odLogo {
+  grid-area: T7OD;
+  width: 100%;
   height: fit-content;
-  position: flex;
-  flex-direction: column;
 }
 
-.the7ofdiamondsHeader h1 {
-  order: 1;
-  color: black;
-}
-
-.aboutHeader {
-  order: 2;
-}
-
-.servicesHeader {
-  order: 3
-}
-
-.shopHeader {
-  order: 4;
-}
-
-#the7ofdiamonds .orbHeader {
-  order: 5;
-}
-
-.the7ofdiamonds a {
-  color: black;
-}
-
-/* ORB */
-#orb mat-toolbar {
-  background-color: black;
-}
-
-mat-expansion-panel {
-  background: black;
-  color: white;
-}
-
-mat-expansion-panel-header {
-  display: flex;
-  height: 100px;
-  flex-direction: column;
-}
-
-mat-expansion-panel-header div {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-content: center;
+button.orbLogo img {
   width: 100%;
+  height: auto;
 }
 
-mat-expansion-panel-header div button a h2,
-h1 {
-  color: white;
-  margin: 5px;
-}
-
-mat-expansion-panel-header div button {
-  background-color: black;
-  box-shadow: 0px 8px 16px 0px rgba(255, 255, 255, 0.2);
-  flex: 1;
-}
-
-mat-expansion-panel-body {
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  align-content: center;
+button.orbLogo {
+  grid-area: ORB;
+  width: 100%;
   height: fit-content;
-  justify-content: space-evenly;
-  overflow: hidden;
+}
+
+button.thfwLogo img {
   width: 100%;
+  height: auto;
 }
 
-mat-expansion-panel-body div {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-evenly;
+button.thfwLogo {
+  grid-area: HOUSE;
   width: 100%;
-}
-
-mat-expansion-panel-body div button {
-  background-color: black;
-  box-shadow: 0px 8px 16px 0px rgba(255, 255, 255, 0.2);
-  flex: 1;
-  margin: 8px;
-}
-
-mat-expansion-panel-body div button h2,
-h1 {
-  color: white;
-}
-
-mat-expansion-panel-body div button.the7ofdiamondsHeader {
-  order: 5;
-}  
-
-mat-expansion-panel-body div {
-  display: flex;
-  flex-direction: column;
-  /* border-color: rgb(14, 133, 50);
-  border-style: solid; */
+  height: fit-content;
 }
 
 @media screen and (min-width: 700px) {
-  mat-toolbar {
-    flex-direction: row;
-    height: 6.25rem;
+  .background .house img {
+    width: 800px;
+    height: auto;
   }
-
-  .the7ofdiamonds a {
-    color: black;
-    width: 250px;
-  }
-
-  .aboutheader {
-    order: 1;
-  }
-
-  .servicesHeader {
-    order: 2;
-  }
-
-  #the7ofdiamonds .the7ofdiamondsHeader {
-    order: 3;
-  }
-
-  .shopHeader {
-    order: 4;
-  }
-
-  #the7ofdiamonds .orbHeader {
-    order: 5;
-  }
-
-  /* ORB */
-  #orb mat-toolbar {
-    height: 100px;
-    flex-direction: row;
-  }
-
-  mat-expansion-panel-header {
-    height: 100px;
-    flex-direction: row;
-  }
-
-  mat-expansion-panel-header div {
-    flex-direction: row;
-  }
-
-  mat-expansion-panel-body {
-    flex-direction: row;
-  }
-
-  mat-expansion-panel-body div {
-    flex-direction: row;
-  }
-
-  mat-expansion-panel-body div button a h2,
-  h1 {
-    margin: 5px;
-  }
-
-  mat-expansion-panel-header div button a h2,
-  h1 {
-    margin: 5px;
-  }
-
-  mat-expansion-panel-body div button.orbHeader {
-    order: 3;
-  }
-  
-  mat-expansion-panel-body div button.aboutOrbHeader {
-    order: 1;
-    border-color: blue;
-    border-style: solid;
-  }
-  
-  mat-expansion-panel-body div button.loginHeader {
-    order: 2;
-  }
-  
-  mat-expansion-panel-body div button.shopHeader {
-    order: 4;
-  }
-  
-  mat-expansion-panel-body div button.the7ofdiamondsHeader {
-    order: 5;
-  }  
 }

@@ -1,0 +1,54 @@
+<header id="orb" class="orbHeader">
+    <mat-accordian>
+      <mat-expansion-panel hideToggle>
+        <mat-expansion-panel-header>
+          <button mat-raised-button class="orb" routerLink="/orb">
+            <a mat-tab-link>
+              <strong>
+                <h1>ORB</h1>
+              </strong>
+            </a>
+          </button>
+          <button mat-raised-button class="aboutOrb" (click)="openAboutOrb()">
+            <a mat-tab-link>
+              <h2>ABOUT</h2>
+            </a>
+          </button>
+          <button mat-raised-button class="loginHeader" (click)="openLogin()">
+            <a mat-tab-link>
+              <h2>LOG IN</h2>
+            </a>
+          </button>
+          <button mat-raised-button class="shop" routerLink="/shop">
+            <a mat-tab-link>
+              <h2>SHOP</h2>
+            </a>
+          </button>
+          <button mat-raised-button class="t7od" routerLink="/">
+            <a mat-tab-link>
+              <h2>
+                THE7OFDIAMONDS.TECH
+              </h2>
+            </a>
+          </button>
+        </mat-expansion-panel-header>
+        <mat-expansion-panel-body>
+          <button mat-raised-button class="learnHeader" (click)="openLearn()">
+            <a mat-tab-link>
+              <h2>LEARN</h2>
+            </a>
+          </button>
+          <button mat-raised-button class="manageHeader" (click)="openManage()">
+            <a mat-tab-link>
+              <h2>MANAGE</h2>
+            </a>
+          </button>
+          <button mat-raised-button class="investHeader" (click)="openInvest()">
+            <a mat-tab-link>
+              <h2>INVEST</h2>
+            </a>
+          </button>
+        </mat-expansion-panel-body>
+      </mat-expansion-panel>
+    </mat-accordian>
+  </header>  

@@ -1,0 +1,53 @@
+/* Header */
+header {
+  z-index: 3;
+}
+
+/* THE7OFDIAMONDS.TECH & THE HOUSE FOREVER WINS */
+header mat-toolbar a {
+  color: black;
+}
+
+mat-toolbar {
+  height: fit-content;
+  position: flex;
+  flex-direction: column;
+}
+
+@media screen and (min-width: 700px) {
+  .background .house img {
+    width: 800px;
+    height: auto;
+  }
+
+  mat-toolbar {
+    flex-direction: row;
+    height: 6.25rem;
+    justify-content: space-evenly;
+  }
+
+  .thehouseforeverwins a {
+    color: black;
+    width: 250px;
+  }
+
+  .aboutTHFWHeader {
+    order: 1;
+  }
+
+  .themeHeader {
+    order: 2;
+  }
+
+  .thehouseforeverwins {
+    order: 3;
+  }
+
+  .merchHeader {
+    order: 4;
+  }
+
+  .learnHeader {
+    order: 5;
+  }
+}

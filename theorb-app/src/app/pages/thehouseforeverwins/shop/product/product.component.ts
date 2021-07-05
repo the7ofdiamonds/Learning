@@ -1,5 +1,5 @@
 import { Component, OnInit, Inject } from '@angular/core';
-import { ShopComponent } from '../shop.component';
+// import { ShopComponent } from '../shop.component';
 import { Product, ProductDetail } from 'src/app/models/thehouseforeverwins/product';
 import { ProductDetailService } from 'src/app/services/thehouseforeverwins/product-detail.service';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';

@@ -1,0 +1,43 @@
+header mat-toolbar a {
+  color: black;
+}
+
+mat-toolbar {
+  height: fit-content;
+  position: flex;
+  flex-direction: column;
+}
+
+@media screen and (min-width: 700px) {
+  mat-toolbar {
+    flex-direction: row;
+    height: 6.25rem;
+    justify-content: space-evenly;
+  }
+
+  .the7ofdiamonds a {
+    color: black;
+    width: 250px;
+  }
+
+  .aboutheader {
+    order: 1;
+  }
+
+  .servicesHeader {
+    order: 2;
+  }
+
+  .the7ofdiamonds {
+    order: 3;
+  }
+
+  .shopHeader {
+    order: 4;
+  }
+
+  .orbHeader {
+    order: 5;
+  }
+
+}

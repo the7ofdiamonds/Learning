@@ -1,3 +1,17 @@
 .mat-snack-bar-container {
   background: white;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+div a img {
+  width: 100px;
+  height: 100px;
+  align-items: center;
+
+}
+
+a img {
+  margin: 7px;
 }
